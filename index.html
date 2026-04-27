@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Conceptos de Superficies</title>
+  <meta name="description" content="Este es un resumen de los casos de superficies y sus propiedades." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Conceptos de Superficies" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este es un resumen de los casos de superficies y sus propiedades." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Conceptos de Superficies" />
+  
+  <meta name="twitter:description" content="Este es un resumen de los casos de superficies y sus propiedades." />
+  
+
+<meta name="author" content="John Jairo Estrada Álvarez" />
+
+
+<meta name="date" content="2026-04-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="rectas-planos.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.12.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Conceptos de Superficies 3D</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vectores y Geometría Vectorial</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#vectores-libres-y-vectores-coordenados"><i class="fa fa-check"></i><b>1.1</b> Vectores libres y vectores coordenados</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#definición-de-vector"><i class="fa fa-check"></i><b>1.1.1</b> Definición de vector</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#vector-en-la-recta-mathbbr"><i class="fa fa-check"></i><b>1.1.2</b> Vector en la recta (<span class="math inline">\(\mathbb{R}\)</span>)</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#vector-en-el-plano-mathbbr2"><i class="fa fa-check"></i><b>1.1.3</b> Vector en el plano (<span class="math inline">\(\mathbb{R}^2\)</span>)</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#vector-en-el-espacio-mathbbr3"><i class="fa fa-check"></i><b>1.1.4</b> Vector en el espacio (<span class="math inline">\(\mathbb{R}^3\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#operaciones-vectoriales"><i class="fa fa-check"></i><b>1.2</b> Operaciones vectoriales</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#suma-y-resta"><i class="fa fa-check"></i><b>1.2.1</b> Suma y resta</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#multiplicación-por-escalar"><i class="fa fa-check"></i><b>1.2.2</b> Multiplicación por escalar</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#producto-punto-producto-escalar"><i class="fa fa-check"></i><b>1.3</b> Producto punto (producto escalar)</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#definición-algebraica"><i class="fa fa-check"></i><b>1.3.1</b> Definición algebraica</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#definición-geométrica"><i class="fa fa-check"></i><b>1.3.2</b> Definición geométrica</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#propiedades"><i class="fa fa-check"></i><b>1.3.3</b> Propiedades</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#aplicaciones-del-producto-punto"><i class="fa fa-check"></i><b>1.3.4</b> Aplicaciones del producto punto</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#ejemplo-resuelto"><i class="fa fa-check"></i><b>1.3.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#producto-cruz-producto-vectorial"><i class="fa fa-check"></i><b>1.4</b> Producto cruz (producto vectorial)</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#definición"><i class="fa fa-check"></i><b>1.4.1</b> Definición</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#propiedades-geométricas"><i class="fa fa-check"></i><b>1.4.2</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#propiedades-algebraicas"><i class="fa fa-check"></i><b>1.4.3</b> Propiedades algebraicas</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#ejemplo-resuelto-1"><i class="fa fa-check"></i><b>1.4.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#triple-producto-escalar"><i class="fa fa-check"></i><b>1.5</b> Triple producto escalar</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#interpretación-geométrica"><i class="fa fa-check"></i><b>1.5.1</b> Interpretación geométrica</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#ejemplo"><i class="fa fa-check"></i><b>1.5.2</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#visualización-interactiva-vectores-en-3d"><i class="fa fa-check"></i><b>1.6</b> Visualización interactiva: vectores en 3D</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#ejercicios-propuestos"><i class="fa fa-check"></i><b>1.7</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rectas-planos.html"><a href="rectas-planos.html"><i class="fa fa-check"></i><b>2</b> Rectas y Planos en el Espacio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rectas-planos.html"><a href="rectas-planos.html#rectas-en-el-espacio"><i class="fa fa-check"></i><b>2.1</b> Rectas en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuación-vectorial"><i class="fa fa-check"></i><b>2.1.1</b> Ecuación vectorial</a></li>
+<li class="chapter" data-level="2.1.2" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuaciones-paramétricas"><i class="fa fa-check"></i><b>2.1.2</b> Ecuaciones paramétricas</a></li>
+<li class="chapter" data-level="2.1.3" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuaciones-simétricas"><i class="fa fa-check"></i><b>2.1.3</b> Ecuaciones simétricas</a></li>
+<li class="chapter" data-level="2.1.4" data-path="rectas-planos.html"><a href="rectas-planos.html#recta-que-pasa-por-dos-puntos"><i class="fa fa-check"></i><b>2.1.4</b> Recta que pasa por dos puntos</a></li>
+<li class="chapter" data-level="2.1.5" data-path="rectas-planos.html"><a href="rectas-planos.html#ejemplo-resuelto-2"><i class="fa fa-check"></i><b>2.1.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="rectas-planos.html"><a href="rectas-planos.html#planos-en-el-espacio"><i class="fa fa-check"></i><b>2.2</b> Planos en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuación-punto-normal"><i class="fa fa-check"></i><b>2.2.1</b> Ecuación punto-normal</a></li>
+<li class="chapter" data-level="2.2.2" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuación-general"><i class="fa fa-check"></i><b>2.2.2</b> Ecuación general</a></li>
+<li class="chapter" data-level="2.2.3" data-path="rectas-planos.html"><a href="rectas-planos.html#planos-coordenados"><i class="fa fa-check"></i><b>2.2.3</b> Planos coordenados</a></li>
+<li class="chapter" data-level="2.2.4" data-path="rectas-planos.html"><a href="rectas-planos.html#interceptos"><i class="fa fa-check"></i><b>2.2.4</b> Interceptos</a></li>
+<li class="chapter" data-level="2.2.5" data-path="rectas-planos.html"><a href="rectas-planos.html#plano-que-pasa-por-tres-puntos"><i class="fa fa-check"></i><b>2.2.5</b> Plano que pasa por tres puntos</a></li>
+<li class="chapter" data-level="2.2.6" data-path="rectas-planos.html"><a href="rectas-planos.html#ejemplo-resuelto-3"><i class="fa fa-check"></i><b>2.2.6</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="rectas-planos.html"><a href="rectas-planos.html#distancias-en-el-espacio"><i class="fa fa-check"></i><b>2.3</b> Distancias en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="rectas-planos.html"><a href="rectas-planos.html#distancia-de-un-punto-a-un-plano"><i class="fa fa-check"></i><b>2.3.1</b> Distancia de un punto a un plano</a></li>
+<li class="chapter" data-level="2.3.2" data-path="rectas-planos.html"><a href="rectas-planos.html#distancia-de-un-punto-a-una-recta"><i class="fa fa-check"></i><b>2.3.2</b> Distancia de un punto a una recta</a></li>
+<li class="chapter" data-level="2.3.3" data-path="rectas-planos.html"><a href="rectas-planos.html#distancia-entre-dos-rectas-en-el-espacio"><i class="fa fa-check"></i><b>2.3.3</b> Distancia entre dos rectas en el espacio</a></li>
+<li class="chapter" data-level="2.3.4" data-path="rectas-planos.html"><a href="rectas-planos.html#ejemplo-resuelto-4"><i class="fa fa-check"></i><b>2.3.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulos-en-el-espacio"><i class="fa fa-check"></i><b>2.4</b> Ángulos en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulo-entre-dos-rectas"><i class="fa fa-check"></i><b>2.4.1</b> Ángulo entre dos rectas</a></li>
+<li class="chapter" data-level="2.4.2" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulo-entre-dos-planos"><i class="fa fa-check"></i><b>2.4.2</b> Ángulo entre dos planos</a></li>
+<li class="chapter" data-level="2.4.3" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulo-entre-una-recta-y-un-plano"><i class="fa fa-check"></i><b>2.4.3</b> Ángulo entre una recta y un plano</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="rectas-planos.html"><a href="rectas-planos.html#intersecciones"><i class="fa fa-check"></i><b>2.5</b> Intersecciones</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="rectas-planos.html"><a href="rectas-planos.html#intersección-de-una-recta-y-un-plano"><i class="fa fa-check"></i><b>2.5.1</b> Intersección de una recta y un plano</a></li>
+<li class="chapter" data-level="2.5.2" data-path="rectas-planos.html"><a href="rectas-planos.html#intersección-de-dos-planos"><i class="fa fa-check"></i><b>2.5.2</b> Intersección de dos planos</a></li>
+<li class="chapter" data-level="2.5.3" data-path="rectas-planos.html"><a href="rectas-planos.html#intersección-de-tres-planos"><i class="fa fa-check"></i><b>2.5.3</b> Intersección de tres planos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="rectas-planos.html"><a href="rectas-planos.html#ejercicios-propuestos-1"><i class="fa fa-check"></i><b>2.6</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="coordenadas.html"><a href="coordenadas.html"><i class="fa fa-check"></i><b>3</b> Sistemas de Coordenadas y Parametrización</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="coordenadas.html"><a href="coordenadas.html#coordenadas-polares-en-el-plano"><i class="fa fa-check"></i><b>3.1</b> Coordenadas polares en el plano</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="coordenadas.html"><a href="coordenadas.html#relación-con-coordenadas-cartesianas"><i class="fa fa-check"></i><b>3.1.1</b> Relación con coordenadas cartesianas</a></li>
+<li class="chapter" data-level="3.1.2" data-path="coordenadas.html"><a href="coordenadas.html#curvas-notables-en-coordenadas-polares"><i class="fa fa-check"></i><b>3.1.2</b> Curvas notables en coordenadas polares</a></li>
+<li class="chapter" data-level="3.1.3" data-path="coordenadas.html"><a href="coordenadas.html#ejemplo-resuelto-5"><i class="fa fa-check"></i><b>3.1.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="coordenadas.html"><a href="coordenadas.html#coordenadas-cilíndricas"><i class="fa fa-check"></i><b>3.2</b> Coordenadas cilíndricas</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="coordenadas.html"><a href="coordenadas.html#definición-1"><i class="fa fa-check"></i><b>3.2.1</b> Definición</a></li>
+<li class="chapter" data-level="3.2.2" data-path="coordenadas.html"><a href="coordenadas.html#conversión-a-cartesianas"><i class="fa fa-check"></i><b>3.2.2</b> Conversión a cartesianas</a></li>
+<li class="chapter" data-level="3.2.3" data-path="coordenadas.html"><a href="coordenadas.html#superficies-de-coordenadas-constantes"><i class="fa fa-check"></i><b>3.2.3</b> Superficies de coordenadas constantes</a></li>
+<li class="chapter" data-level="3.2.4" data-path="coordenadas.html"><a href="coordenadas.html#jacobiano"><i class="fa fa-check"></i><b>3.2.4</b> Jacobiano</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="coordenadas.html"><a href="coordenadas.html#coordenadas-esféricas"><i class="fa fa-check"></i><b>3.3</b> Coordenadas esféricas</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="coordenadas.html"><a href="coordenadas.html#conversión-a-cartesianas-1"><i class="fa fa-check"></i><b>3.3.1</b> Conversión a cartesianas</a></li>
+<li class="chapter" data-level="3.3.2" data-path="coordenadas.html"><a href="coordenadas.html#conversión-a-cilíndricas"><i class="fa fa-check"></i><b>3.3.2</b> Conversión a cilíndricas</a></li>
+<li class="chapter" data-level="3.3.3" data-path="coordenadas.html"><a href="coordenadas.html#superficies-de-coordenadas-constantes-1"><i class="fa fa-check"></i><b>3.3.3</b> Superficies de coordenadas constantes</a></li>
+<li class="chapter" data-level="3.3.4" data-path="coordenadas.html"><a href="coordenadas.html#jacobiano-1"><i class="fa fa-check"></i><b>3.3.4</b> Jacobiano</a></li>
+<li class="chapter" data-level="3.3.5" data-path="coordenadas.html"><a href="coordenadas.html#ejemplo-resuelto-6"><i class="fa fa-check"></i><b>3.3.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="coordenadas.html"><a href="coordenadas.html#parametrización-de-curvas"><i class="fa fa-check"></i><b>3.4</b> Parametrización de curvas</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="coordenadas.html"><a href="coordenadas.html#curvas-paramétricas-en-el-plano"><i class="fa fa-check"></i><b>3.4.1</b> Curvas paramétricas en el plano</a></li>
+<li class="chapter" data-level="3.4.2" data-path="coordenadas.html"><a href="coordenadas.html#curvas-paramétricas-en-el-espacio"><i class="fa fa-check"></i><b>3.4.2</b> Curvas paramétricas en el espacio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="coordenadas.html"><a href="coordenadas.html#longitud-de-arco"><i class="fa fa-check"></i><b>3.5</b> Longitud de arco</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="coordenadas.html"><a href="coordenadas.html#ejemplo-resuelto-7"><i class="fa fa-check"></i><b>3.5.1</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="coordenadas.html"><a href="coordenadas.html#ejercicios-propuestos-2"><i class="fa fa-check"></i><b>3.6</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html"><i class="fa fa-check"></i><b>4</b> Funciones de Varias Variables y Derivadas Parciales</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#funciones-de-dos-y-tres-variables"><i class="fa fa-check"></i><b>4.1</b> Funciones de dos y tres variables</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#definición-2"><i class="fa fa-check"></i><b>4.1.1</b> Definición</a></li>
+<li class="chapter" data-level="4.1.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#dominio-y-rango"><i class="fa fa-check"></i><b>4.1.2</b> Dominio y rango</a></li>
+<li class="chapter" data-level="4.1.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplos"><i class="fa fa-check"></i><b>4.1.3</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#gráfica-de-una-función-de-dos-variables"><i class="fa fa-check"></i><b>4.2</b> Gráfica de una función de dos variables</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-1"><i class="fa fa-check"></i><b>4.2.1</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#curvas-de-nivel"><i class="fa fa-check"></i><b>4.3</b> Curvas de nivel</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplos-de-curvas-de-nivel"><i class="fa fa-check"></i><b>4.3.1</b> Ejemplos de curvas de nivel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#límites-y-continuidad"><i class="fa fa-check"></i><b>4.4</b> Límites y continuidad</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#límite-de-una-función-de-dos-variables"><i class="fa fa-check"></i><b>4.4.1</b> Límite de una función de dos variables</a></li>
+<li class="chapter" data-level="4.4.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#criterio-para-inexistencia-de-límite"><i class="fa fa-check"></i><b>4.4.2</b> Criterio para inexistencia de límite</a></li>
+<li class="chapter" data-level="4.4.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-8"><i class="fa fa-check"></i><b>4.4.3</b> Ejemplo resuelto</a></li>
+<li class="chapter" data-level="4.4.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#continuidad"><i class="fa fa-check"></i><b>4.4.4</b> Continuidad</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivadas-parciales-1"><i class="fa fa-check"></i><b>4.5</b> Derivadas parciales</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#definición-3"><i class="fa fa-check"></i><b>4.5.1</b> Definición</a></li>
+<li class="chapter" data-level="4.5.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#notaciones"><i class="fa fa-check"></i><b>4.5.2</b> Notaciones</a></li>
+<li class="chapter" data-level="4.5.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#interpretación-geométrica-1"><i class="fa fa-check"></i><b>4.5.3</b> Interpretación geométrica</a></li>
+<li class="chapter" data-level="4.5.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-9"><i class="fa fa-check"></i><b>4.5.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#herramienta-de-cálculo-derivadas-parciales-paso-a-paso"><i class="fa fa-check"></i><b>4.6</b> Herramienta de cálculo: Derivadas parciales paso a paso</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-fx-y-x3-siny-exy"><i class="fa fa-check"></i><b>4.6.1</b> Ejemplo: <span class="math inline">\(f(x, y) = x^3 \sin(y) + e^{xy}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivadas-parciales-de-orden-superior"><i class="fa fa-check"></i><b>4.7</b> Derivadas parciales de orden superior</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#teorema-de-clairaut"><i class="fa fa-check"></i><b>4.7.1</b> Teorema de Clairaut</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#plano-tangente-y-aproximación-lineal"><i class="fa fa-check"></i><b>4.8</b> Plano tangente y aproximación lineal</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ecuación-del-plano-tangente"><i class="fa fa-check"></i><b>4.8.1</b> Ecuación del plano tangente</a></li>
+<li class="chapter" data-level="4.8.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#aproximación-lineal-diferenciabilidad"><i class="fa fa-check"></i><b>4.8.2</b> Aproximación lineal (diferenciabilidad)</a></li>
+<li class="chapter" data-level="4.8.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-10"><i class="fa fa-check"></i><b>4.8.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#regla-de-la-cadena"><i class="fa fa-check"></i><b>4.9</b> Regla de la cadena</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#caso-1-función-compuesta-de-una-variable"><i class="fa fa-check"></i><b>4.9.1</b> Caso 1: Función compuesta de una variable</a></li>
+<li class="chapter" data-level="4.9.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#caso-2-función-compuesta-de-dos-variables"><i class="fa fa-check"></i><b>4.9.2</b> Caso 2: Función compuesta de dos variables</a></li>
+<li class="chapter" data-level="4.9.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-11"><i class="fa fa-check"></i><b>4.9.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivada-direccional-y-gradiente"><i class="fa fa-check"></i><b>4.10</b> Derivada direccional y gradiente</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivada-direccional"><i class="fa fa-check"></i><b>4.10.1</b> Derivada direccional</a></li>
+<li class="chapter" data-level="4.10.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#vector-gradiente"><i class="fa fa-check"></i><b>4.10.2</b> Vector gradiente</a></li>
+<li class="chapter" data-level="4.10.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#propiedades-del-gradiente"><i class="fa fa-check"></i><b>4.10.3</b> Propiedades del gradiente</a></li>
+<li class="chapter" data-level="4.10.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-12"><i class="fa fa-check"></i><b>4.10.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#visualización-interactiva-plano-tangente-y-gradiente"><i class="fa fa-check"></i><b>4.11</b> Visualización interactiva: plano tangente y gradiente</a></li>
+<li class="chapter" data-level="4.12" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejercicios-propuestos-3"><i class="fa fa-check"></i><b>4.12</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="maximos-minimos.html"><a href="maximos-minimos.html"><i class="fa fa-check"></i><b>5</b> Máximos, Mínimos y Optimización</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#puntos-críticos"><i class="fa fa-check"></i><b>5.1</b> Puntos críticos</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#definición-4"><i class="fa fa-check"></i><b>5.1.1</b> Definición</a></li>
+<li class="chapter" data-level="5.1.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#extremos-locales"><i class="fa fa-check"></i><b>5.1.2</b> Extremos locales</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#criterio-del-hessiano-para-funciones-de-dos-variables"><i class="fa fa-check"></i><b>5.2</b> Criterio del Hessiano para funciones de dos variables</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#matriz-hessiana"><i class="fa fa-check"></i><b>5.2.1</b> Matriz Hessiana</a></li>
+<li class="chapter" data-level="5.2.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#discriminante"><i class="fa fa-check"></i><b>5.2.2</b> Discriminante</a></li>
+<li class="chapter" data-level="5.2.3" data-path="maximos-minimos.html"><a href="maximos-minimos.html#criterio-de-clasificación"><i class="fa fa-check"></i><b>5.2.3</b> Criterio de clasificación</a></li>
+<li class="chapter" data-level="5.2.4" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-resuelto-13"><i class="fa fa-check"></i><b>5.2.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="maximos-minimos.html"><a href="maximos-minimos.html#herramienta-de-cálculo-hessiano-automático"><i class="fa fa-check"></i><b>5.3</b> Herramienta de cálculo: Hessiano automático</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-fx-y-x3-y3---3xy-en-1-1"><i class="fa fa-check"></i><b>5.3.1</b> Ejemplo: <span class="math inline">\(f(x, y) = x^3 + y^3 - 3xy\)</span> en <span class="math inline">\((1, 1)\)</span></a></li>
+<li class="chapter" data-level="5.3.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#segundo-ejemplo-fx-y-x2-y2-en-0-0"><i class="fa fa-check"></i><b>5.3.2</b> Segundo ejemplo: <span class="math inline">\(f(x, y) = x^2 + y^2\)</span> en <span class="math inline">\((0, 0)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="maximos-minimos.html"><a href="maximos-minimos.html#extremos-absolutos-en-regiones-compactas"><i class="fa fa-check"></i><b>5.4</b> Extremos absolutos en regiones compactas</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#método-para-encontrar-extremos-absolutos"><i class="fa fa-check"></i><b>5.4.1</b> Método para encontrar extremos absolutos</a></li>
+<li class="chapter" data-level="5.4.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-resuelto-14"><i class="fa fa-check"></i><b>5.4.2</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="maximos-minimos.html"><a href="maximos-minimos.html#multiplicadores-de-lagrange"><i class="fa fa-check"></i><b>5.5</b> Multiplicadores de Lagrange</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#condición-necesaria"><i class="fa fa-check"></i><b>5.5.1</b> Condición necesaria</a></li>
+<li class="chapter" data-level="5.5.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#función-de-lagrange"><i class="fa fa-check"></i><b>5.5.2</b> Función de Lagrange</a></li>
+<li class="chapter" data-level="5.5.3" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-resuelto-15"><i class="fa fa-check"></i><b>5.5.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="maximos-minimos.html"><a href="maximos-minimos.html#extensión-a-tres-variables"><i class="fa fa-check"></i><b>5.6</b> Extensión a tres variables</a></li>
+<li class="chapter" data-level="5.7" data-path="maximos-minimos.html"><a href="maximos-minimos.html#visualización-interactiva-puntos-críticos-y-sillas-de-montar"><i class="fa fa-check"></i><b>5.7</b> Visualización interactiva: puntos críticos y sillas de montar</a></li>
+<li class="chapter" data-level="5.8" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejercicios-propuestos-4"><i class="fa fa-check"></i><b>5.8</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cuadricas.html"><a href="cuadricas.html"><i class="fa fa-check"></i><b>6</b> Superficies Cuádricas</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-general-y-clasificación"><i class="fa fa-check"></i><b>6.1</b> Ecuación general y clasificación</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="cuadricas.html"><a href="cuadricas.html#estrategia-de-análisis"><i class="fa fa-check"></i><b>6.1.1</b> Estrategia de análisis</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="cuadricas.html"><a href="cuadricas.html#elipsoide"><i class="fa fa-check"></i><b>6.2</b> Elipsoide</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica"><i class="fa fa-check"></i><b>6.2.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.2.2" data-path="cuadricas.html"><a href="cuadricas.html#caso-particular-la-esfera"><i class="fa fa-check"></i><b>6.2.2</b> Caso particular: la esfera</a></li>
+<li class="chapter" data-level="6.2.3" data-path="cuadricas.html"><a href="cuadricas.html#trazas"><i class="fa fa-check"></i><b>6.2.3</b> Trazas</a></li>
+<li class="chapter" data-level="6.2.4" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-1"><i class="fa fa-check"></i><b>6.2.4</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.2.5" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-16"><i class="fa fa-check"></i><b>6.2.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="cuadricas.html"><a href="cuadricas.html#hiperboloide-de-una-hoja"><i class="fa fa-check"></i><b>6.3</b> Hiperboloide de una hoja</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-1"><i class="fa fa-check"></i><b>6.3.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.3.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-1"><i class="fa fa-check"></i><b>6.3.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.3.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-2"><i class="fa fa-check"></i><b>6.3.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.3.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-17"><i class="fa fa-check"></i><b>6.3.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="cuadricas.html"><a href="cuadricas.html#hiperboloide-de-dos-hojas"><i class="fa fa-check"></i><b>6.4</b> Hiperboloide de dos hojas</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-2"><i class="fa fa-check"></i><b>6.4.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.4.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-2"><i class="fa fa-check"></i><b>6.4.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.4.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-3"><i class="fa fa-check"></i><b>6.4.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.4.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-18"><i class="fa fa-check"></i><b>6.4.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="cuadricas.html"><a href="cuadricas.html#paraboloide-elíptico"><i class="fa fa-check"></i><b>6.5</b> Paraboloide elíptico</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-3"><i class="fa fa-check"></i><b>6.5.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.5.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-3"><i class="fa fa-check"></i><b>6.5.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.5.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-4"><i class="fa fa-check"></i><b>6.5.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.5.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-19"><i class="fa fa-check"></i><b>6.5.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="cuadricas.html"><a href="cuadricas.html#paraboloide-hiperbólico"><i class="fa fa-check"></i><b>6.6</b> Paraboloide hiperbólico</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-4"><i class="fa fa-check"></i><b>6.6.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.6.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-4"><i class="fa fa-check"></i><b>6.6.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.6.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-5"><i class="fa fa-check"></i><b>6.6.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.6.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-20"><i class="fa fa-check"></i><b>6.6.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="cuadricas.html"><a href="cuadricas.html#cono-elíptico"><i class="fa fa-check"></i><b>6.7</b> Cono elíptico</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-5"><i class="fa fa-check"></i><b>6.7.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.7.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-5"><i class="fa fa-check"></i><b>6.7.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.7.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-6"><i class="fa fa-check"></i><b>6.7.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.7.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-21"><i class="fa fa-check"></i><b>6.7.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="cuadricas.html"><a href="cuadricas.html#clasificación-resumida-de-las-cuádricas"><i class="fa fa-check"></i><b>6.8</b> Clasificación resumida de las cuádricas</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="cuadricas.html"><a href="cuadricas.html#criterio-de-clasificación-1"><i class="fa fa-check"></i><b>6.8.1</b> Criterio de clasificación</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="cuadricas.html"><a href="cuadricas.html#ejercicios-propuestos-5"><i class="fa fa-check"></i><b>6.9</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="integrales.html"><a href="integrales.html"><i class="fa fa-check"></i><b>7</b> Integrales Múltiples</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="integrales.html"><a href="integrales.html#integrales-dobles"><i class="fa fa-check"></i><b>7.1</b> Integrales dobles</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="integrales.html"><a href="integrales.html#definición-por-sumas-de-riemann"><i class="fa fa-check"></i><b>7.1.1</b> Definición por sumas de Riemann</a></li>
+<li class="chapter" data-level="7.1.2" data-path="integrales.html"><a href="integrales.html#propiedades-1"><i class="fa fa-check"></i><b>7.1.2</b> Propiedades</a></li>
+<li class="chapter" data-level="7.1.3" data-path="integrales.html"><a href="integrales.html#evaluación-integrales-iteradas-teorema-de-fubini"><i class="fa fa-check"></i><b>7.1.3</b> Evaluación: integrales iteradas (Teorema de Fubini)</a></li>
+<li class="chapter" data-level="7.1.4" data-path="integrales.html"><a href="integrales.html#regiones-generales"><i class="fa fa-check"></i><b>7.1.4</b> Regiones generales</a></li>
+<li class="chapter" data-level="7.1.5" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-22"><i class="fa fa-check"></i><b>7.1.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="integrales.html"><a href="integrales.html#cambio-de-variables-en-integrales-dobles"><i class="fa fa-check"></i><b>7.2</b> Cambio de variables en integrales dobles</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="integrales.html"><a href="integrales.html#transformación-general"><i class="fa fa-check"></i><b>7.2.1</b> Transformación general</a></li>
+<li class="chapter" data-level="7.2.2" data-path="integrales.html"><a href="integrales.html#coordenadas-polares"><i class="fa fa-check"></i><b>7.2.2</b> Coordenadas polares</a></li>
+<li class="chapter" data-level="7.2.3" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-23"><i class="fa fa-check"></i><b>7.2.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="integrales.html"><a href="integrales.html#integrales-triples"><i class="fa fa-check"></i><b>7.3</b> Integrales triples</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="integrales.html"><a href="integrales.html#definición-5"><i class="fa fa-check"></i><b>7.3.1</b> Definición</a></li>
+<li class="chapter" data-level="7.3.2" data-path="integrales.html"><a href="integrales.html#evaluación-como-integral-iterada"><i class="fa fa-check"></i><b>7.3.2</b> Evaluación como integral iterada</a></li>
+<li class="chapter" data-level="7.3.3" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-24"><i class="fa fa-check"></i><b>7.3.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="integrales.html"><a href="integrales.html#cambio-de-variables-en-integrales-triples"><i class="fa fa-check"></i><b>7.4</b> Cambio de variables en integrales triples</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="integrales.html"><a href="integrales.html#coordenadas-cilíndricas-1"><i class="fa fa-check"></i><b>7.4.1</b> Coordenadas cilíndricas</a></li>
+<li class="chapter" data-level="7.4.2" data-path="integrales.html"><a href="integrales.html#coordenadas-esféricas-1"><i class="fa fa-check"></i><b>7.4.2</b> Coordenadas esféricas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-25"><i class="fa fa-check"></i><b>7.4.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="integrales.html"><a href="integrales.html#aplicaciones-de-las-integrales-múltiples"><i class="fa fa-check"></i><b>7.5</b> Aplicaciones de las integrales múltiples</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="integrales.html"><a href="integrales.html#áreas-y-volúmenes"><i class="fa fa-check"></i><b>7.5.1</b> Áreas y volúmenes</a></li>
+<li class="chapter" data-level="7.5.2" data-path="integrales.html"><a href="integrales.html#masa-y-centro-de-masa"><i class="fa fa-check"></i><b>7.5.2</b> Masa y centro de masa</a></li>
+<li class="chapter" data-level="7.5.3" data-path="integrales.html"><a href="integrales.html#momentos-de-inercia"><i class="fa fa-check"></i><b>7.5.3</b> Momentos de inercia</a></li>
+<li class="chapter" data-level="7.5.4" data-path="integrales.html"><a href="integrales.html#valor-promedio"><i class="fa fa-check"></i><b>7.5.4</b> Valor promedio</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="integrales.html"><a href="integrales.html#visualización-interactiva-regiones-de-integración"><i class="fa fa-check"></i><b>7.6</b> Visualización interactiva: regiones de integración</a></li>
+<li class="chapter" data-level="7.7" data-path="integrales.html"><a href="integrales.html#ejercicios-propuestos-6"><i class="fa fa-check"></i><b>7.7</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="diferencial.html"><a href="diferencial.html"><i class="fa fa-check"></i><b>8</b> Geometría Diferencial de Superficies</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="diferencial.html"><a href="diferencial.html#superficies-paramétricas"><i class="fa fa-check"></i><b>8.1</b> Superficies paramétricas</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="diferencial.html"><a href="diferencial.html#definición-6"><i class="fa fa-check"></i><b>8.1.1</b> Definición</a></li>
+<li class="chapter" data-level="8.1.2" data-path="diferencial.html"><a href="diferencial.html#ejemplos-de-parametrizaciones"><i class="fa fa-check"></i><b>8.1.2</b> Ejemplos de parametrizaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="diferencial.html"><a href="diferencial.html#cambio-de-parametrización"><i class="fa fa-check"></i><b>8.2</b> Cambio de parametrización</a></li>
+<li class="chapter" data-level="8.3" data-path="diferencial.html"><a href="diferencial.html#vector-normal-y-orientación"><i class="fa fa-check"></i><b>8.3</b> Vector normal y orientación</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="diferencial.html"><a href="diferencial.html#vector-normal"><i class="fa fa-check"></i><b>8.3.1</b> Vector normal</a></li>
+<li class="chapter" data-level="8.3.2" data-path="diferencial.html"><a href="diferencial.html#interpretación-geométrica-2"><i class="fa fa-check"></i><b>8.3.2</b> Interpretación geométrica</a></li>
+<li class="chapter" data-level="8.3.3" data-path="diferencial.html"><a href="diferencial.html#ejemplo-de-cálculo"><i class="fa fa-check"></i><b>8.3.3</b> Ejemplo de cálculo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="diferencial.html"><a href="diferencial.html#plano-tangente"><i class="fa fa-check"></i><b>8.4</b> Plano tangente</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="diferencial.html"><a href="diferencial.html#definición-7"><i class="fa fa-check"></i><b>8.4.1</b> Definición</a></li>
+<li class="chapter" data-level="8.4.2" data-path="diferencial.html"><a href="diferencial.html#ecuación-del-plano-tangente-1"><i class="fa fa-check"></i><b>8.4.2</b> Ecuación del plano tangente</a></li>
+<li class="chapter" data-level="8.4.3" data-path="diferencial.html"><a href="diferencial.html#ejemplo-2"><i class="fa fa-check"></i><b>8.4.3</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="diferencial.html"><a href="diferencial.html#primera-forma-fundamental"><i class="fa fa-check"></i><b>8.5</b> Primera forma fundamental</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="diferencial.html"><a href="diferencial.html#coeficientes-fundamentales"><i class="fa fa-check"></i><b>8.5.1</b> Coeficientes fundamentales</a></li>
+<li class="chapter" data-level="8.5.2" data-path="diferencial.html"><a href="diferencial.html#aplicaciones"><i class="fa fa-check"></i><b>8.5.2</b> Aplicaciones</a></li>
+<li class="chapter" data-level="8.5.3" data-path="diferencial.html"><a href="diferencial.html#ejemplo-esfera"><i class="fa fa-check"></i><b>8.5.3</b> Ejemplo: Esfera</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="diferencial.html"><a href="diferencial.html#segunda-forma-fundamental-y-curvatura"><i class="fa fa-check"></i><b>8.6</b> Segunda forma fundamental y curvatura</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="diferencial.html"><a href="diferencial.html#vector-normal-y-derivadas"><i class="fa fa-check"></i><b>8.6.1</b> Vector normal y derivadas</a></li>
+<li class="chapter" data-level="8.6.2" data-path="diferencial.html"><a href="diferencial.html#curvaturas-principales"><i class="fa fa-check"></i><b>8.6.2</b> Curvaturas principales</a></li>
+<li class="chapter" data-level="8.6.3" data-path="diferencial.html"><a href="diferencial.html#curvatura-gaussiana"><i class="fa fa-check"></i><b>8.6.3</b> Curvatura gaussiana</a></li>
+<li class="chapter" data-level="8.6.4" data-path="diferencial.html"><a href="diferencial.html#curvatura-media"><i class="fa fa-check"></i><b>8.6.4</b> Curvatura media</a></li>
+<li class="chapter" data-level="8.6.5" data-path="diferencial.html"><a href="diferencial.html#ejemplo-paraboloide-elíptico"><i class="fa fa-check"></i><b>8.6.5</b> Ejemplo: Paraboloide elíptico</a></li>
+<li class="chapter" data-level="8.6.6" data-path="diferencial.html"><a href="diferencial.html#ejemplo-paraboloide-hiperbólico"><i class="fa fa-check"></i><b>8.6.6</b> Ejemplo: Paraboloide hiperbólico</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="diferencial.html"><a href="diferencial.html#líneas-de-curvatura-y-direcciones-principales"><i class="fa fa-check"></i><b>8.7</b> Líneas de curvatura y direcciones principales</a></li>
+<li class="chapter" data-level="8.8" data-path="diferencial.html"><a href="diferencial.html#ecuaciones-de-weingarten"><i class="fa fa-check"></i><b>8.8</b> Ecuaciones de Weingarten</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="diferencial.html"><a href="diferencial.html#aplicaciones"><i class="fa fa-check"></i><b>9</b> Aplicaciones de las Superficies</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="aplicaciones.html"><a href="aplicaciones.html"><i class="fa fa-check"></i><b>9.1</b> Áreas de superficies</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="aplicaciones.html"><a href="aplicaciones.html#fórmula-general"><i class="fa fa-check"></i><b>9.1.1</b> Fórmula general</a></li>
+<li class="chapter" data-level="9.1.2" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-área-de-un-paraboloide"><i class="fa fa-check"></i><b>9.1.2</b> Ejemplo resuelto: Área de un paraboloide</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="aplicaciones.html"><a href="aplicaciones.html#integrales-de-superficie-de-campos-escalares"><i class="fa fa-check"></i><b>9.2</b> Integrales de superficie de campos escalares</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="aplicaciones.html"><a href="aplicaciones.html#interpretaciones-físicas"><i class="fa fa-check"></i><b>9.2.1</b> Interpretaciones físicas</a></li>
+<li class="chapter" data-level="9.2.2" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-masa-de-una-lámina-esférica"><i class="fa fa-check"></i><b>9.2.2</b> Ejemplo resuelto: Masa de una lámina esférica</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="aplicaciones.html"><a href="aplicaciones.html#integrales-de-superficie-de-campos-vectoriales-flujo"><i class="fa fa-check"></i><b>9.3</b> Integrales de superficie de campos vectoriales (Flujo)</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="aplicaciones.html"><a href="aplicaciones.html#interpretación-física"><i class="fa fa-check"></i><b>9.3.1</b> Interpretación física</a></li>
+<li class="chapter" data-level="9.3.2" data-path="aplicaciones.html"><a href="aplicaciones.html#teorema-de-la-divergencia-gauss"><i class="fa fa-check"></i><b>9.3.2</b> Teorema de la divergencia (Gauss)</a></li>
+<li class="chapter" data-level="9.3.3" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-flujo-a-través-de-un-elipsoide"><i class="fa fa-check"></i><b>9.3.3</b> Ejemplo resuelto: Flujo a través de un elipsoide</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="aplicaciones.html"><a href="aplicaciones.html#volumen-bajo-una-superficie"><i class="fa fa-check"></i><b>9.4</b> Volumen bajo una superficie</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-26"><i class="fa fa-check"></i><b>9.4.1</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="aplicaciones.html"><a href="aplicaciones.html#aplicaciones-en-física"><i class="fa fa-check"></i><b>9.5</b> Aplicaciones en física</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="aplicaciones.html"><a href="aplicaciones.html#ley-de-gauss-eléctrica"><i class="fa fa-check"></i><b>9.5.1</b> Ley de Gauss eléctrica</a></li>
+<li class="chapter" data-level="9.5.2" data-path="aplicaciones.html"><a href="aplicaciones.html#ley-de-ampère-maxwell"><i class="fa fa-check"></i><b>9.5.2</b> Ley de Ampère-Maxwell</a></li>
+<li class="chapter" data-level="9.5.3" data-path="aplicaciones.html"><a href="aplicaciones.html#momento-de-inercia"><i class="fa fa-check"></i><b>9.5.3</b> Momento de inercia</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="aplicaciones.html"><a href="aplicaciones.html#aplicaciones-en-arquitectura-e-ingeniería"><i class="fa fa-check"></i><b>9.6</b> Aplicaciones en arquitectura e ingeniería</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="aplicaciones.html"><a href="aplicaciones.html#estructuras-regladas"><i class="fa fa-check"></i><b>9.6.1</b> Estructuras regladas</a></li>
+<li class="chapter" data-level="9.6.2" data-path="aplicaciones.html"><a href="aplicaciones.html#óptica"><i class="fa fa-check"></i><b>9.6.2</b> Óptica</a></li>
+<li class="chapter" data-level="9.6.3" data-path="aplicaciones.html"><a href="aplicaciones.html#mecánica-celeste"><i class="fa fa-check"></i><b>9.6.3</b> Mecánica celeste</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="aplicaciones.html"><a href="aplicaciones.html#ejercicios-propuestos-7"><i class="fa fa-check"></i><b>9.7</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>10</b> Conclusiones</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="conclusiones.html"><a href="conclusiones.html#resumen-de-contenidos-por-capítulo"><i class="fa fa-check"></i><b>10.1</b> Resumen de contenidos por capítulo</a></li>
+<li class="chapter" data-level="10.2" data-path="conclusiones.html"><a href="conclusiones.html#conclusiones-finales"><i class="fa fa-check"></i><b>10.2</b> Conclusiones finales</a></li>
+<li class="chapter" data-level="10.3" data-path="conclusiones.html"><a href="conclusiones.html#direcciones-para-profundizar"><i class="fa fa-check"></i><b>10.3</b> Direcciones para profundizar</a></li>
+<li class="chapter" data-level="10.4" data-path="conclusiones.html"><a href="conclusiones.html#referencias-bibliográficas"><i class="fa fa-check"></i><b>10.4</b> Referencias bibliográficas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Conceptos de Superficies</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Conceptos de Superficies</h1>
+<p class="author"><em>John Jairo Estrada Álvarez</em></p>
+<p class="date"><em>2026-04-25</em></p>
+</div>
+<div id="vectores" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Capítulo 1</span> Vectores y Geometría Vectorial<a href="index.html#vectores" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div style="margin: 1.5em 0; padding: 1em; background-color: #e8f4fd; border-left: 5px solid #2196F3; border-radius: 4px;">
+<p style="margin: 0 0 0.5em 0; font-weight: bold; color: #1565C0;">
+🎧 Podcast del capítulo
+</p>
+<p><audio controls preload="none" style="width: 100%; height: 40px;">
+<source src="audio/cap00_vectores.mp3" type="audio/mpeg">
+Tu navegador no soporta el elemento de audio.
+</audio></p>
+</div>
+<p>El estudio de las superficies en el espacio tridimensional descansa sobre los fundamentos del álgebra vectorial. En este capítulo se presentan los conceptos esenciales de vectores, sus operaciones y propiedades geométricas.</p>
+<div id="vectores-libres-y-vectores-coordenados" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Vectores libres y vectores coordenados<a href="index.html#vectores-libres-y-vectores-coordenados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="definición-de-vector" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Definición de vector<a href="index.html#definición-de-vector" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Un <strong>vector</strong> es un objeto matemático que posee magnitud (longitud) y dirección. Geométricamente, se representa como un segmento de recta orientado. Dos vectores son equivalentes si tienen la misma magnitud y dirección, independientemente de su punto de origen; por ello, los vectores también se denominan <strong>vectores libres</strong>.</p>
+</div>
+<div id="vector-en-la-recta-mathbbr" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Vector en la recta (<span class="math inline">\(\mathbb{R}\)</span>)<a href="index.html#vector-en-la-recta-mathbbr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En la recta numérica, un vector se identifica con un único número real que indica su magnitud y sentido:</p>
+<p><span class="math display">\[
+\vec{v} = v_1 \in \mathbb{R}
+\]</span></p>
+<div id="visualizador-interactivo-vector-en-la-recta-real" class="section level4 hasAnchor" number="1.1.2.1">
+<h4><span class="header-section-number">1.1.2.1</span> 🧮 Visualizador interactivo: Vector en la recta real<a href="index.html#visualizador-interactivo-vector-en-la-recta-real" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A continuación puede ingresar la componente <span class="math inline">\(v_1\)</span> de un vector en <span class="math inline">\(\mathbb{R}\)</span> y observar su representación geométrica junto con su magnitud.</p>
+<div id="vector-r1-widget" style="margin: 1.5em 0; padding: 1.5em; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px;">
+  <div style="margin-bottom: 1em;">
+    <label for="v1-input" style="font-weight: bold; margin-right: 0.5em;">Componente v₁:</label>
+    <input type="number" id="v1-input" value="3" step="0.5" style="padding: 0.4em 0.6em; font-size: 1em; border: 1px solid #adb5bd; border-radius: 4px; width: 100px;">
+    <button onclick="actualizarVector()" style="margin-left: 0.5em; padding: 0.4em 1em; font-size: 1em; background-color: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer;">Actualizar</button>
+  </div>
+  
+  <svg id="vector-svg" width="100%" height="200" viewBox="-300 -80 600 160" style="background: #ffffff; border: 1px solid #e9ecef; border-radius: 4px;">
+    <line x1="-280" y1="0" x2="280" y2="0" stroke="#495057" stroke-width="2" />
+    <polygon points="280,0 272,-5 272,5" fill="#495057" />
+    <text x="285" y="5" font-size="14" fill="#495057" font-weight="bold">ℝ</text>
+    
+    <g id="axis-ticks"></g>
+    
+    <line id="vector-line" x1="0" y1="0" x2="150" y2="0" stroke="#1f77b4" stroke-width="4" marker-end="url(#arrowhead-blue)" />
+    
+    <circle cx="0" cy="0" r="5" fill="#d62728" />
+    <circle id="vector-tip" cx="150" cy="0" r="5" fill="#2ca02c" />
+    
+    <text x="0" y="25" font-size="14" fill="#d62728" text-anchor="middle" font-weight="bold">0</text>
+    <text id="tip-label" x="150" y="25" font-size="14" fill="#2ca02c" text-anchor="middle" font-weight="bold">v₁ = 3</text>
+    <text id="vector-label" x="75" y="-15" font-size="14" fill="#1f77b4" text-anchor="middle" font-weight="bold">v⃗</text>
+    
+    <defs>
+      <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#1f77b4" />
+      </marker>
+    </defs>
+  </svg>
+  
+  <div style="margin-top: 1em; display: flex; gap: 1em; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 200px; padding: 0.8em; background: #e7f3ff; border-left: 4px solid #1f77b4; border-radius: 4px;">
+      <strong>Magnitud:</strong> <span id="magnitud-val">|3| = 3</span>
+    </div>
+    <div style="flex: 1; min-width: 200px; padding: 0.8em; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+      <strong>Dirección:</strong> <span id="direccion-val">positiva (→)</span>
+    </div>
+  </div>
+  
+  <p style="margin-top: 1em; font-size: 0.9em; color: #6c757d;">
+    💡 <em>La magnitud de un vector en ℝ es el valor absoluto de su componente. Si v₁ &gt; 0 apunta a la derecha; si v₁ &lt; 0, a la izquierda.</em>
+  </p>
+</div>
+
+<script>
+(function() {
+  const escala = 50;
+  const svg = document.getElementById('vector-svg');
+  const vectorLine = document.getElementById('vector-line');
+  const vectorTip = document.getElementById('vector-tip');
+  const tipLabel = document.getElementById('tip-label');
+  const vectorLabel = document.getElementById('vector-label');
+  const magnitudVal = document.getElementById('magnitud-val');
+  const direccionVal = document.getElementById('direccion-val');
+  const ticksGroup = document.getElementById('axis-ticks');
+  
+  function dibujarMarcas(limite) {
+    ticksGroup.innerHTML = '';
+    const maxTick = Math.ceil(limite);
+    for (let i = -maxTick; i <= maxTick; i++) {
+      if (i === 0) continue;
+      const x = i * escala;
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', x);
+      line.setAttribute('y1', -6);
+      line.setAttribute('x2', x);
+      line.setAttribute('y2', 6);
+      line.setAttribute('stroke', '#adb5bd');
+      line.setAttribute('stroke-width', '1');
+      ticksGroup.appendChild(line);
+      
+      const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      text.setAttribute('x', x);
+      text.setAttribute('y', 22);
+      text.setAttribute('text-anchor', 'middle');
+      text.setAttribute('font-size', '12');
+      text.setAttribute('fill', '#6c757d');
+      text.textContent = i;
+      ticksGroup.appendChild(text);
+    }
+  }
+  
+  window.actualizarVector = function() {
+    const input = document.getElementById('v1-input');
+    const v1 = parseFloat(input.value) || 0;
+    const longitudPx = v1 * escala;
+    
+    const limite = Math.max(6, Math.abs(v1) * 1.3);
+    const ancho = Math.ceil(limite * escala) + 100;
+    svg.setAttribute('viewBox', '-' + ancho + ' -80 ' + (ancho * 2) + ' 160');
+    
+    vectorLine.setAttribute('x2', longitudPx);
+    vectorTip.setAttribute('cx', longitudPx);
+    tipLabel.setAttribute('x', longitudPx);
+    tipLabel.textContent = 'v₁ = ' + v1;
+    
+    vectorLabel.setAttribute('x', longitudPx / 2);
+    vectorLabel.setAttribute('y', v1 >= 0 ? -15 : 15);
+    
+    const mag = Math.abs(v1);
+    magnitudVal.textContent = '|' + v1 + '| = ' + mag;
+    
+    if (v1 > 0) {
+      direccionVal.textContent = 'positiva (→)';
+    } else if (v1 < 0) {
+      direccionVal.textContent = 'negativa (←)';
+    } else {
+      direccionVal.textContent = 'vector nulo (sin dirección)';
+    }
+    
+    dibujarMarcas(limite);
+  };
+  
+  document.getElementById('v1-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') actualizarVector();
+  });
+  
+  actualizarVector();
+})();
+</script>
+</div>
+</div>
+<div id="vector-en-el-plano-mathbbr2" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Vector en el plano (<span class="math inline">\(\mathbb{R}^2\)</span>)<a href="index.html#vector-en-el-plano-mathbbr2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En el plano cartesiano, un vector se expresa mediante un par ordenado de números reales:</p>
+<p><span class="math display">\[
+\vec{v} = (v_1, v_2) = v_1 \mathbf{i} + v_2 \mathbf{j}
+\]</span></p>
+<p>donde <span class="math inline">\(\mathbf{i} = (1, 0)\)</span> y <span class="math inline">\(\mathbf{j} = (0, 1)\)</span> son los vectores de la <strong>base canónica</strong>.</p>
+<p>La magnitud (o norma) del vector es:</p>
+<p><span class="math display">\[
+\|\vec{v}\| = \sqrt{v_1^2 + v_2^2}
+\]</span></p>
+<div id="visualizador-interactivo-vectores-en-el-plano" class="section level4 hasAnchor" number="1.1.3.1">
+<h4><span class="header-section-number">1.1.3.1</span> 🧮 Visualizador interactivo: Vectores en el Plano<a href="index.html#visualizador-interactivo-vectores-en-el-plano" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Ingrese las componentes de uno o dos vectores para visualizarlos en el plano cartesiano, calcular su magnitud, dirección y operaciones.</p>
+<div id="vector-r2-widget" style="margin: 1.5em 0; padding: 1.5em; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px;">
+  <div style="margin-bottom: 1em;">
+    <strong style="color: #1f77b4;">Vector v⃗ = </strong>
+    <label>(</label>
+    <input type="number" id="r2-v1-input" value="3" step="0.5" style="width: 70px; padding: 0.3em; font-size: 1em;">
+    <label>,</label>
+    <input type="number" id="r2-v2-input" value="2" step="0.5" style="width: 70px; padding: 0.3em; font-size: 1em;">
+    <label>)</label>
+    <button onclick="actualizarPlano()" style="margin-left: 1em; padding: 0.4em 1em; background-color: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer;">Actualizar</button>
+  </div>
+
+  <div style="margin-bottom: 1em;">
+    <button id="r2-btn-toggle-avanzado" onclick="toggleAvanzado()" style="padding: 0.4em 1em; background-color: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">➕ Habilitar segundo vector (operaciones)</button>
+  </div>
+
+  <div id="r2-panel-avanzado" style="display: none; margin-bottom: 1em; padding: 1em; background: #fff; border: 1px dashed #adb5bd; border-radius: 4px;">
+    <div style="margin-bottom: 0.8em;">
+      <strong style="color: #d62728;">Vector u⃗ = </strong>
+      <label>(</label>
+      <input type="number" id="r2-u1-input" value="-2" step="0.5" style="width: 70px; padding: 0.3em; font-size: 1em;">
+      <label>,</label>
+      <input type="number" id="r2-u2-input" value="4" step="0.5" style="width: 70px; padding: 0.3em; font-size: 1em;">
+      <label>)</label>
+    </div>
+    <div style="display: flex; gap: 0.8em; flex-wrap: wrap;">
+      <label style="cursor: pointer;"><input type="checkbox" id="r2-chk-suma" checked onchange="actualizarPlano()"> Mostrar v⃗ + u⃗</label>
+      <label style="cursor: pointer;"><input type="checkbox" id="r2-chk-paralelogramo" checked onchange="actualizarPlano()"> Mostrar paralelogramo</label>
+    </div>
+  </div>
+
+  <svg id="plano-svg" width="100%" height="360" viewBox="-300 -300 600 600" style="background: #ffffff; border: 1px solid #e9ecef; border-radius: 4px;">
+    <defs>
+      <marker id="arrow-axis" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+        <polygon points="0 0, 10 5, 0 10" fill="#495057" />
+      </marker>
+      <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#1f77b4" />
+      </marker>
+      <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#d62728" />
+      </marker>
+      <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#2ca02c" />
+      </marker>
+    </defs>
+    <g id="grid-group"></g>
+    <line x1="-280" y1="0" x2="280" y2="0" stroke="#495057" stroke-width="2" marker-end="url(#arrow-axis)" />
+    <line x1="0" y1="280" x2="0" y2="-280" stroke="#495057" stroke-width="2" marker-end="url(#arrow-axis)" />
+    <text x="290" y="5" font-size="16" fill="#495057" font-weight="bold">x</text>
+    <text x="5" y="-290" font-size="16" fill="#495057" font-weight="bold">y</text>
+    <g id="vectores-group"></g>
+  </svg>
+
+  <div id="r2-resultados-simple" style="margin-top: 1em; display: flex; gap: 1em; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 200px; padding: 0.8em; background: #e7f3ff; border-left: 4px solid #1f77b4; border-radius: 4px;">
+      <strong>Magnitud de v⃗:</strong> <span id="r2-mag-v">‖v⃗‖ = 3.61</span>
+    </div>
+    <div style="flex: 1; min-width: 200px; padding: 0.8em; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+      <strong>Dirección de v⃗:</strong> <span id="r2-dir-v">θ = 33.69°</span>
+    </div>
+  </div>
+
+  <div id="r2-resultados-avanzado" style="display: none; margin-top: 1em;">
+    <div style="display: flex; gap: 1em; flex-wrap: wrap; margin-bottom: 0.8em;">
+      <div style="flex: 1; min-width: 200px; padding: 0.8em; background: #e7f3ff; border-left: 4px solid #1f77b4; border-radius: 4px;">
+        <strong>Magnitud de v⃗:</strong> <span id="r2-mag-v2">‖v⃗‖ = 3.61</span>
+      </div>
+      <div style="flex: 1; min-width: 200px; padding: 0.8em; background: #f8d7da; border-left: 4px solid #d62728; border-radius: 4px;">
+        <strong>Magnitud de u⃗:</strong> <span id="r2-mag-u">‖u⃗‖ = 4.47</span>
+      </div>
+      <div style="flex: 1; min-width: 200px; padding: 0.8em; background: #d4edda; border-left: 4px solid #2ca02c; border-radius: 4px;">
+        <strong>Magnitud de v⃗+u⃗:</strong> <span id="r2-mag-suma">‖v⃗+u⃗‖ = 5.10</span>
+      </div>
+    </div>
+    <div style="padding: 0.8em; background: #f3e5f5; border-left: 4px solid #9c27b0; border-radius: 4px;">
+      <strong>Producto punto v⃗ · u⃗ = </strong><span id="r2-prod-punto">2.00</span>
+      <span id="r2-angulo-info" style="margin-left: 0.5em; color: #6c757d;">(ángulo agudo)</span>
+    </div>
+  </div>
+
+  <p style="margin-top: 1em; font-size: 0.9em; color: #6c757d;">
+    💡 <em>La magnitud se calcula con el teorema de Pitágoras. La dirección es el ángulo θ medido desde el eje x positivo. En el modo avanzado puede ver la suma gráfica (regla del paralelogramo) y el producto punto.</em>
+  </p>
+</div>
+
+<script>
+(function() {
+  const escalaBase = 40;
+  const svg = document.getElementById('plano-svg');
+  const gridGroup = document.getElementById('grid-group');
+  const vectoresGroup = document.getElementById('vectores-group');
+
+  function dibujarCuadricula(lim) {
+    gridGroup.innerHTML = '';
+    const maxL = Math.ceil(lim);
+    for (let i = -maxL; i <= maxL; i++) {
+      if (i === 0) continue;
+      const p = i * escalaBase;
+      // vertical
+      const lv = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      lv.setAttribute('x1', p); lv.setAttribute('y1', -maxL*escalaBase);
+      lv.setAttribute('x2', p); lv.setAttribute('y2', maxL*escalaBase);
+      lv.setAttribute('stroke', '#e9ecef'); lv.setAttribute('stroke-width', '1');
+      gridGroup.appendChild(lv);
+      // horizontal
+      const lh = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      lh.setAttribute('x1', -maxL*escalaBase); lh.setAttribute('y1', -p);
+      lh.setAttribute('x2', maxL*escalaBase); lh.setAttribute('y2', -p);
+      lh.setAttribute('stroke', '#e9ecef'); lh.setAttribute('stroke-width', '1');
+      gridGroup.appendChild(lh);
+
+      // etiquetas ejes
+      const tx = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      tx.setAttribute('x', p); tx.setAttribute('y', 18);
+      tx.setAttribute('text-anchor', 'middle'); tx.setAttribute('font-size', '12'); tx.setAttribute('fill', '#adb5bd');
+      tx.textContent = i;
+      gridGroup.appendChild(tx);
+
+      const ty = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      ty.setAttribute('x', -12); ty.setAttribute('y', -p + 4);
+      ty.setAttribute('text-anchor', 'middle'); ty.setAttribute('font-size', '12'); ty.setAttribute('fill', '#adb5bd');
+      ty.textContent = i;
+      gridGroup.appendChild(ty);
+    }
+  }
+
+  function crearFlecha(x1, y1, x2, y2, color, marcador, ancho, idLinea) {
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', x1); line.setAttribute('y1', y1);
+    line.setAttribute('x2', x2); line.setAttribute('y2', y2);
+    line.setAttribute('stroke', color); line.setAttribute('stroke-width', ancho);
+    line.setAttribute('marker-end', 'url(#' + marcador + ')');
+    if (idLinea) line.setAttribute('id', idLinea);
+    return line;
+  }
+
+  function crearTexto(x, y, texto, color, tam, anchor, dy) {
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    t.setAttribute('x', x); t.setAttribute('y', y);
+    t.setAttribute('fill', color); t.setAttribute('font-size', tam);
+    t.setAttribute('font-weight', 'bold');
+    t.setAttribute('text-anchor', anchor || 'middle');
+    if (dy) t.setAttribute('dy', dy);
+    t.textContent = texto;
+    return t;
+  }
+
+  window.toggleAvanzado = function() {
+    const panel = document.getElementById('r2-panel-avanzado');
+    const btn = document.getElementById('r2-btn-toggle-avanzado');
+    const resSimple = document.getElementById('r2-resultados-simple');
+    const resAdv = document.getElementById('r2-resultados-avanzado');
+    if (panel.style.display === 'none') {
+      panel.style.display = 'block';
+      btn.textContent = '➖ Ocultar segundo vector';
+      btn.style.backgroundColor = '#d62728';
+      resSimple.style.display = 'none';
+      resAdv.style.display = 'block';
+    } else {
+      panel.style.display = 'none';
+      btn.textContent = '➕ Habilitar segundo vector (operaciones)';
+      btn.style.backgroundColor = '#6c757d';
+      resSimple.style.display = 'flex';
+      resAdv.style.display = 'none';
+    }
+    actualizarPlano();
+  };
+
+  window.actualizarPlano = function() {
+    const v1 = parseFloat(document.getElementById('r2-v1-input').value) || 0;
+    const v2 = parseFloat(document.getElementById('r2-v2-input').value) || 0;
+    const adv = document.getElementById('r2-panel-avanzado').style.display !== 'none';
+    const mostrarSuma = adv && document.getElementById('r2-chk-suma').checked;
+    const mostrarPar = adv && document.getElementById('r2-chk-paralelogramo').checked;
+
+    let u1 = 0, u2 = 0;
+    if (adv) {
+      u1 = parseFloat(document.getElementById('r2-u1-input').value) || 0;
+      u2 = parseFloat(document.getElementById('r2-u2-input').value) || 0;
+    }
+
+    const s1 = v1 + u1, s2 = v2 + u2;
+
+    // Calcular escala dinámica
+    const coords = [Math.abs(v1), Math.abs(v2), Math.abs(u1), Math.abs(u2), Math.abs(s1), Math.abs(s2)];
+    const maxCoord = Math.max(...coords, 1);
+    const lim = Math.ceil(maxCoord * 1.3) + 1;
+    const viewLim = Math.max(300, lim * escalaBase + 40);
+    svg.setAttribute('viewBox', '-' + viewLim + ' -' + viewLim + ' ' + (viewLim*2) + ' ' + (viewLim*2));
+    dibujarCuadricula(lim);
+
+    vectoresGroup.innerHTML = '';
+
+    // Vector v (azul)
+    const vx = v1 * escalaBase, vy = -v2 * escalaBase;
+    vectoresGroup.appendChild(crearFlecha(0, 0, vx, vy, '#1f77b4', 'arrow-blue', 4));
+    vectoresGroup.appendChild(crearTexto(vx + (v1>=0?12:-12), vy + (v2>=0?-12:12), 'v⃗', '#1f77b4', 16, 'middle'));
+    vectoresGroup.appendChild(crearTexto(vx, vy + 20, '('+v1+','+v2+')', '#1f77b4', 12, 'middle'));
+
+    if (adv) {
+      // Vector u (rojo)
+      const ux = u1 * escalaBase, uy = -u2 * escalaBase;
+      vectoresGroup.appendChild(crearFlecha(0, 0, ux, uy, '#d62728', 'arrow-red', 4));
+      vectoresGroup.appendChild(crearTexto(ux + (u1>=0?12:-12), uy + (u2>=0?-12:12), 'u⃗', '#d62728', 16, 'middle'));
+      vectoresGroup.appendChild(crearTexto(ux, uy + 20, '('+u1+','+u2+')', '#d62728', 12, 'middle'));
+
+      if (mostrarPar) {
+        // Líneas punteadas del paralelogramo
+        const lp1 = crearFlecha(vx, vy, (v1+u1)*escalaBase, (v2+u2)*-escalaBase, '#adb5bd', '', 1.5);
+        lp1.setAttribute('stroke-dasharray', '6,4');
+        vectoresGroup.appendChild(lp1);
+        const lp2 = crearFlecha(ux, uy, (v1+u1)*escalaBase, (v2+u2)*-escalaBase, '#adb5bd', '', 1.5);
+        lp2.setAttribute('stroke-dasharray', '6,4');
+        vectoresGroup.appendChild(lp2);
+      }
+
+      if (mostrarSuma) {
+        const sx = s1 * escalaBase, sy = -s2 * escalaBase;
+        vectoresGroup.appendChild(crearFlecha(0, 0, sx, sy, '#2ca02c', 'arrow-green', 4));
+        vectoresGroup.appendChild(crearTexto(sx + (s1>=0?14:-14), sy + (s2>=0?-14:14), 'v⃗+u⃗', '#2ca02c', 16, 'middle'));
+      }
+
+      // Resultados avanzados
+      const magV = Math.sqrt(v1*v1 + v2*v2).toFixed(2);
+      const magU = Math.sqrt(u1*u1 + u2*u2).toFixed(2);
+      const magS = Math.sqrt(s1*s1 + s2*s2).toFixed(2);
+      const pPunto = (v1*u1 + v2*u2);
+      document.getElementById('r2-mag-v2').textContent = '‖v⃗‖ = ' + magV;
+      document.getElementById('r2-mag-u').textContent = '‖u⃗‖ = ' + magU;
+      document.getElementById('r2-mag-suma').textContent = '‖v⃗+u⃗‖ = ' + magS;
+      document.getElementById('r2-prod-punto').textContent = pPunto.toFixed(2);
+
+      let info = '';
+      if (Math.abs(pPunto) < 0.001) info = '(vectores ortogonales, θ = 90°)';
+      else if (pPunto > 0) info = '(ángulo agudo)';
+      else info = '(ángulo obtuso)';
+      document.getElementById('r2-angulo-info').textContent = info;
+    }
+
+    // Resultados simples
+    const magV = Math.sqrt(v1*v1 + v2*v2).toFixed(2);
+    const theta = Math.atan2(v2, v1) * 180 / Math.PI;
+    document.getElementById('r2-mag-v').textContent = '‖v⃗‖ = ' + magV;
+    document.getElementById('r2-dir-v').textContent = 'θ = ' + theta.toFixed(2) + '°';
+  };
+
+  // Eventos
+  ['v1-input','v2-input','u1-input','u2-input'].forEach(function(id) {
+    document.getElementById(id).addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') actualizarPlano();
+    });
+  });
+
+  actualizarPlano();
+})();
+</script>
+</div>
+</div>
+<div id="vector-en-el-espacio-mathbbr3" class="section level3 hasAnchor" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Vector en el espacio (<span class="math inline">\(\mathbb{R}^3\)</span>)<a href="index.html#vector-en-el-espacio-mathbbr3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En el espacio tridimensional, un vector se representa por una terna ordenada:</p>
+<p><span class="math display">\[
+\vec{v} = (v_1, v_2, v_3) = v_1 \mathbf{i} + v_2 \mathbf{j} + v_3 \mathbf{k}
+\]</span></p>
+<p>donde <span class="math inline">\(\mathbf{i} = (1, 0, 0)\)</span>, <span class="math inline">\(\mathbf{j} = (0, 1, 0)\)</span> y <span class="math inline">\(\mathbf{k} = (0, 0, 1)\)</span>.</p>
+<p>La magnitud es:</p>
+<p><span class="math display">\[
+\|\vec{v}\| = \sqrt{v_1^2 + v_2^2 + v_3^2}
+\]</span></p>
+<p>Un vector de magnitud 1 se denomina <strong>vector unitario</strong>. Cualquier vector no nulo <span class="math inline">\(\vec{v}\)</span> puede normalizarse dividiéndolo por su magnitud:</p>
+<p><span class="math display">\[
+\hat{v} = \frac{\vec{v}}{\|\vec{v}\|}
+\]</span></p>
+<div id="video-complementario-vectores-en-el-espacio" class="section level4 hasAnchor" number="1.1.4.1">
+<h4><span class="header-section-number">1.1.4.1</span> 🎥 Video complementario: Vectores en el espacio<a href="index.html#video-complementario-vectores-en-el-espacio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El siguiente video ilustra de forma visual el concepto de vectores en el espacio tridimensional, su representación gráfica y ejemplos prácticos.</p>
+<div id="yt-embed-ldSFlbdCy3k" style="margin: 1.5em 0; text-align: center;">
+  <iframe
+    id="yt-iframe-ldSFlbdCy3k"
+    src="https://www.youtube.com/embed/ldSFlbdCy3k"
+    title="Vectores en el espacio"
+    width="100%"
+    height="400"
+    frameborder="0"
+    style="border: none; border-radius: 0.75rem; max-width: 100%;"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<script>
+(function() {
+  var container = document.getElementById('yt-embed-ldSFlbdCy3k');
+  var iframe = document.getElementById('yt-iframe-ldSFlbdCy3k');
+  var videoId = 'ldSFlbdCy3k';
+  var videoUrl = 'https://youtu.be/' + videoId;
+
+  // Fallback para file:// o si el embed está bloqueado
+  if (window.location.protocol === 'file:' || !iframe) {
+    container.innerHTML =
+      '<a href="' + videoUrl + '" target="_blank" style="display: block; position: relative; max-width: 640px; margin: 0 auto;">' +
+        '<img src="https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg" ' +
+             'alt="Vectores en el espacio" ' +
+             'style="width: 100%; border-radius: 0.75rem; display: block;" ' +
+             'onerror="this.src=\'https://img.youtube.com/vi/' + videoId + '/0.jpg\'">' +
+        '<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); ' +
+                     'width: 68px; height: 48px; background: rgba(0,0,0,0.75); border-radius: 12px; ' +
+                     'display: flex; align-items: center; justify-content: center;">' +
+          '<div style="width: 0; height: 0; border-top: 10px solid transparent; ' +
+                      'border-bottom: 10px solid transparent; border-left: 18px solid white; margin-left: 4px;"></div>' +
+        '</div>' +
+      '</a>';
+  }
+})();
+</script>
+</div>
+</div>
+</div>
+<div id="operaciones-vectoriales" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Operaciones vectoriales<a href="index.html#operaciones-vectoriales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="suma-y-resta" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Suma y resta<a href="index.html#suma-y-resta" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dados <span class="math inline">\(\vec{u} = (u_1, u_2, u_3)\)</span> y <span class="math inline">\(\vec{v} = (v_1, v_2, v_3)\)</span>:</p>
+<p><span class="math display">\[
+\vec{u} + \vec{v} = (u_1 + v_1,\; u_2 + v_2,\; u_3 + v_3)
+\]</span></p>
+<p><span class="math display">\[
+\vec{u} - \vec{v} = (u_1 - v_1,\; u_2 - v_2,\; u_3 - v_3)
+\]</span></p>
+<p>Geométricamente, la suma se obtiene mediante la <strong>regla del paralelogramo</strong>.</p>
+</div>
+<div id="multiplicación-por-escalar" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Multiplicación por escalar<a href="index.html#multiplicación-por-escalar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dado un escalar <span class="math inline">\(\lambda \in \mathbb{R}\)</span>:</p>
+<p><span class="math display">\[
+\lambda \vec{v} = (\lambda v_1,\; \lambda v_2,\; \lambda v_3)
+\]</span></p>
+<p>Si <span class="math inline">\(\lambda &gt; 0\)</span>, el vector se alarga o acorta manteniendo la dirección. Si <span class="math inline">\(\lambda &lt; 0\)</span>, invierte el sentido.</p>
+</div>
+</div>
+<div id="producto-punto-producto-escalar" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Producto punto (producto escalar)<a href="index.html#producto-punto-producto-escalar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="definición-algebraica" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Definición algebraica<a href="index.html#definición-algebraica" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+\vec{u} \cdot \vec{v} = u_1 v_1 + u_2 v_2 + u_3 v_3
+\]</span></p>
+</div>
+<div id="definición-geométrica" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Definición geométrica<a href="index.html#definición-geométrica" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+\vec{u} \cdot \vec{v} = \|\vec{u}\| \|\vec{v}\| \cos\theta
+\]</span></p>
+<p>donde <span class="math inline">\(\theta\)</span> es el ángulo entre los vectores (<span class="math inline">\(0 \leq \theta \leq \pi\)</span>).</p>
+</div>
+<div id="propiedades" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Propiedades<a href="index.html#propiedades" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Conmutatividad</strong>: <span class="math inline">\(\vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u}\)</span></li>
+<li><strong>Distributividad</strong>: <span class="math inline">\(\vec{u} \cdot (\vec{v} + \vec{w}) = \vec{u} \cdot \vec{v} + \vec{u} \cdot \vec{w}\)</span></li>
+<li><strong>Asociatividad con escalares</strong>: <span class="math inline">\((\lambda \vec{u}) \cdot \vec{v} = \lambda (\vec{u} \cdot \vec{v})\)</span></li>
+<li><strong>Positividad</strong>: <span class="math inline">\(\vec{v} \cdot \vec{v} = \|\vec{v}\|^2 \geq 0\)</span>, con igualdad solo si <span class="math inline">\(\vec{v} = \vec{0}\)</span></li>
+</ol>
+</div>
+<div id="aplicaciones-del-producto-punto" class="section level3 hasAnchor" number="1.3.4">
+<h3><span class="header-section-number">1.3.4</span> Aplicaciones del producto punto<a href="index.html#aplicaciones-del-producto-punto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Ángulo entre vectores</strong>:</p>
+<p><span class="math display">\[
+\cos\theta = \frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\| \|\vec{v}\|}
+\]</span></p>
+<p><strong>Vectores perpendiculares (ortogonales)</strong>:</p>
+<p><span class="math display">\[
+\vec{u} \perp \vec{v} \iff \vec{u} \cdot \vec{v} = 0
+\]</span></p>
+<p><strong>Proyección escalar de <span class="math inline">\(\vec{u}\)</span> sobre <span class="math inline">\(\vec{v}\)</span></strong>:</p>
+<p><span class="math display">\[
+\text{comp}_{\vec{v}} \vec{u} = \frac{\vec{u} \cdot \vec{v}}{\|\vec{v}\|}
+\]</span></p>
+<p><strong>Proyección vectorial de <span class="math inline">\(\vec{u}\)</span> sobre <span class="math inline">\(\vec{v}\)</span></strong>:</p>
+<p><span class="math display">\[
+\text{proj}_{\vec{v}} \vec{u} = \left( \frac{\vec{u} \cdot \vec{v}}{\vec{v} \cdot \vec{v}} \right) \vec{v}
+\]</span></p>
+</div>
+<div id="ejemplo-resuelto" class="section level3 hasAnchor" number="1.3.5">
+<h3><span class="header-section-number">1.3.5</span> Ejemplo resuelto<a href="index.html#ejemplo-resuelto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p><strong>Ejemplo 1.</strong> Sean <span class="math inline">\(\vec{u} = (2, -1, 3)\)</span> y <span class="math inline">\(\vec{v} = (1, 4, -2)\)</span>. Calcule <span class="math inline">\(\vec{u} \cdot \vec{v}\)</span>, el ángulo entre ellos, y la proyección de <span class="math inline">\(\vec{u}\)</span> sobre <span class="math inline">\(\vec{v}\)</span>.</p>
+</blockquote>
+<p><strong>Solución.</strong> El producto punto es:</p>
+<p><span class="math display">\[
+\vec{u} \cdot \vec{v} = 2(1) + (-1)(4) + 3(-2) = 2 - 4 - 6 = -8
+\]</span></p>
+<p>Las magnitudes son:</p>
+<p><span class="math display">\[
+\|\vec{u}\| = \sqrt{4 + 1 + 9} = \sqrt{14}, \qquad \|\vec{v}\| = \sqrt{1 + 16 + 4} = \sqrt{21}
+\]</span></p>
+<p>El ángulo satisface:</p>
+<p><span class="math display">\[
+\cos\theta = \frac{-8}{\sqrt{14}\sqrt{21}} = \frac{-8}{\sqrt{294}} \approx -0.466 \implies \theta \approx 117.8°
+\]</span></p>
+<p>La proyección vectorial es:</p>
+<p><span class="math display">\[
+\text{proj}_{\vec{v}} \vec{u} = \frac{-8}{21}(1, 4, -2) = \left(-\frac{8}{21}, -\frac{32}{21}, \frac{16}{21}\right)
+\]</span></p>
+</div>
+</div>
+<div id="producto-cruz-producto-vectorial" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Producto cruz (producto vectorial)<a href="index.html#producto-cruz-producto-vectorial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El producto cruz está definido únicamente en <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+<div id="definición" class="section level3 hasAnchor" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Definición<a href="index.html#definición" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+\vec{u} \times \vec{v} = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+u_1 &amp; u_2 &amp; u_3 \\
+v_1 &amp; v_2 &amp; v_3
+\end{vmatrix} = (u_2 v_3 - u_3 v_2,\; u_3 v_1 - u_1 v_3,\; u_1 v_2 - u_2 v_1)
+\]</span></p>
+</div>
+<div id="propiedades-geométricas" class="section level3 hasAnchor" number="1.4.2">
+<h3><span class="header-section-number">1.4.2</span> Propiedades geométricas<a href="index.html#propiedades-geométricas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>El vector <span class="math inline">\(\vec{u} \times \vec{v}\)</span> es perpendicular tanto a <span class="math inline">\(\vec{u}\)</span> como a <span class="math inline">\(\vec{v}\)</span>.</li>
+<li>Su magnitud es: <span class="math inline">\(\|\vec{u} \times \vec{v}\| = \|\vec{u}\| \|\vec{v}\| \sin\theta\)</span>, que corresponde al área del paralelogramo formado por <span class="math inline">\(\vec{u}\)</span> y <span class="math inline">\(\vec{v}\)</span>.</li>
+<li>La dirección sigue la <strong>regla de la mano derecha</strong>.</li>
+</ul>
+</div>
+<div id="propiedades-algebraicas" class="section level3 hasAnchor" number="1.4.3">
+<h3><span class="header-section-number">1.4.3</span> Propiedades algebraicas<a href="index.html#propiedades-algebraicas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Anticonmutatividad</strong>: <span class="math inline">\(\vec{u} \times \vec{v} = -(\vec{v} \times \vec{u})\)</span></li>
+<li><strong>Distributividad</strong>: <span class="math inline">\(\vec{u} \times (\vec{v} + \vec{w}) = \vec{u} \times \vec{v} + \vec{u} \times \vec{w}\)</span></li>
+<li><strong>Asociatividad con escalares</strong>: <span class="math inline">\((\lambda \vec{u}) \times \vec{v} = \lambda (\vec{u} \times \vec{v})\)</span></li>
+<li><strong>Vector nulo</strong>: <span class="math inline">\(\vec{u} \times \vec{u} = \vec{0}\)</span></li>
+</ol>
+</div>
+<div id="ejemplo-resuelto-1" class="section level3 hasAnchor" number="1.4.4">
+<h3><span class="header-section-number">1.4.4</span> Ejemplo resuelto<a href="index.html#ejemplo-resuelto-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p><strong>Ejemplo 2.</strong> Calcule <span class="math inline">\(\vec{u} \times \vec{v}\)</span> para <span class="math inline">\(\vec{u} = (1, 2, 3)\)</span> y <span class="math inline">\(\vec{v} = (4, 5, 6)\)</span>. Verifique que es perpendicular a ambos.</p>
+</blockquote>
+<p><strong>Solución.</strong></p>
+<p><span class="math display">\[
+\vec{u} \times \vec{v} = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6
+\end{vmatrix} = \mathbf{i}(12 - 15) - \mathbf{j}(6 - 12) + \mathbf{k}(5 - 8) = (-3, 6, -3)
+\]</span></p>
+<p>Verificación de perpendicularidad:</p>
+<p><span class="math display">\[
+\vec{u} \cdot (-3, 6, -3) = -3 + 12 - 9 = 0
+\]</span></p>
+<p><span class="math display">\[
+\vec{v} \cdot (-3, 6, -3) = -12 + 30 - 18 = 0
+\]</span></p>
+<p>El área del paralelogramo formado por <span class="math inline">\(\vec{u}\)</span> y <span class="math inline">\(\vec{v}\)</span> es <span class="math inline">\(\|(-3, 6, -3)\| = \sqrt{9 + 36 + 9} = \sqrt{54} = 3\sqrt{6}\)</span>.</p>
+</div>
+</div>
+<div id="triple-producto-escalar" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Triple producto escalar<a href="index.html#triple-producto-escalar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dados tres vectores <span class="math inline">\(\vec{u}\)</span>, <span class="math inline">\(\vec{v}\)</span>, <span class="math inline">\(\vec{w}\)</span> en <span class="math inline">\(\mathbb{R}^3\)</span>, el <strong>triple producto escalar</strong> es:</p>
+<p><span class="math display">\[
+\vec{u} \cdot (\vec{v} \times \vec{w}) = \begin{vmatrix}
+u_1 &amp; u_2 &amp; u_3 \\
+v_1 &amp; v_2 &amp; v_3 \\
+w_1 &amp; w_2 &amp; w_3
+\end{vmatrix}
+\]</span></p>
+<div id="interpretación-geométrica" class="section level3 hasAnchor" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> Interpretación geométrica<a href="index.html#interpretación-geométrica" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El valor absoluto del triple producto escalar es el <strong>volumen del paralelepípedo</strong> formado por los tres vectores. Si el resultado es cero, los tres vectores son coplanares (linealmente dependientes).</p>
+</div>
+<div id="ejemplo" class="section level3 hasAnchor" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> Ejemplo<a href="index.html#ejemplo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p><strong>Ejemplo 3.</strong> Calcule el volumen del paralelepípedo formado por <span class="math inline">\(\vec{u} = (1, 0, 0)\)</span>, <span class="math inline">\(\vec{v} = (0, 2, 0)\)</span> y <span class="math inline">\(\vec{w} = (0, 0, 3)\)</span>.</p>
+</blockquote>
+<p><strong>Solución.</strong></p>
+<p><span class="math display">\[
+\vec{u} \cdot (\vec{v} \times \vec{w}) = \begin{vmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 0 \\
+0 &amp; 0 &amp; 3
+\end{vmatrix} = 1 \cdot 2 \cdot 3 = 6
+\]</span></p>
+<p>El volumen es <span class="math inline">\(|6| = 6\)</span> unidades cúbicas (consistente con un prisma rectangular de dimensiones <span class="math inline">\(1 \times 2 \times 3\)</span>).</p>
+</div>
+</div>
+<div id="visualización-interactiva-vectores-en-3d" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Visualización interactiva: vectores en 3D<a href="index.html#visualización-interactiva-vectores-en-3d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La siguiente aplicación interactiva le permite definir tres vectores en el espacio, visualizarlos en un entorno 3D orbitable y calcular todas las operaciones vectoriales fundamentales en tiempo real.</p>
+<div id="v3d-widget" style="margin: 1.5em 0; padding: 1.5em; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px;">
+  <div style="display: flex; gap: 1em; flex-wrap: wrap; margin-bottom: 1em;">
+    <div style="flex: 1; min-width: 200px; padding: 0.8em; background: #fff; border-radius: 6px;">
+      <strong style="color: #ff9800;">Vector u⃗</strong><br>
+      <label>(</label>
+      <input type="number" id="v3d-u1" value="3" step="0.5" style="width: 60px; padding: 0.2em;">
+      <label>,</label>
+      <input type="number" id="v3d-u2" value="1" step="0.5" style="width: 60px; padding: 0.2em;">
+      <label>,</label>
+      <input type="number" id="v3d-u3" value="2" step="0.5" style="width: 60px; padding: 0.2em;">
+      <label>)</label>
+    </div>
+    <div style="flex: 1; min-width: 200px; padding: 0.8em; background: #fff; border-radius: 6px;">
+      <strong style="color: #00bcd4;">Vector v⃗</strong><br>
+      <label>(</label>
+      <input type="number" id="v3d-v1" value="1" step="0.5" style="width: 60px; padding: 0.2em;">
+      <label>,</label>
+      <input type="number" id="v3d-v2" value="4" step="0.5" style="width: 60px; padding: 0.2em;">
+      <label>,</label>
+      <input type="number" id="v3d-v3" value="-1" step="0.5" style="width: 60px; padding: 0.2em;">
+      <label>)</label>
+    </div>
+    <div style="flex: 1; min-width: 200px; padding: 0.8em; background: #fff; border-radius: 6px;">
+      <strong style="color: #e91e63;">Vector w⃗</strong><br>
+      <label>(</label>
+      <input type="number" id="v3d-w1" value="2" step="0.5" style="width: 60px; padding: 0.2em;">
+      <label>,</label>
+      <input type="number" id="v3d-w2" value="0" step="0.5" style="width: 60px; padding: 0.2em;">
+      <label>,</label>
+      <input type="number" id="v3d-w3" value="3" step="0.5" style="width: 60px; padding: 0.2em;">
+      <label>)</label>
+    </div>
+    <div style="flex: 1; min-width: 120px; padding: 0.8em; background: #fff; border-radius: 6px;">
+      <strong style="color: #9c27b0;">Escalar λ</strong><br>
+      <input type="number" id="v3d-lambda" value="2" step="0.5" style="width: 80px; padding: 0.2em;">
+    </div>
+  </div>
+
+  <div style="margin-bottom: 1em; display: flex; gap: 0.8em; flex-wrap: wrap;">
+    <button onclick="v3dActualizar()" style="padding: 0.5em 1.2em; background-color: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">🔄 Actualizar escena</button>
+    <label style="cursor: pointer; padding: 0.4em;"><input type="checkbox" id="v3d-chk-suma" checked onchange="v3dActualizar()"> Mostrar u⃗+v⃗</label>
+    <label style="cursor: pointer; padding: 0.4em;"><input type="checkbox" id="v3d-chk-cruz" checked onchange="v3dActualizar()"> Mostrar u⃗×v⃗</label>
+    <label style="cursor: pointer; padding: 0.4em;"><input type="checkbox" id="v3d-chk-lambda" onchange="v3dActualizar()"> Mostrar λu⃗</label>
+    <label style="cursor: pointer; padding: 0.4em;"><input type="checkbox" id="v3d-chk-paralelo" onchange="v3dActualizar()"> Mostrar paralelepípedo</label>
+  </div>
+
+  <div id="v3d-canvas-container" style="width: 100%; height: 480px; background: #000; border-radius: 8px; overflow: hidden; position: relative;">
+    <div id="v3d-loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-family: sans-serif;">Cargando visualizador 3D...</div>
+  </div>
+
+  <div style="margin-top: 1em; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8em;">
+    <div style="padding: 0.7em; background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 4px;">
+      <strong>Magnitudes</strong><br>
+      <small>‖u⃗‖ = <span id="v3d-mag-u">—</span></small><br>
+      <small>‖v⃗‖ = <span id="v3d-mag-v">—</span></small><br>
+      <small>‖w⃗‖ = <span id="v3d-mag-w">—</span></small>
+    </div>
+    <div style="padding: 0.7em; background: #e3f2fd; border-left: 4px solid #2196f3; border-radius: 4px;">
+      <strong>Dirección</strong><br>
+      <small>û = <span id="v3d-unit-u">—</span></small>
+    </div>
+    <div style="padding: 0.7em; background: #e8f5e9; border-left: 4px solid #4caf50; border-radius: 4px;">
+      <strong>Suma / Diferencia</strong><br>
+      <small>u⃗+v⃗ = <span id="v3d-suma">—</span></small><br>
+      <small>u⃗−v⃗ = <span id="v3d-resta">—</span></small>
+    </div>
+    <div style="padding: 0.7em; background: #f3e5f5; border-left: 4px solid #9c27b0; border-radius: 4px;">
+      <strong>Escalar</strong><br>
+      <small>λu⃗ = <span id="v3d-lambda-u">—</span></small>
+    </div>
+    <div style="padding: 0.7em; background: #e0f7fa; border-left: 4px solid #00bcd4; border-radius: 4px;">
+      <strong>Producto punto</strong><br>
+      <small>u⃗·v⃗ = <span id="v3d-punto">—</span></small><br>
+      <small>Ángulo = <span id="v3d-angulo">—</span></small>
+    </div>
+    <div style="padding: 0.7em; background: #ffebee; border-left: 4px solid #f44336; border-radius: 4px;">
+      <strong>Producto cruz</strong><br>
+      <small>u⃗×v⃗ = <span id="v3d-cruz">—</span></small><br>
+      <small>‖u⃗×v⃗‖ = <span id="v3d-mag-cruz">—</span></small>
+    </div>
+    <div style="padding: 0.7em; background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 4px;">
+      <strong>Triple producto</strong><br>
+      <small>u⃗·(v⃗×w⃗) = <span id="v3d-triple">—</span></small><br>
+      <small>Volumen = |<span id="v3d-volumen">—</span>|</small>
+    </div>
+  </div>
+
+  <p style="margin-top: 1em; font-size: 0.85em; color: #6c757d;">
+    💡 <em>Use el mouse para rotar (clic izquierdo arrastrando), hacer zoom (rueda) y desplazar (clic derecho arrastrando). Los vectores se escalan automáticamente para mantener la escena visible.</em>
+  </p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<script>
+(function() {
+  var container = document.getElementById('v3d-canvas-container');
+  var loading = document.getElementById('v3d-loading');
+  
+  // Escena
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x111111);
+  
+  // Cámara
+  var camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+  camera.position.set(8, 6, 8);
+  camera.lookAt(0, 0, 0);
+  
+  // Renderer
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+  
+  // Controles
+  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.1;
+  
+  // Luz
+  var light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(10, 10, 10);
+  scene.add(light);
+  scene.add(new THREE.AmbientLight(0x404040));
+  
+  // Grupo de vectores
+  var vecGroup = new THREE.Group();
+  scene.add(vecGroup);
+  
+  // Función para crear flecha
+  function crearFlecha(origen, dir, longitud, color, nombre) {
+    if (longitud < 0.01) return null;
+    var arrow = new THREE.ArrowHelper(
+      dir.clone().normalize(),
+      origen,
+      longitud,
+      color,
+      longitud * 0.15,
+      longitud * 0.1
+    );
+    arrow.name = nombre;
+    return arrow;
+  }
+  
+  // Función para crear línea punteada
+  function crearLinea(p1, p2, color) {
+    var geo = new THREE.BufferGeometry().setFromPoints([p1, p2]);
+    var mat = new THREE.LineDashedMaterial({ color: color, dashSize: 0.2, gapSize: 0.1 });
+    var line = new THREE.Line(geo, mat);
+    line.computeLineDistances();
+    return line;
+  }
+  
+  function redondear(x) {
+    return Math.round(x * 100) / 100;
+  }
+  
+  function formatoVector(v) {
+    return '(' + redondear(v.x) + ', ' + redondear(v.y) + ', ' + redondear(v.z) + ')';
+  }
+  
+  window.v3dActualizar = function() {
+    // Leer inputs
+    var u = new THREE.Vector3(
+      parseFloat(document.getElementById('v3d-u1').value) || 0,
+      parseFloat(document.getElementById('v3d-u2').value) || 0,
+      parseFloat(document.getElementById('v3d-u3').value) || 0
+    );
+    var v = new THREE.Vector3(
+      parseFloat(document.getElementById('v3d-v1').value) || 0,
+      parseFloat(document.getElementById('v3d-v2').value) || 0,
+      parseFloat(document.getElementById('v3d-v3').value) || 0
+    );
+    var w = new THREE.Vector3(
+      parseFloat(document.getElementById('v3d-w1').value) || 0,
+      parseFloat(document.getElementById('v3d-w2').value) || 0,
+      parseFloat(document.getElementById('v3d-w3').value) || 0
+    );
+    var lam = parseFloat(document.getElementById('v3d-lambda').value) || 0;
+    
+    var chkSuma = document.getElementById('v3d-chk-suma').checked;
+    var chkCruz = document.getElementById('v3d-chk-cruz').checked;
+    var chkLambda = document.getElementById('v3d-chk-lambda').checked;
+    var chkParalelo = document.getElementById('v3d-chk-paralelo').checked;
+    
+    // Cálculos
+    var magU = u.length();
+    var magV = v.length();
+    var magW = w.length();
+    var unitU = u.clone().normalize();
+    var suma = u.clone().add(v);
+    var resta = u.clone().sub(v);
+    var lambdaU = u.clone().multiplyScalar(lam);
+    var punto = u.dot(v);
+    var angulo = (magU > 0 && magV > 0) ? Math.acos(Math.max(-1, Math.min(1, punto / (magU * magV)))) : 0;
+    var cruz = new THREE.Vector3().crossVectors(u, v);
+    var magCruz = cruz.length();
+    var triple = u.dot(new THREE.Vector3().crossVectors(v, w));
+    
+    // Actualizar textos
+    document.getElementById('v3d-mag-u').textContent = redondear(magU);
+    document.getElementById('v3d-mag-v').textContent = redondear(magV);
+    document.getElementById('v3d-mag-w').textContent = redondear(magW);
+    document.getElementById('v3d-unit-u').textContent = magU > 0 ? formatoVector(unitU) : '—';
+    document.getElementById('v3d-suma').textContent = formatoVector(suma);
+    document.getElementById('v3d-resta').textContent = formatoVector(resta);
+    document.getElementById('v3d-lambda-u').textContent = formatoVector(lambdaU);
+    document.getElementById('v3d-punto').textContent = redondear(punto);
+    document.getElementById('v3d-angulo').textContent = (magU > 0 && magV > 0) ? (redondear(angulo * 180 / Math.PI) + '°') : '—';
+    document.getElementById('v3d-cruz').textContent = formatoVector(cruz);
+    document.getElementById('v3d-mag-cruz').textContent = redondear(magCruz);
+    document.getElementById('v3d-triple').textContent = redondear(triple);
+    document.getElementById('v3d-volumen').textContent = redondear(Math.abs(triple));
+    
+    // Limpiar escena de vectores
+    while(vecGroup.children.length > 0) {
+      vecGroup.remove(vecGroup.children[0]);
+    }
+    
+    // Determinar escala visual
+    var maxVal = Math.max(u.length(), v.length(), w.length(), suma.length(), lambdaU.length(), cruz.length(), 1);
+    var escalaVisual = 5 / maxVal;
+    
+    function s(vec) { return vec.clone().multiplyScalar(escalaVisual); }
+    
+    // Ejes
+    var origen = new THREE.Vector3(0,0,0);
+    vecGroup.add(crearFlecha(origen, new THREE.Vector3(1,0,0), 6, 0xff0000, 'ejeX'));
+    vecGroup.add(crearFlecha(origen, new THREE.Vector3(0,1,0), 6, 0x00ff00, 'ejeY'));
+    vecGroup.add(crearFlecha(origen, new THREE.Vector3(0,0,1), 6, 0x0000ff, 'ejeZ'));
+    
+    // Vectores principales
+    var su = s(u), sv = s(v), sw = s(w);
+    if (u.length() > 0) vecGroup.add(crearFlecha(origen, su, su.length(), 0xff9800, 'u'));
+    if (v.length() > 0) vecGroup.add(crearFlecha(origen, sv, sv.length(), 0x00bcd4, 'v'));
+    if (w.length() > 0) vecGroup.add(crearFlecha(origen, sw, sw.length(), 0xe91e63, 'w'));
+    
+    // Suma
+    if (chkSuma && u.length() > 0 && v.length() > 0) {
+      var ss = s(suma);
+      vecGroup.add(crearFlecha(origen, ss, ss.length(), 0x4caf50, 'suma'));
+      vecGroup.add(crearLinea(su, ss, 0x4caf50));
+      vecGroup.add(crearLinea(sv, ss, 0x4caf50));
+    }
+    
+    // Lambda u
+    if (chkLambda && Math.abs(lam) > 0.01 && u.length() > 0) {
+      var sl = s(lambdaU);
+      vecGroup.add(crearFlecha(origen, sl, sl.length(), 0x9c27b0, 'lambdaU'));
+    }
+    
+    // Producto cruz
+    if (chkCruz && u.length() > 0 && v.length() > 0) {
+      var sc = s(cruz);
+      if (sc.length() > 0.01) {
+        vecGroup.add(crearFlecha(origen, sc, sc.length(), 0xf44336, 'cruz'));
+      }
+    }
+    
+    // Paralelepípedo
+    if (chkParalelo && u.length() > 0 && v.length() > 0 && w.length() > 0) {
+      var p0 = origen.clone();
+      var p1 = su.clone();
+      var p2 = sv.clone();
+      var p3 = sw.clone();
+      var p4 = su.clone().add(sv);
+      var p5 = su.clone().add(sw);
+      var p6 = sv.clone().add(sw);
+      var p7 = su.clone().add(sv).add(sw);
+      var lineas = [
+        [p1,p4], [p2,p4], [p1,p5], [p3,p5], [p2,p6], [p3,p6],
+        [p4,p7], [p5,p7], [p6,p7]
+      ];
+      lineas.forEach(function(ln) {
+        vecGroup.add(crearLinea(ln[0], ln[1], 0xaaaaaa));
+      });
+    }
+    
+    loading.style.display = 'none';
+  };
+  
+  // Eventos
+  ['v3d-u1','v3d-u2','v3d-u3','v3d-v1','v3d-v2','v3d-v3','v3d-w1','v3d-w2','v3d-w3','v3d-lambda'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') v3dActualizar();
+    });
+  });
+  
+  // Resize
+  window.addEventListener('resize', function() {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+  
+  // Animación
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+  
+  // Inicializar
+  v3dActualizar();
+})();
+</script>
+</div>
+<div id="ejercicios-propuestos" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Ejercicios propuestos<a href="index.html#ejercicios-propuestos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Dados <span class="math inline">\(\vec{a} = (3, -1, 2)\)</span> y <span class="math inline">\(\vec{b} = (1, 2, -1)\)</span>, calcule <span class="math inline">\(\vec{a} + \vec{b}\)</span>, <span class="math inline">\(\vec{a} - \vec{b}\)</span>, <span class="math inline">\(2\vec{a} - 3\vec{b}\)</span>, <span class="math inline">\(\vec{a} \cdot \vec{b}\)</span> y <span class="math inline">\(\vec{a} \times \vec{b}\)</span>.</li>
+<li>Halle el ángulo entre los vectores <span class="math inline">\(\vec{u} = (1, 1, 1)\)</span> y <span class="math inline">\(\vec{v} = (1, -1, 0)\)</span>.</li>
+<li>Determine el valor de <span class="math inline">\(k\)</span> para que los vectores <span class="math inline">\((2, k, 3)\)</span> y <span class="math inline">\((1, 2, -1)\)</span> sean perpendiculares.</li>
+<li>Calcule el área del triángulo con vértices <span class="math inline">\(A = (1, 0, 0)\)</span>, <span class="math inline">\(B = (0, 2, 0)\)</span> y <span class="math inline">\(C = (0, 0, 3)\)</span>.</li>
+<li>Verifique que <span class="math inline">\((\vec{u} \times \vec{v}) \times \vec{w} \neq \vec{u} \times (\vec{v} \times \vec{w})\)</span> en general, usando <span class="math inline">\(\vec{u} = (1, 0, 0)\)</span>, <span class="math inline">\(\vec{v} = (0, 1, 0)\)</span>, <span class="math inline">\(\vec{w} = (0, 0, 1)\)</span>.</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="rectas-planos.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Superficies3d.pdf", "Superficies3d.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

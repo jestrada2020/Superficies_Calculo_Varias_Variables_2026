@@ -1,0 +1,2573 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Rectas y Planos en el Espacio | Conceptos de Superficies</title>
+  <meta name="description" content="Este es un resumen de los casos de superficies y sus propiedades." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Rectas y Planos en el Espacio | Conceptos de Superficies" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este es un resumen de los casos de superficies y sus propiedades." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Rectas y Planos en el Espacio | Conceptos de Superficies" />
+  
+  <meta name="twitter:description" content="Este es un resumen de los casos de superficies y sus propiedades." />
+  
+
+<meta name="author" content="John Jairo Estrada Álvarez" />
+
+
+<meta name="date" content="2026-04-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="coordenadas.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.12.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Conceptos de Superficies 3D</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vectores y Geometría Vectorial</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#vectores-libres-y-vectores-coordenados"><i class="fa fa-check"></i><b>1.1</b> Vectores libres y vectores coordenados</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#definición-de-vector"><i class="fa fa-check"></i><b>1.1.1</b> Definición de vector</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#vector-en-la-recta-mathbbr"><i class="fa fa-check"></i><b>1.1.2</b> Vector en la recta (<span class="math inline">\(\mathbb{R}\)</span>)</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#vector-en-el-plano-mathbbr2"><i class="fa fa-check"></i><b>1.1.3</b> Vector en el plano (<span class="math inline">\(\mathbb{R}^2\)</span>)</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#vector-en-el-espacio-mathbbr3"><i class="fa fa-check"></i><b>1.1.4</b> Vector en el espacio (<span class="math inline">\(\mathbb{R}^3\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#operaciones-vectoriales"><i class="fa fa-check"></i><b>1.2</b> Operaciones vectoriales</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#suma-y-resta"><i class="fa fa-check"></i><b>1.2.1</b> Suma y resta</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#multiplicación-por-escalar"><i class="fa fa-check"></i><b>1.2.2</b> Multiplicación por escalar</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#producto-punto-producto-escalar"><i class="fa fa-check"></i><b>1.3</b> Producto punto (producto escalar)</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#definición-algebraica"><i class="fa fa-check"></i><b>1.3.1</b> Definición algebraica</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#definición-geométrica"><i class="fa fa-check"></i><b>1.3.2</b> Definición geométrica</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#propiedades"><i class="fa fa-check"></i><b>1.3.3</b> Propiedades</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#aplicaciones-del-producto-punto"><i class="fa fa-check"></i><b>1.3.4</b> Aplicaciones del producto punto</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#ejemplo-resuelto"><i class="fa fa-check"></i><b>1.3.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#producto-cruz-producto-vectorial"><i class="fa fa-check"></i><b>1.4</b> Producto cruz (producto vectorial)</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#definición"><i class="fa fa-check"></i><b>1.4.1</b> Definición</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#propiedades-geométricas"><i class="fa fa-check"></i><b>1.4.2</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#propiedades-algebraicas"><i class="fa fa-check"></i><b>1.4.3</b> Propiedades algebraicas</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#ejemplo-resuelto-1"><i class="fa fa-check"></i><b>1.4.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#triple-producto-escalar"><i class="fa fa-check"></i><b>1.5</b> Triple producto escalar</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#interpretación-geométrica"><i class="fa fa-check"></i><b>1.5.1</b> Interpretación geométrica</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#ejemplo"><i class="fa fa-check"></i><b>1.5.2</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#visualización-interactiva-vectores-en-3d"><i class="fa fa-check"></i><b>1.6</b> Visualización interactiva: vectores en 3D</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#ejercicios-propuestos"><i class="fa fa-check"></i><b>1.7</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rectas-planos.html"><a href="rectas-planos.html"><i class="fa fa-check"></i><b>2</b> Rectas y Planos en el Espacio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rectas-planos.html"><a href="rectas-planos.html#rectas-en-el-espacio"><i class="fa fa-check"></i><b>2.1</b> Rectas en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuación-vectorial"><i class="fa fa-check"></i><b>2.1.1</b> Ecuación vectorial</a></li>
+<li class="chapter" data-level="2.1.2" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuaciones-paramétricas"><i class="fa fa-check"></i><b>2.1.2</b> Ecuaciones paramétricas</a></li>
+<li class="chapter" data-level="2.1.3" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuaciones-simétricas"><i class="fa fa-check"></i><b>2.1.3</b> Ecuaciones simétricas</a></li>
+<li class="chapter" data-level="2.1.4" data-path="rectas-planos.html"><a href="rectas-planos.html#recta-que-pasa-por-dos-puntos"><i class="fa fa-check"></i><b>2.1.4</b> Recta que pasa por dos puntos</a></li>
+<li class="chapter" data-level="2.1.5" data-path="rectas-planos.html"><a href="rectas-planos.html#ejemplo-resuelto-2"><i class="fa fa-check"></i><b>2.1.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="rectas-planos.html"><a href="rectas-planos.html#planos-en-el-espacio"><i class="fa fa-check"></i><b>2.2</b> Planos en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuación-punto-normal"><i class="fa fa-check"></i><b>2.2.1</b> Ecuación punto-normal</a></li>
+<li class="chapter" data-level="2.2.2" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuación-general"><i class="fa fa-check"></i><b>2.2.2</b> Ecuación general</a></li>
+<li class="chapter" data-level="2.2.3" data-path="rectas-planos.html"><a href="rectas-planos.html#planos-coordenados"><i class="fa fa-check"></i><b>2.2.3</b> Planos coordenados</a></li>
+<li class="chapter" data-level="2.2.4" data-path="rectas-planos.html"><a href="rectas-planos.html#interceptos"><i class="fa fa-check"></i><b>2.2.4</b> Interceptos</a></li>
+<li class="chapter" data-level="2.2.5" data-path="rectas-planos.html"><a href="rectas-planos.html#plano-que-pasa-por-tres-puntos"><i class="fa fa-check"></i><b>2.2.5</b> Plano que pasa por tres puntos</a></li>
+<li class="chapter" data-level="2.2.6" data-path="rectas-planos.html"><a href="rectas-planos.html#ejemplo-resuelto-3"><i class="fa fa-check"></i><b>2.2.6</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="rectas-planos.html"><a href="rectas-planos.html#distancias-en-el-espacio"><i class="fa fa-check"></i><b>2.3</b> Distancias en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="rectas-planos.html"><a href="rectas-planos.html#distancia-de-un-punto-a-un-plano"><i class="fa fa-check"></i><b>2.3.1</b> Distancia de un punto a un plano</a></li>
+<li class="chapter" data-level="2.3.2" data-path="rectas-planos.html"><a href="rectas-planos.html#distancia-de-un-punto-a-una-recta"><i class="fa fa-check"></i><b>2.3.2</b> Distancia de un punto a una recta</a></li>
+<li class="chapter" data-level="2.3.3" data-path="rectas-planos.html"><a href="rectas-planos.html#distancia-entre-dos-rectas-en-el-espacio"><i class="fa fa-check"></i><b>2.3.3</b> Distancia entre dos rectas en el espacio</a></li>
+<li class="chapter" data-level="2.3.4" data-path="rectas-planos.html"><a href="rectas-planos.html#ejemplo-resuelto-4"><i class="fa fa-check"></i><b>2.3.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulos-en-el-espacio"><i class="fa fa-check"></i><b>2.4</b> Ángulos en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulo-entre-dos-rectas"><i class="fa fa-check"></i><b>2.4.1</b> Ángulo entre dos rectas</a></li>
+<li class="chapter" data-level="2.4.2" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulo-entre-dos-planos"><i class="fa fa-check"></i><b>2.4.2</b> Ángulo entre dos planos</a></li>
+<li class="chapter" data-level="2.4.3" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulo-entre-una-recta-y-un-plano"><i class="fa fa-check"></i><b>2.4.3</b> Ángulo entre una recta y un plano</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="rectas-planos.html"><a href="rectas-planos.html#intersecciones"><i class="fa fa-check"></i><b>2.5</b> Intersecciones</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="rectas-planos.html"><a href="rectas-planos.html#intersección-de-una-recta-y-un-plano"><i class="fa fa-check"></i><b>2.5.1</b> Intersección de una recta y un plano</a></li>
+<li class="chapter" data-level="2.5.2" data-path="rectas-planos.html"><a href="rectas-planos.html#intersección-de-dos-planos"><i class="fa fa-check"></i><b>2.5.2</b> Intersección de dos planos</a></li>
+<li class="chapter" data-level="2.5.3" data-path="rectas-planos.html"><a href="rectas-planos.html#intersección-de-tres-planos"><i class="fa fa-check"></i><b>2.5.3</b> Intersección de tres planos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="rectas-planos.html"><a href="rectas-planos.html#ejercicios-propuestos-1"><i class="fa fa-check"></i><b>2.6</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="coordenadas.html"><a href="coordenadas.html"><i class="fa fa-check"></i><b>3</b> Sistemas de Coordenadas y Parametrización</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="coordenadas.html"><a href="coordenadas.html#coordenadas-polares-en-el-plano"><i class="fa fa-check"></i><b>3.1</b> Coordenadas polares en el plano</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="coordenadas.html"><a href="coordenadas.html#relación-con-coordenadas-cartesianas"><i class="fa fa-check"></i><b>3.1.1</b> Relación con coordenadas cartesianas</a></li>
+<li class="chapter" data-level="3.1.2" data-path="coordenadas.html"><a href="coordenadas.html#curvas-notables-en-coordenadas-polares"><i class="fa fa-check"></i><b>3.1.2</b> Curvas notables en coordenadas polares</a></li>
+<li class="chapter" data-level="3.1.3" data-path="coordenadas.html"><a href="coordenadas.html#ejemplo-resuelto-5"><i class="fa fa-check"></i><b>3.1.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="coordenadas.html"><a href="coordenadas.html#coordenadas-cilíndricas"><i class="fa fa-check"></i><b>3.2</b> Coordenadas cilíndricas</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="coordenadas.html"><a href="coordenadas.html#definición-1"><i class="fa fa-check"></i><b>3.2.1</b> Definición</a></li>
+<li class="chapter" data-level="3.2.2" data-path="coordenadas.html"><a href="coordenadas.html#conversión-a-cartesianas"><i class="fa fa-check"></i><b>3.2.2</b> Conversión a cartesianas</a></li>
+<li class="chapter" data-level="3.2.3" data-path="coordenadas.html"><a href="coordenadas.html#superficies-de-coordenadas-constantes"><i class="fa fa-check"></i><b>3.2.3</b> Superficies de coordenadas constantes</a></li>
+<li class="chapter" data-level="3.2.4" data-path="coordenadas.html"><a href="coordenadas.html#jacobiano"><i class="fa fa-check"></i><b>3.2.4</b> Jacobiano</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="coordenadas.html"><a href="coordenadas.html#coordenadas-esféricas"><i class="fa fa-check"></i><b>3.3</b> Coordenadas esféricas</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="coordenadas.html"><a href="coordenadas.html#conversión-a-cartesianas-1"><i class="fa fa-check"></i><b>3.3.1</b> Conversión a cartesianas</a></li>
+<li class="chapter" data-level="3.3.2" data-path="coordenadas.html"><a href="coordenadas.html#conversión-a-cilíndricas"><i class="fa fa-check"></i><b>3.3.2</b> Conversión a cilíndricas</a></li>
+<li class="chapter" data-level="3.3.3" data-path="coordenadas.html"><a href="coordenadas.html#superficies-de-coordenadas-constantes-1"><i class="fa fa-check"></i><b>3.3.3</b> Superficies de coordenadas constantes</a></li>
+<li class="chapter" data-level="3.3.4" data-path="coordenadas.html"><a href="coordenadas.html#jacobiano-1"><i class="fa fa-check"></i><b>3.3.4</b> Jacobiano</a></li>
+<li class="chapter" data-level="3.3.5" data-path="coordenadas.html"><a href="coordenadas.html#ejemplo-resuelto-6"><i class="fa fa-check"></i><b>3.3.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="coordenadas.html"><a href="coordenadas.html#parametrización-de-curvas"><i class="fa fa-check"></i><b>3.4</b> Parametrización de curvas</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="coordenadas.html"><a href="coordenadas.html#curvas-paramétricas-en-el-plano"><i class="fa fa-check"></i><b>3.4.1</b> Curvas paramétricas en el plano</a></li>
+<li class="chapter" data-level="3.4.2" data-path="coordenadas.html"><a href="coordenadas.html#curvas-paramétricas-en-el-espacio"><i class="fa fa-check"></i><b>3.4.2</b> Curvas paramétricas en el espacio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="coordenadas.html"><a href="coordenadas.html#longitud-de-arco"><i class="fa fa-check"></i><b>3.5</b> Longitud de arco</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="coordenadas.html"><a href="coordenadas.html#ejemplo-resuelto-7"><i class="fa fa-check"></i><b>3.5.1</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="coordenadas.html"><a href="coordenadas.html#ejercicios-propuestos-2"><i class="fa fa-check"></i><b>3.6</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html"><i class="fa fa-check"></i><b>4</b> Funciones de Varias Variables y Derivadas Parciales</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#funciones-de-dos-y-tres-variables"><i class="fa fa-check"></i><b>4.1</b> Funciones de dos y tres variables</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#definición-2"><i class="fa fa-check"></i><b>4.1.1</b> Definición</a></li>
+<li class="chapter" data-level="4.1.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#dominio-y-rango"><i class="fa fa-check"></i><b>4.1.2</b> Dominio y rango</a></li>
+<li class="chapter" data-level="4.1.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplos"><i class="fa fa-check"></i><b>4.1.3</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#gráfica-de-una-función-de-dos-variables"><i class="fa fa-check"></i><b>4.2</b> Gráfica de una función de dos variables</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-1"><i class="fa fa-check"></i><b>4.2.1</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#curvas-de-nivel"><i class="fa fa-check"></i><b>4.3</b> Curvas de nivel</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplos-de-curvas-de-nivel"><i class="fa fa-check"></i><b>4.3.1</b> Ejemplos de curvas de nivel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#límites-y-continuidad"><i class="fa fa-check"></i><b>4.4</b> Límites y continuidad</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#límite-de-una-función-de-dos-variables"><i class="fa fa-check"></i><b>4.4.1</b> Límite de una función de dos variables</a></li>
+<li class="chapter" data-level="4.4.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#criterio-para-inexistencia-de-límite"><i class="fa fa-check"></i><b>4.4.2</b> Criterio para inexistencia de límite</a></li>
+<li class="chapter" data-level="4.4.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-8"><i class="fa fa-check"></i><b>4.4.3</b> Ejemplo resuelto</a></li>
+<li class="chapter" data-level="4.4.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#continuidad"><i class="fa fa-check"></i><b>4.4.4</b> Continuidad</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivadas-parciales-1"><i class="fa fa-check"></i><b>4.5</b> Derivadas parciales</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#definición-3"><i class="fa fa-check"></i><b>4.5.1</b> Definición</a></li>
+<li class="chapter" data-level="4.5.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#notaciones"><i class="fa fa-check"></i><b>4.5.2</b> Notaciones</a></li>
+<li class="chapter" data-level="4.5.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#interpretación-geométrica-1"><i class="fa fa-check"></i><b>4.5.3</b> Interpretación geométrica</a></li>
+<li class="chapter" data-level="4.5.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-9"><i class="fa fa-check"></i><b>4.5.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#herramienta-de-cálculo-derivadas-parciales-paso-a-paso"><i class="fa fa-check"></i><b>4.6</b> Herramienta de cálculo: Derivadas parciales paso a paso</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-fx-y-x3-siny-exy"><i class="fa fa-check"></i><b>4.6.1</b> Ejemplo: <span class="math inline">\(f(x, y) = x^3 \sin(y) + e^{xy}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivadas-parciales-de-orden-superior"><i class="fa fa-check"></i><b>4.7</b> Derivadas parciales de orden superior</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#teorema-de-clairaut"><i class="fa fa-check"></i><b>4.7.1</b> Teorema de Clairaut</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#plano-tangente-y-aproximación-lineal"><i class="fa fa-check"></i><b>4.8</b> Plano tangente y aproximación lineal</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ecuación-del-plano-tangente"><i class="fa fa-check"></i><b>4.8.1</b> Ecuación del plano tangente</a></li>
+<li class="chapter" data-level="4.8.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#aproximación-lineal-diferenciabilidad"><i class="fa fa-check"></i><b>4.8.2</b> Aproximación lineal (diferenciabilidad)</a></li>
+<li class="chapter" data-level="4.8.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-10"><i class="fa fa-check"></i><b>4.8.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#regla-de-la-cadena"><i class="fa fa-check"></i><b>4.9</b> Regla de la cadena</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#caso-1-función-compuesta-de-una-variable"><i class="fa fa-check"></i><b>4.9.1</b> Caso 1: Función compuesta de una variable</a></li>
+<li class="chapter" data-level="4.9.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#caso-2-función-compuesta-de-dos-variables"><i class="fa fa-check"></i><b>4.9.2</b> Caso 2: Función compuesta de dos variables</a></li>
+<li class="chapter" data-level="4.9.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-11"><i class="fa fa-check"></i><b>4.9.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivada-direccional-y-gradiente"><i class="fa fa-check"></i><b>4.10</b> Derivada direccional y gradiente</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivada-direccional"><i class="fa fa-check"></i><b>4.10.1</b> Derivada direccional</a></li>
+<li class="chapter" data-level="4.10.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#vector-gradiente"><i class="fa fa-check"></i><b>4.10.2</b> Vector gradiente</a></li>
+<li class="chapter" data-level="4.10.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#propiedades-del-gradiente"><i class="fa fa-check"></i><b>4.10.3</b> Propiedades del gradiente</a></li>
+<li class="chapter" data-level="4.10.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-12"><i class="fa fa-check"></i><b>4.10.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#visualización-interactiva-plano-tangente-y-gradiente"><i class="fa fa-check"></i><b>4.11</b> Visualización interactiva: plano tangente y gradiente</a></li>
+<li class="chapter" data-level="4.12" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejercicios-propuestos-3"><i class="fa fa-check"></i><b>4.12</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="maximos-minimos.html"><a href="maximos-minimos.html"><i class="fa fa-check"></i><b>5</b> Máximos, Mínimos y Optimización</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#puntos-críticos"><i class="fa fa-check"></i><b>5.1</b> Puntos críticos</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#definición-4"><i class="fa fa-check"></i><b>5.1.1</b> Definición</a></li>
+<li class="chapter" data-level="5.1.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#extremos-locales"><i class="fa fa-check"></i><b>5.1.2</b> Extremos locales</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#criterio-del-hessiano-para-funciones-de-dos-variables"><i class="fa fa-check"></i><b>5.2</b> Criterio del Hessiano para funciones de dos variables</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#matriz-hessiana"><i class="fa fa-check"></i><b>5.2.1</b> Matriz Hessiana</a></li>
+<li class="chapter" data-level="5.2.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#discriminante"><i class="fa fa-check"></i><b>5.2.2</b> Discriminante</a></li>
+<li class="chapter" data-level="5.2.3" data-path="maximos-minimos.html"><a href="maximos-minimos.html#criterio-de-clasificación"><i class="fa fa-check"></i><b>5.2.3</b> Criterio de clasificación</a></li>
+<li class="chapter" data-level="5.2.4" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-resuelto-13"><i class="fa fa-check"></i><b>5.2.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="maximos-minimos.html"><a href="maximos-minimos.html#herramienta-de-cálculo-hessiano-automático"><i class="fa fa-check"></i><b>5.3</b> Herramienta de cálculo: Hessiano automático</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-fx-y-x3-y3---3xy-en-1-1"><i class="fa fa-check"></i><b>5.3.1</b> Ejemplo: <span class="math inline">\(f(x, y) = x^3 + y^3 - 3xy\)</span> en <span class="math inline">\((1, 1)\)</span></a></li>
+<li class="chapter" data-level="5.3.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#segundo-ejemplo-fx-y-x2-y2-en-0-0"><i class="fa fa-check"></i><b>5.3.2</b> Segundo ejemplo: <span class="math inline">\(f(x, y) = x^2 + y^2\)</span> en <span class="math inline">\((0, 0)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="maximos-minimos.html"><a href="maximos-minimos.html#extremos-absolutos-en-regiones-compactas"><i class="fa fa-check"></i><b>5.4</b> Extremos absolutos en regiones compactas</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#método-para-encontrar-extremos-absolutos"><i class="fa fa-check"></i><b>5.4.1</b> Método para encontrar extremos absolutos</a></li>
+<li class="chapter" data-level="5.4.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-resuelto-14"><i class="fa fa-check"></i><b>5.4.2</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="maximos-minimos.html"><a href="maximos-minimos.html#multiplicadores-de-lagrange"><i class="fa fa-check"></i><b>5.5</b> Multiplicadores de Lagrange</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#condición-necesaria"><i class="fa fa-check"></i><b>5.5.1</b> Condición necesaria</a></li>
+<li class="chapter" data-level="5.5.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#función-de-lagrange"><i class="fa fa-check"></i><b>5.5.2</b> Función de Lagrange</a></li>
+<li class="chapter" data-level="5.5.3" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-resuelto-15"><i class="fa fa-check"></i><b>5.5.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="maximos-minimos.html"><a href="maximos-minimos.html#extensión-a-tres-variables"><i class="fa fa-check"></i><b>5.6</b> Extensión a tres variables</a></li>
+<li class="chapter" data-level="5.7" data-path="maximos-minimos.html"><a href="maximos-minimos.html#visualización-interactiva-puntos-críticos-y-sillas-de-montar"><i class="fa fa-check"></i><b>5.7</b> Visualización interactiva: puntos críticos y sillas de montar</a></li>
+<li class="chapter" data-level="5.8" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejercicios-propuestos-4"><i class="fa fa-check"></i><b>5.8</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cuadricas.html"><a href="cuadricas.html"><i class="fa fa-check"></i><b>6</b> Superficies Cuádricas</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-general-y-clasificación"><i class="fa fa-check"></i><b>6.1</b> Ecuación general y clasificación</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="cuadricas.html"><a href="cuadricas.html#estrategia-de-análisis"><i class="fa fa-check"></i><b>6.1.1</b> Estrategia de análisis</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="cuadricas.html"><a href="cuadricas.html#elipsoide"><i class="fa fa-check"></i><b>6.2</b> Elipsoide</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica"><i class="fa fa-check"></i><b>6.2.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.2.2" data-path="cuadricas.html"><a href="cuadricas.html#caso-particular-la-esfera"><i class="fa fa-check"></i><b>6.2.2</b> Caso particular: la esfera</a></li>
+<li class="chapter" data-level="6.2.3" data-path="cuadricas.html"><a href="cuadricas.html#trazas"><i class="fa fa-check"></i><b>6.2.3</b> Trazas</a></li>
+<li class="chapter" data-level="6.2.4" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-1"><i class="fa fa-check"></i><b>6.2.4</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.2.5" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-16"><i class="fa fa-check"></i><b>6.2.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="cuadricas.html"><a href="cuadricas.html#hiperboloide-de-una-hoja"><i class="fa fa-check"></i><b>6.3</b> Hiperboloide de una hoja</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-1"><i class="fa fa-check"></i><b>6.3.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.3.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-1"><i class="fa fa-check"></i><b>6.3.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.3.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-2"><i class="fa fa-check"></i><b>6.3.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.3.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-17"><i class="fa fa-check"></i><b>6.3.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="cuadricas.html"><a href="cuadricas.html#hiperboloide-de-dos-hojas"><i class="fa fa-check"></i><b>6.4</b> Hiperboloide de dos hojas</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-2"><i class="fa fa-check"></i><b>6.4.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.4.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-2"><i class="fa fa-check"></i><b>6.4.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.4.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-3"><i class="fa fa-check"></i><b>6.4.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.4.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-18"><i class="fa fa-check"></i><b>6.4.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="cuadricas.html"><a href="cuadricas.html#paraboloide-elíptico"><i class="fa fa-check"></i><b>6.5</b> Paraboloide elíptico</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-3"><i class="fa fa-check"></i><b>6.5.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.5.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-3"><i class="fa fa-check"></i><b>6.5.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.5.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-4"><i class="fa fa-check"></i><b>6.5.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.5.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-19"><i class="fa fa-check"></i><b>6.5.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="cuadricas.html"><a href="cuadricas.html#paraboloide-hiperbólico"><i class="fa fa-check"></i><b>6.6</b> Paraboloide hiperbólico</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-4"><i class="fa fa-check"></i><b>6.6.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.6.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-4"><i class="fa fa-check"></i><b>6.6.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.6.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-5"><i class="fa fa-check"></i><b>6.6.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.6.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-20"><i class="fa fa-check"></i><b>6.6.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="cuadricas.html"><a href="cuadricas.html#cono-elíptico"><i class="fa fa-check"></i><b>6.7</b> Cono elíptico</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-5"><i class="fa fa-check"></i><b>6.7.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.7.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-5"><i class="fa fa-check"></i><b>6.7.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.7.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-6"><i class="fa fa-check"></i><b>6.7.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.7.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-21"><i class="fa fa-check"></i><b>6.7.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="cuadricas.html"><a href="cuadricas.html#clasificación-resumida-de-las-cuádricas"><i class="fa fa-check"></i><b>6.8</b> Clasificación resumida de las cuádricas</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="cuadricas.html"><a href="cuadricas.html#criterio-de-clasificación-1"><i class="fa fa-check"></i><b>6.8.1</b> Criterio de clasificación</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="cuadricas.html"><a href="cuadricas.html#ejercicios-propuestos-5"><i class="fa fa-check"></i><b>6.9</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="integrales.html"><a href="integrales.html"><i class="fa fa-check"></i><b>7</b> Integrales Múltiples</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="integrales.html"><a href="integrales.html#integrales-dobles"><i class="fa fa-check"></i><b>7.1</b> Integrales dobles</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="integrales.html"><a href="integrales.html#definición-por-sumas-de-riemann"><i class="fa fa-check"></i><b>7.1.1</b> Definición por sumas de Riemann</a></li>
+<li class="chapter" data-level="7.1.2" data-path="integrales.html"><a href="integrales.html#propiedades-1"><i class="fa fa-check"></i><b>7.1.2</b> Propiedades</a></li>
+<li class="chapter" data-level="7.1.3" data-path="integrales.html"><a href="integrales.html#evaluación-integrales-iteradas-teorema-de-fubini"><i class="fa fa-check"></i><b>7.1.3</b> Evaluación: integrales iteradas (Teorema de Fubini)</a></li>
+<li class="chapter" data-level="7.1.4" data-path="integrales.html"><a href="integrales.html#regiones-generales"><i class="fa fa-check"></i><b>7.1.4</b> Regiones generales</a></li>
+<li class="chapter" data-level="7.1.5" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-22"><i class="fa fa-check"></i><b>7.1.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="integrales.html"><a href="integrales.html#cambio-de-variables-en-integrales-dobles"><i class="fa fa-check"></i><b>7.2</b> Cambio de variables en integrales dobles</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="integrales.html"><a href="integrales.html#transformación-general"><i class="fa fa-check"></i><b>7.2.1</b> Transformación general</a></li>
+<li class="chapter" data-level="7.2.2" data-path="integrales.html"><a href="integrales.html#coordenadas-polares"><i class="fa fa-check"></i><b>7.2.2</b> Coordenadas polares</a></li>
+<li class="chapter" data-level="7.2.3" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-23"><i class="fa fa-check"></i><b>7.2.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="integrales.html"><a href="integrales.html#integrales-triples"><i class="fa fa-check"></i><b>7.3</b> Integrales triples</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="integrales.html"><a href="integrales.html#definición-5"><i class="fa fa-check"></i><b>7.3.1</b> Definición</a></li>
+<li class="chapter" data-level="7.3.2" data-path="integrales.html"><a href="integrales.html#evaluación-como-integral-iterada"><i class="fa fa-check"></i><b>7.3.2</b> Evaluación como integral iterada</a></li>
+<li class="chapter" data-level="7.3.3" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-24"><i class="fa fa-check"></i><b>7.3.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="integrales.html"><a href="integrales.html#cambio-de-variables-en-integrales-triples"><i class="fa fa-check"></i><b>7.4</b> Cambio de variables en integrales triples</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="integrales.html"><a href="integrales.html#coordenadas-cilíndricas-1"><i class="fa fa-check"></i><b>7.4.1</b> Coordenadas cilíndricas</a></li>
+<li class="chapter" data-level="7.4.2" data-path="integrales.html"><a href="integrales.html#coordenadas-esféricas-1"><i class="fa fa-check"></i><b>7.4.2</b> Coordenadas esféricas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-25"><i class="fa fa-check"></i><b>7.4.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="integrales.html"><a href="integrales.html#aplicaciones-de-las-integrales-múltiples"><i class="fa fa-check"></i><b>7.5</b> Aplicaciones de las integrales múltiples</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="integrales.html"><a href="integrales.html#áreas-y-volúmenes"><i class="fa fa-check"></i><b>7.5.1</b> Áreas y volúmenes</a></li>
+<li class="chapter" data-level="7.5.2" data-path="integrales.html"><a href="integrales.html#masa-y-centro-de-masa"><i class="fa fa-check"></i><b>7.5.2</b> Masa y centro de masa</a></li>
+<li class="chapter" data-level="7.5.3" data-path="integrales.html"><a href="integrales.html#momentos-de-inercia"><i class="fa fa-check"></i><b>7.5.3</b> Momentos de inercia</a></li>
+<li class="chapter" data-level="7.5.4" data-path="integrales.html"><a href="integrales.html#valor-promedio"><i class="fa fa-check"></i><b>7.5.4</b> Valor promedio</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="integrales.html"><a href="integrales.html#visualización-interactiva-regiones-de-integración"><i class="fa fa-check"></i><b>7.6</b> Visualización interactiva: regiones de integración</a></li>
+<li class="chapter" data-level="7.7" data-path="integrales.html"><a href="integrales.html#ejercicios-propuestos-6"><i class="fa fa-check"></i><b>7.7</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="diferencial.html"><a href="diferencial.html"><i class="fa fa-check"></i><b>8</b> Geometría Diferencial de Superficies</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="diferencial.html"><a href="diferencial.html#superficies-paramétricas"><i class="fa fa-check"></i><b>8.1</b> Superficies paramétricas</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="diferencial.html"><a href="diferencial.html#definición-6"><i class="fa fa-check"></i><b>8.1.1</b> Definición</a></li>
+<li class="chapter" data-level="8.1.2" data-path="diferencial.html"><a href="diferencial.html#ejemplos-de-parametrizaciones"><i class="fa fa-check"></i><b>8.1.2</b> Ejemplos de parametrizaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="diferencial.html"><a href="diferencial.html#cambio-de-parametrización"><i class="fa fa-check"></i><b>8.2</b> Cambio de parametrización</a></li>
+<li class="chapter" data-level="8.3" data-path="diferencial.html"><a href="diferencial.html#vector-normal-y-orientación"><i class="fa fa-check"></i><b>8.3</b> Vector normal y orientación</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="diferencial.html"><a href="diferencial.html#vector-normal"><i class="fa fa-check"></i><b>8.3.1</b> Vector normal</a></li>
+<li class="chapter" data-level="8.3.2" data-path="diferencial.html"><a href="diferencial.html#interpretación-geométrica-2"><i class="fa fa-check"></i><b>8.3.2</b> Interpretación geométrica</a></li>
+<li class="chapter" data-level="8.3.3" data-path="diferencial.html"><a href="diferencial.html#ejemplo-de-cálculo"><i class="fa fa-check"></i><b>8.3.3</b> Ejemplo de cálculo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="diferencial.html"><a href="diferencial.html#plano-tangente"><i class="fa fa-check"></i><b>8.4</b> Plano tangente</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="diferencial.html"><a href="diferencial.html#definición-7"><i class="fa fa-check"></i><b>8.4.1</b> Definición</a></li>
+<li class="chapter" data-level="8.4.2" data-path="diferencial.html"><a href="diferencial.html#ecuación-del-plano-tangente-1"><i class="fa fa-check"></i><b>8.4.2</b> Ecuación del plano tangente</a></li>
+<li class="chapter" data-level="8.4.3" data-path="diferencial.html"><a href="diferencial.html#ejemplo-2"><i class="fa fa-check"></i><b>8.4.3</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="diferencial.html"><a href="diferencial.html#primera-forma-fundamental"><i class="fa fa-check"></i><b>8.5</b> Primera forma fundamental</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="diferencial.html"><a href="diferencial.html#coeficientes-fundamentales"><i class="fa fa-check"></i><b>8.5.1</b> Coeficientes fundamentales</a></li>
+<li class="chapter" data-level="8.5.2" data-path="diferencial.html"><a href="diferencial.html#aplicaciones"><i class="fa fa-check"></i><b>8.5.2</b> Aplicaciones</a></li>
+<li class="chapter" data-level="8.5.3" data-path="diferencial.html"><a href="diferencial.html#ejemplo-esfera"><i class="fa fa-check"></i><b>8.5.3</b> Ejemplo: Esfera</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="diferencial.html"><a href="diferencial.html#segunda-forma-fundamental-y-curvatura"><i class="fa fa-check"></i><b>8.6</b> Segunda forma fundamental y curvatura</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="diferencial.html"><a href="diferencial.html#vector-normal-y-derivadas"><i class="fa fa-check"></i><b>8.6.1</b> Vector normal y derivadas</a></li>
+<li class="chapter" data-level="8.6.2" data-path="diferencial.html"><a href="diferencial.html#curvaturas-principales"><i class="fa fa-check"></i><b>8.6.2</b> Curvaturas principales</a></li>
+<li class="chapter" data-level="8.6.3" data-path="diferencial.html"><a href="diferencial.html#curvatura-gaussiana"><i class="fa fa-check"></i><b>8.6.3</b> Curvatura gaussiana</a></li>
+<li class="chapter" data-level="8.6.4" data-path="diferencial.html"><a href="diferencial.html#curvatura-media"><i class="fa fa-check"></i><b>8.6.4</b> Curvatura media</a></li>
+<li class="chapter" data-level="8.6.5" data-path="diferencial.html"><a href="diferencial.html#ejemplo-paraboloide-elíptico"><i class="fa fa-check"></i><b>8.6.5</b> Ejemplo: Paraboloide elíptico</a></li>
+<li class="chapter" data-level="8.6.6" data-path="diferencial.html"><a href="diferencial.html#ejemplo-paraboloide-hiperbólico"><i class="fa fa-check"></i><b>8.6.6</b> Ejemplo: Paraboloide hiperbólico</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="diferencial.html"><a href="diferencial.html#líneas-de-curvatura-y-direcciones-principales"><i class="fa fa-check"></i><b>8.7</b> Líneas de curvatura y direcciones principales</a></li>
+<li class="chapter" data-level="8.8" data-path="diferencial.html"><a href="diferencial.html#ecuaciones-de-weingarten"><i class="fa fa-check"></i><b>8.8</b> Ecuaciones de Weingarten</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="diferencial.html"><a href="diferencial.html#aplicaciones"><i class="fa fa-check"></i><b>9</b> Aplicaciones de las Superficies</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="aplicaciones.html"><a href="aplicaciones.html"><i class="fa fa-check"></i><b>9.1</b> Áreas de superficies</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="aplicaciones.html"><a href="aplicaciones.html#fórmula-general"><i class="fa fa-check"></i><b>9.1.1</b> Fórmula general</a></li>
+<li class="chapter" data-level="9.1.2" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-área-de-un-paraboloide"><i class="fa fa-check"></i><b>9.1.2</b> Ejemplo resuelto: Área de un paraboloide</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="aplicaciones.html"><a href="aplicaciones.html#integrales-de-superficie-de-campos-escalares"><i class="fa fa-check"></i><b>9.2</b> Integrales de superficie de campos escalares</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="aplicaciones.html"><a href="aplicaciones.html#interpretaciones-físicas"><i class="fa fa-check"></i><b>9.2.1</b> Interpretaciones físicas</a></li>
+<li class="chapter" data-level="9.2.2" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-masa-de-una-lámina-esférica"><i class="fa fa-check"></i><b>9.2.2</b> Ejemplo resuelto: Masa de una lámina esférica</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="aplicaciones.html"><a href="aplicaciones.html#integrales-de-superficie-de-campos-vectoriales-flujo"><i class="fa fa-check"></i><b>9.3</b> Integrales de superficie de campos vectoriales (Flujo)</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="aplicaciones.html"><a href="aplicaciones.html#interpretación-física"><i class="fa fa-check"></i><b>9.3.1</b> Interpretación física</a></li>
+<li class="chapter" data-level="9.3.2" data-path="aplicaciones.html"><a href="aplicaciones.html#teorema-de-la-divergencia-gauss"><i class="fa fa-check"></i><b>9.3.2</b> Teorema de la divergencia (Gauss)</a></li>
+<li class="chapter" data-level="9.3.3" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-flujo-a-través-de-un-elipsoide"><i class="fa fa-check"></i><b>9.3.3</b> Ejemplo resuelto: Flujo a través de un elipsoide</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="aplicaciones.html"><a href="aplicaciones.html#volumen-bajo-una-superficie"><i class="fa fa-check"></i><b>9.4</b> Volumen bajo una superficie</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-26"><i class="fa fa-check"></i><b>9.4.1</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="aplicaciones.html"><a href="aplicaciones.html#aplicaciones-en-física"><i class="fa fa-check"></i><b>9.5</b> Aplicaciones en física</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="aplicaciones.html"><a href="aplicaciones.html#ley-de-gauss-eléctrica"><i class="fa fa-check"></i><b>9.5.1</b> Ley de Gauss eléctrica</a></li>
+<li class="chapter" data-level="9.5.2" data-path="aplicaciones.html"><a href="aplicaciones.html#ley-de-ampère-maxwell"><i class="fa fa-check"></i><b>9.5.2</b> Ley de Ampère-Maxwell</a></li>
+<li class="chapter" data-level="9.5.3" data-path="aplicaciones.html"><a href="aplicaciones.html#momento-de-inercia"><i class="fa fa-check"></i><b>9.5.3</b> Momento de inercia</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="aplicaciones.html"><a href="aplicaciones.html#aplicaciones-en-arquitectura-e-ingeniería"><i class="fa fa-check"></i><b>9.6</b> Aplicaciones en arquitectura e ingeniería</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="aplicaciones.html"><a href="aplicaciones.html#estructuras-regladas"><i class="fa fa-check"></i><b>9.6.1</b> Estructuras regladas</a></li>
+<li class="chapter" data-level="9.6.2" data-path="aplicaciones.html"><a href="aplicaciones.html#óptica"><i class="fa fa-check"></i><b>9.6.2</b> Óptica</a></li>
+<li class="chapter" data-level="9.6.3" data-path="aplicaciones.html"><a href="aplicaciones.html#mecánica-celeste"><i class="fa fa-check"></i><b>9.6.3</b> Mecánica celeste</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="aplicaciones.html"><a href="aplicaciones.html#ejercicios-propuestos-7"><i class="fa fa-check"></i><b>9.7</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>10</b> Conclusiones</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="conclusiones.html"><a href="conclusiones.html#resumen-de-contenidos-por-capítulo"><i class="fa fa-check"></i><b>10.1</b> Resumen de contenidos por capítulo</a></li>
+<li class="chapter" data-level="10.2" data-path="conclusiones.html"><a href="conclusiones.html#conclusiones-finales"><i class="fa fa-check"></i><b>10.2</b> Conclusiones finales</a></li>
+<li class="chapter" data-level="10.3" data-path="conclusiones.html"><a href="conclusiones.html#direcciones-para-profundizar"><i class="fa fa-check"></i><b>10.3</b> Direcciones para profundizar</a></li>
+<li class="chapter" data-level="10.4" data-path="conclusiones.html"><a href="conclusiones.html#referencias-bibliográficas"><i class="fa fa-check"></i><b>10.4</b> Referencias bibliográficas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Conceptos de Superficies</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rectas-planos" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Rectas y Planos en el Espacio<a href="rectas-planos.html#rectas-planos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div style="margin: 1.5em 0; padding: 1em; background-color: #e8f4fd; border-left: 5px solid #2196F3; border-radius: 4px;">
+<p style="margin: 0 0 0.5em 0; font-weight: bold; color: #1565C0;">
+🎧 Podcast del capítulo
+</p>
+<p><audio controls preload="none" style="width: 100%; height: 40px;">
+<source src="audio/cap01_rectas_planos.mp3" type="audio/mpeg">
+Tu navegador no soporta el elemento de audio.
+</audio></p>
+</div>
+<p>Los vectores son la herramienta fundamental para describir objetos geométricos en el espacio. En este capítulo se utilizan los conceptos vectoriales para estudiar rectas y planos, incluyendo sus ecuaciones, intersecciones, distancias y ángulos.</p>
+<div id="rectas-en-el-espacio" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Rectas en el espacio<a href="rectas-planos.html#rectas-en-el-espacio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una recta en <span class="math inline">\(\mathbb{R}^3\)</span> queda determinada por un punto <span class="math inline">\(P_0\)</span> y un vector director <span class="math inline">\(\vec{v}\)</span>.</p>
+<div id="ecuación-vectorial" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Ecuación vectorial<a href="rectas-planos.html#ecuación-vectorial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sea <span class="math inline">\(P_0 = (x_0, y_0, z_0)\)</span> un punto de la recta y <span class="math inline">\(\vec{v} = (a, b, c)\)</span> el vector director. Entonces cualquier punto <span class="math inline">\(P = (x, y, z)\)</span> de la recta satisface:</p>
+<p><span class="math display">\[
+\vec{r} = \vec{r}_0 + t\vec{v}, \qquad t \in \mathbb{R}
+\]</span></p>
+<p>En coordenadas:</p>
+<p><span class="math display">\[
+(x, y, z) = (x_0, y_0, z_0) + t(a, b, c)
+\]</span></p>
+</div>
+<div id="ecuaciones-paramétricas" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Ecuaciones paramétricas<a href="rectas-planos.html#ecuaciones-paramétricas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Descomponiendo la ecuación vectorial:</p>
+<p><span class="math display">\[
+\begin{aligned}
+x &amp;= x_0 + at \\
+y &amp;= y_0 + bt \\
+z &amp;= z_0 + ct
+\end{aligned}, \qquad t \in \mathbb{R}
+\]</span></p>
+</div>
+<div id="ecuaciones-simétricas" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Ecuaciones simétricas<a href="rectas-planos.html#ecuaciones-simétricas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si <span class="math inline">\(a, b, c \neq 0\)</span>, podemos despejar <span class="math inline">\(t\)</span> en cada ecuación e igualar:</p>
+<p><span class="math display">\[
+\frac{x - x_0}{a} = \frac{y - y_0}{b} = \frac{z - z_0}{c}
+\]</span></p>
+<p>Si alguna componente del vector director es cero, la ecuación simétrica se adapta. Por ejemplo, si <span class="math inline">\(a = 0\)</span>:</p>
+<p><span class="math display">\[
+x = x_0, \qquad \frac{y - y_0}{b} = \frac{z - z_0}{c}
+\]</span></p>
+</div>
+<div id="recta-que-pasa-por-dos-puntos" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Recta que pasa por dos puntos<a href="rectas-planos.html#recta-que-pasa-por-dos-puntos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dados <span class="math inline">\(P_1 = (x_1, y_1, z_1)\)</span> y <span class="math inline">\(P_2 = (x_2, y_2, z_2)\)</span>, el vector director es <span class="math inline">\(\vec{v} = \overrightarrow{P_1 P_2} = (x_2 - x_1, y_2 - y_1, z_2 - z_1)\)</span>.</p>
+</div>
+<div id="ejemplo-resuelto-2" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Ejemplo resuelto<a href="rectas-planos.html#ejemplo-resuelto-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p><strong>Ejemplo 1.</strong> Halle las ecuaciones vectorial, paramétrica y simétrica de la recta que pasa por <span class="math inline">\(P_0 = (1, -2, 3)\)</span> con dirección <span class="math inline">\(\vec{v} = (2, 1, -1)\)</span>.</p>
+</blockquote>
+<p><strong>Solución.</strong></p>
+<p><strong>Vectorial:</strong> <span class="math inline">\((x, y, z) = (1, -2, 3) + t(2, 1, -1)\)</span></p>
+<p><strong>Paramétricas:</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+x &amp;= 1 + 2t \\
+y &amp;= -2 + t \\
+z &amp;= 3 - t
+\end{aligned}
+\]</span></p>
+<p><strong>Simétricas:</strong></p>
+<p><span class="math display">\[
+\frac{x - 1}{2} = \frac{y + 2}{1} = \frac{z - 3}{-1}
+\]</span></p>
+<div id="visualizador-interactivo-rectas-en-el-espacio" class="section level4 hasAnchor" number="2.1.5.1">
+<h4><span class="header-section-number">2.1.5.1</span> 🧮 Visualizador interactivo: Rectas en el espacio<a href="rectas-planos.html#visualizador-interactivo-rectas-en-el-espacio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Seleccione el método de definición de la recta, ingrese los datos y observe su representación geométrica junto con sus ecuaciones.</p>
+<div id="rect3d-widget" style="margin: 1.5em 0; padding: 1.5em; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px;">
+  <div style="margin-bottom: 1em; display: flex; gap: 0.5em; flex-wrap: wrap;">
+    <button id="rect3d-btn-modo1" onclick="rect3dCambiarModo(1)" style="padding: 0.5em 1em; background: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">📍 Punto + Vector director</button>
+    <button id="rect3d-btn-modo2" onclick="rect3dCambiarModo(2)" style="padding: 0.5em 1em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">🔗 Dos puntos</button>
+    <button id="rect3d-btn-modo3" onclick="rect3dCambiarModo(3)" style="padding: 0.5em 1em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">⫲ Paralela + Punto</button>
+  </div>
+
+  <!-- Modo 1: Punto + Vector director -->
+  <div id="rect3d-panel1" style="margin-bottom: 1em;">
+    <div style="display: flex; gap: 1em; flex-wrap: wrap; margin-bottom: 0.5em;">
+      <div><strong style="color: #d62728;">Punto P₀</strong> = (
+        <input type="number" id="rect3d-p1-x" value="1" step="0.5" style="width: 55px;">,
+        <input type="number" id="rect3d-p1-y" value="-2" step="0.5" style="width: 55px;">,
+        <input type="number" id="rect3d-p1-z" value="3" step="0.5" style="width: 55px;">)</div>
+      <div><strong style="color: #1f77b4;">Vector director v⃗</strong> = (
+        <input type="number" id="rect3d-v1-x" value="2" step="0.5" style="width: 55px;">,
+        <input type="number" id="rect3d-v1-y" value="1" step="0.5" style="width: 55px;">,
+        <input type="number" id="rect3d-v1-z" value="-1" step="0.5" style="width: 55px;">)</div>
+    </div>
+  </div>
+
+  <!-- Modo 2: Dos puntos -->
+  <div id="rect3d-panel2" style="display: none; margin-bottom: 1em;">
+    <div style="display: flex; gap: 1em; flex-wrap: wrap; margin-bottom: 0.5em;">
+      <div><strong style="color: #d62728;">Punto P₁</strong> = (
+        <input type="number" id="rect3d-p2a-x" value="1" step="0.5" style="width: 55px;">,
+        <input type="number" id="rect3d-p2a-y" value="0" step="0.5" style="width: 55px;">,
+        <input type="number" id="rect3d-p2a-z" value="2" step="0.5" style="width: 55px;">)</div>
+      <div><strong style="color: #2ca02c;">Punto P₂</strong> = (
+        <input type="number" id="rect3d-p2b-x" value="4" step="0.5" style="width: 55px;">,
+        <input type="number" id="rect3d-p2b-y" value="3" step="0.5" style="width: 55px;">,
+        <input type="number" id="rect3d-p2b-z" value="1" step="0.5" style="width: 55px;">)</div>
+    </div>
+  </div>
+
+  <!-- Modo 3: Paralela a recta dada + Punto -->
+  <div id="rect3d-panel3" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.6em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Recta dada:</strong> pasa por
+      (<input type="number" id="rect3d-r0-x" value="0" step="0.5" style="width: 55px;">,
+       <input type="number" id="rect3d-r0-y" value="0" step="0.5" style="width: 55px;">,
+       <input type="number" id="rect3d-r0-z" value="0" step="0.5" style="width: 55px;">)
+      con dirección
+      (<input type="number" id="rect3d-rv-x" value="1" step="0.5" style="width: 55px;">,
+       <input type="number" id="rect3d-rv-y" value="1" step="0.5" style="width: 55px;">,
+       <input type="number" id="rect3d-rv-z" value="1" step="0.5" style="width: 55px;">)
+    </div>
+    <div><strong style="color: #e91e63;">Nuevo punto Q</strong> = (
+      <input type="number" id="rect3d-q-x" value="2" step="0.5" style="width: 55px;">,
+      <input type="number" id="rect3d-q-y" value="-1" step="0.5" style="width: 55px;">,
+      <input type="number" id="rect3d-q-z" value="4" step="0.5" style="width: 55px;">)</div>
+  </div>
+
+  <button onclick="rect3dActualizar()" style="padding: 0.5em 1.2em; background-color: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-bottom: 1em;">🔄 Actualizar</button>
+
+  <div id="rect3d-canvas-container" style="width: 100%; height: 420px; background: #000; border-radius: 8px; overflow: hidden; position: relative;">
+    <div id="rect3d-loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-family: sans-serif;">Cargando visualizador 3D...</div>
+  </div>
+
+  <div id="rect3d-resultados" style="margin-top: 1em; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.8em;">
+    <div style="padding: 0.7em; background: #fff; border-left: 4px solid #1f77b4; border-radius: 4px;">
+      <strong>Vector director</strong><br>
+      <small>v⃗ = <span id="rect3d-res-dir">—</span></small>
+    </div>
+    <div style="padding: 0.7em; background: #fff; border-left: 4px solid #d62728; border-radius: 4px;">
+      <strong>Punto de paso</strong><br>
+      <small>P₀ = <span id="rect3d-res-pto">—</span></small>
+    </div>
+    <div style="padding: 0.7em; background: #fff; border-left: 4px solid #2ca02c; border-radius: 4px;">
+      <strong>Ecuación vectorial</strong><br>
+      <small>r⃗ = <span id="rect3d-res-vec">—</span></small>
+    </div>
+    <div style="padding: 0.7em; background: #fff; border-left: 4px solid #ff9800; border-radius: 4px;">
+      <strong>Ecuaciones paramétricas</strong><br>
+      <small><span id="rect3d-res-par">—</span></small>
+    </div>
+    <div style="padding: 0.7em; background: #fff; border-left: 4px solid #9c27b0; border-radius: 4px;">
+      <strong>Ecuaciones simétricas</strong><br>
+      <small><span id="rect3d-res-sim">—</span></small>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<script>
+(function() {
+  var container = document.getElementById('rect3d-canvas-container');
+  var loading = document.getElementById('rect3d-loading');
+  var modoActivo = 1;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x111111);
+  var camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+  camera.position.set(8, 6, 8);
+  camera.lookAt(0, 0, 0);
+
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+
+  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.1;
+
+  scene.add(new THREE.AmbientLight(0x404040));
+  var light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(10, 10, 10);
+  scene.add(light);
+
+  var objGroup = new THREE.Group();
+  scene.add(objGroup);
+
+  function crearFlecha(origen, dir, longitud, color) {
+    if (longitud < 0.01) return null;
+    return new THREE.ArrowHelper(dir.clone().normalize(), origen, longitud, color, longitud * 0.15, longitud * 0.1);
+  }
+
+  function crearEsfera(pos, color, radio) {
+    var geo = new THREE.SphereGeometry(radio || 0.12, 16, 16);
+    var mat = new THREE.MeshBasicMaterial({ color: color });
+    var mesh = new THREE.Mesh(geo, mat);
+    mesh.position.copy(pos);
+    return mesh;
+  }
+
+  function crearLinea(p1, p2, color, dashed) {
+    var pts = [p1, p2];
+    var geo = new THREE.BufferGeometry().setFromPoints(pts);
+    var mat;
+    if (dashed) {
+      mat = new THREE.LineDashedMaterial({ color: color, dashSize: 0.25, gapSize: 0.15, linewidth: 2 });
+      var line = new THREE.Line(geo, mat);
+      line.computeLineDistances();
+      return line;
+    } else {
+      mat = new THREE.LineBasicMaterial({ color: color, linewidth: 3 });
+      return new THREE.Line(geo, mat);
+    }
+  }
+
+  function redondear(x) {
+    return Math.round(x * 100) / 100;
+  }
+
+  function fmt(v) {
+    return '(' + redondear(v.x) + ', ' + redondear(v.y) + ', ' + redondear(v.z) + ')';
+  }
+
+  window.rect3dCambiarModo = function(m) {
+    modoActivo = m;
+    document.getElementById('rect3d-panel1').style.display = m === 1 ? 'block' : 'none';
+    document.getElementById('rect3d-panel2').style.display = m === 2 ? 'block' : 'none';
+    document.getElementById('rect3d-panel3').style.display = m === 3 ? 'block' : 'none';
+    ['rect3d-btn-modo1','rect3d-btn-modo2','rect3d-btn-modo3'].forEach(function(id, idx) {
+      var btn = document.getElementById(id);
+      if (idx + 1 === m) { btn.style.background = '#1f77b4'; btn.style.fontWeight = 'bold'; }
+      else { btn.style.background = '#6c757d'; btn.style.fontWeight = 'normal'; }
+    });
+    rect3dActualizar();
+  };
+
+  window.rect3dActualizar = function() {
+    var p0, dir;
+    var p0label, dirlabel;
+
+    if (modoActivo === 1) {
+      p0 = new THREE.Vector3(
+        parseFloat(document.getElementById('rect3d-p1-x').value) || 0,
+        parseFloat(document.getElementById('rect3d-p1-y').value) || 0,
+        parseFloat(document.getElementById('rect3d-p1-z').value) || 0
+      );
+      dir = new THREE.Vector3(
+        parseFloat(document.getElementById('rect3d-v1-x').value) || 0,
+        parseFloat(document.getElementById('rect3d-v1-y').value) || 0,
+        parseFloat(document.getElementById('rect3d-v1-z').value) || 0
+      );
+    } else if (modoActivo === 2) {
+      var p1 = new THREE.Vector3(
+        parseFloat(document.getElementById('rect3d-p2a-x').value) || 0,
+        parseFloat(document.getElementById('rect3d-p2a-y').value) || 0,
+        parseFloat(document.getElementById('rect3d-p2a-z').value) || 0
+      );
+      var p2 = new THREE.Vector3(
+        parseFloat(document.getElementById('rect3d-p2b-x').value) || 0,
+        parseFloat(document.getElementById('rect3d-p2b-y').value) || 0,
+        parseFloat(document.getElementById('rect3d-p2b-z').value) || 0
+      );
+      p0 = p1.clone();
+      dir = p2.clone().sub(p1);
+    } else {
+      var r0 = new THREE.Vector3(
+        parseFloat(document.getElementById('rect3d-r0-x').value) || 0,
+        parseFloat(document.getElementById('rect3d-r0-y').value) || 0,
+        parseFloat(document.getElementById('rect3d-r0-z').value) || 0
+      );
+      var rv = new THREE.Vector3(
+        parseFloat(document.getElementById('rect3d-rv-x').value) || 0,
+        parseFloat(document.getElementById('rect3d-rv-y').value) || 0,
+        parseFloat(document.getElementById('rect3d-rv-z').value) || 0
+      );
+      p0 = new THREE.Vector3(
+        parseFloat(document.getElementById('rect3d-q-x').value) || 0,
+        parseFloat(document.getElementById('rect3d-q-y').value) || 0,
+        parseFloat(document.getElementById('rect3d-q-z').value) || 0
+      );
+      dir = rv.clone();
+      // Guardar para dibujar recta original punteada
+      p0label = p0; dirlabel = dir;
+    }
+
+    var magDir = dir.length();
+
+    // Limpiar escena
+    while (objGroup.children.length > 0) objGroup.remove(objGroup.children[0]);
+
+    // Ejes
+    var origen = new THREE.Vector3(0,0,0);
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(1,0,0), 6, 0xff0000));
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(0,1,0), 6, 0x00ff00));
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(0,0,1), 6, 0x0000ff));
+
+    // Escala visual
+    var maxV = Math.max(p0.length(), dir.length(), 1);
+    var escala = 4 / maxV;
+
+    // Recta principal (larga)
+    if (magDir > 0.001) {
+      var d = dir.clone().normalize();
+      var tMax = 10 / escala;
+      var a = p0.clone().add(d.clone().multiplyScalar(-tMax));
+      var b = p0.clone().add(d.clone().multiplyScalar(tMax));
+      objGroup.add(crearLinea(a, b, 0xffff00, false));
+
+      // Vector director en el punto
+      var dirVis = d.clone().multiplyScalar(Math.min(magDir, 3));
+      objGroup.add(crearFlecha(p0, dirVis, dirVis.length(), 0x1f77b4));
+    }
+
+    // Puntos
+    objGroup.add(crearEsfera(p0, 0xd62728, 0.12));
+
+    // Modo 2: segundo punto
+    if (modoActivo === 2) {
+      var p2 = new THREE.Vector3(
+        parseFloat(document.getElementById('rect3d-p2b-x').value) || 0,
+        parseFloat(document.getElementById('rect3d-p2b-y').value) || 0,
+        parseFloat(document.getElementById('rect3d-p2b-z').value) || 0
+      );
+      objGroup.add(crearEsfera(p2, 0x2ca02c, 0.12));
+    }
+
+    // Modo 3: recta original punteada
+    if (modoActivo === 3) {
+      var r0 = new THREE.Vector3(
+        parseFloat(document.getElementById('rect3d-r0-x').value) || 0,
+        parseFloat(document.getElementById('rect3d-r0-y').value) || 0,
+        parseFloat(document.getElementById('rect3d-r0-z').value) || 0
+      );
+      var rv = new THREE.Vector3(
+        parseFloat(document.getElementById('rect3d-rv-x').value) || 0,
+        parseFloat(document.getElementById('rect3d-rv-y').value) || 0,
+        parseFloat(document.getElementById('rect3d-rv-z').value) || 0
+      );
+      if (rv.length() > 0.001) {
+        var d2 = rv.clone().normalize();
+        var t2 = 10;
+        objGroup.add(crearLinea(
+          r0.clone().add(d2.clone().multiplyScalar(-t2)),
+          r0.clone().add(d2.clone().multiplyScalar(t2)),
+          0x888888, true
+        ));
+        objGroup.add(crearEsfera(r0, 0x888888, 0.08));
+      }
+      objGroup.add(crearEsfera(p0, 0xe91e63, 0.12));
+    }
+
+    // Actualizar resultados textuales
+    document.getElementById('rect3d-res-dir').textContent = fmt(dir);
+    document.getElementById('rect3d-res-pto').textContent = fmt(p0);
+    document.getElementById('rect3d-res-vec').innerHTML =
+      '(' + redondear(p0.x) + ', ' + redondear(p0.y) + ', ' + redondear(p0.z) + ') + t' + fmt(dir);
+
+    var px = 'x = ' + redondear(p0.x) + (dir.x >= 0 ? ' + ' : ' - ') + Math.abs(redondear(dir.x)) + 't';
+    var py = 'y = ' + redondear(p0.y) + (dir.y >= 0 ? ' + ' : ' - ') + Math.abs(redondear(dir.y)) + 't';
+    var pz = 'z = ' + redondear(p0.z) + (dir.z >= 0 ? ' + ' : ' - ') + Math.abs(redondear(dir.z)) + 't';
+    document.getElementById('rect3d-res-par').innerHTML = px + '<br>' + py + '<br>' + pz;
+
+    var sim = '';
+    if (Math.abs(dir.x) > 0.001) {
+      sim += '(x - ' + redondear(p0.x) + ') / ' + redondear(dir.x);
+    } else {
+      sim += 'x = ' + redondear(p0.x);
+    }
+    sim += ' = ';
+    if (Math.abs(dir.y) > 0.001) {
+      sim += '(y - ' + redondear(p0.y) + ') / ' + redondear(dir.y);
+    } else {
+      sim += 'y = ' + redondear(p0.y);
+    }
+    sim += ' = ';
+    if (Math.abs(dir.z) > 0.001) {
+      sim += '(z - ' + redondear(p0.z) + ') / ' + redondear(dir.z);
+    } else {
+      sim += 'z = ' + redondear(p0.z);
+    }
+    document.getElementById('rect3d-res-sim').textContent = sim;
+
+    loading.style.display = 'none';
+  };
+
+  // Eventos Enter
+  var ids = ['rect3d-p1-x','rect3d-p1-y','rect3d-p1-z','rect3d-v1-x','rect3d-v1-y','rect3d-v1-z',
+             'rect3d-p2a-x','rect3d-p2a-y','rect3d-p2a-z','rect3d-p2b-x','rect3d-p2b-y','rect3d-p2b-z',
+             'rect3d-r0-x','rect3d-r0-y','rect3d-r0-z','rect3d-rv-x','rect3d-rv-y','rect3d-rv-z',
+             'rect3d-q-x','rect3d-q-y','rect3d-q-z'];
+  ids.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('keypress', function(e) { if (e.key === 'Enter') rect3dActualizar(); });
+  });
+
+  window.addEventListener('resize', function() {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  rect3dActualizar();
+})();
+</script>
+</div>
+</div>
+</div>
+<div id="planos-en-el-espacio" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Planos en el espacio<a href="rectas-planos.html#planos-en-el-espacio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Un plano queda determinado por un punto <span class="math inline">\(P_0\)</span> y un vector normal <span class="math inline">\(\vec{n}\)</span> perpendicular al plano.</p>
+<div id="ecuación-punto-normal" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Ecuación punto-normal<a href="rectas-planos.html#ecuación-punto-normal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si <span class="math inline">\(\vec{n} = (A, B, C)\)</span> es el vector normal y <span class="math inline">\(P_0 = (x_0, y_0, z_0)\)</span> es un punto del plano, entonces para cualquier punto <span class="math inline">\(P = (x, y, z)\)</span> del plano, el vector <span class="math inline">\(\overrightarrow{P_0 P}\)</span> es perpendicular a <span class="math inline">\(\vec{n}\)</span>:</p>
+<p><span class="math display">\[
+\vec{n} \cdot \overrightarrow{P_0 P} = 0
+\]</span></p>
+<p>Esto da:</p>
+<p><span class="math display">\[
+A(x - x_0) + B(y - y_0) + C(z - z_0) = 0
+\]</span></p>
+</div>
+<div id="ecuación-general" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Ecuación general<a href="rectas-planos.html#ecuación-general" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Expandiendo la ecuación punto-normal:</p>
+<p><span class="math display">\[
+Ax + By + Cz + D = 0
+\]</span></p>
+<p>donde <span class="math inline">\(D = -(Ax_0 + By_0 + Cz_0)\)</span>.</p>
+<p>El vector normal es <span class="math inline">\(\vec{n} = (A, B, C)\)</span>. Si <span class="math inline">\((A, B, C) \neq (0, 0, 0)\)</span>, la ecuación representa un plano.</p>
+</div>
+<div id="planos-coordenados" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Planos coordenados<a href="rectas-planos.html#planos-coordenados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Plano</th>
+<th align="left">Ecuación</th>
+<th align="left">Vector normal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(xy\)</span></td>
+<td align="left"><span class="math inline">\(z = 0\)</span></td>
+<td align="left"><span class="math inline">\((0, 0, 1)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(xz\)</span></td>
+<td align="left"><span class="math inline">\(y = 0\)</span></td>
+<td align="left"><span class="math inline">\((0, 1, 0)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(yz\)</span></td>
+<td align="left"><span class="math inline">\(x = 0\)</span></td>
+<td align="left"><span class="math inline">\((1, 0, 0)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="interceptos" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Interceptos<a href="rectas-planos.html#interceptos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los <strong>interceptos</strong> del plano <span class="math inline">\(Ax + By + Cz = D\)</span> (con <span class="math inline">\(D \neq 0\)</span>) son:</p>
+<ul>
+<li>Intercepto <span class="math inline">\(x\)</span>: <span class="math inline">\(\left(\frac{D}{A}, 0, 0\right)\)</span> (si <span class="math inline">\(A \neq 0\)</span>)</li>
+<li>Intercepto <span class="math inline">\(y\)</span>: <span class="math inline">\(\left(0, \frac{D}{B}, 0\right)\)</span> (si <span class="math inline">\(B \neq 0\)</span>)</li>
+<li>Intercepto <span class="math inline">\(z\)</span>: <span class="math inline">\(\left(0, 0, \frac{D}{C}\right)\)</span> (si <span class="math inline">\(C \neq 0\)</span>)</li>
+</ul>
+</div>
+<div id="plano-que-pasa-por-tres-puntos" class="section level3 hasAnchor" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> Plano que pasa por tres puntos<a href="rectas-planos.html#plano-que-pasa-por-tres-puntos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dados tres puntos no colineales <span class="math inline">\(P_1\)</span>, <span class="math inline">\(P_2\)</span>, <span class="math inline">\(P_3\)</span>, el vector normal se obtiene mediante el producto cruz:</p>
+<p><span class="math display">\[
+\vec{n} = \overrightarrow{P_1 P_2} \times \overrightarrow{P_1 P_3}
+\]</span></p>
+</div>
+<div id="ejemplo-resuelto-3" class="section level3 hasAnchor" number="2.2.6">
+<h3><span class="header-section-number">2.2.6</span> Ejemplo resuelto<a href="rectas-planos.html#ejemplo-resuelto-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p><strong>Ejemplo 2.</strong> Halle la ecuación del plano que pasa por <span class="math inline">\(P_1 = (1, 0, 0)\)</span>, <span class="math inline">\(P_2 = (0, 2, 0)\)</span> y <span class="math inline">\(P_3 = (0, 0, 3)\)</span>.</p>
+</blockquote>
+<p><strong>Solución.</strong> Los vectores en el plano son:</p>
+<p><span class="math display">\[
+\overrightarrow{P_1 P_2} = (-1, 2, 0), \qquad \overrightarrow{P_1 P_3} = (-1, 0, 3)
+\]</span></p>
+<p>El vector normal es:</p>
+<p><span class="math display">\[
+\vec{n} = (-1, 2, 0) \times (-1, 0, 3) = (6, 3, 2)
+\]</span></p>
+<p>Usando <span class="math inline">\(P_1\)</span> en la ecuación punto-normal:</p>
+<p><span class="math display">\[
+6(x - 1) + 3(y - 0) + 2(z - 0) = 0 \implies 6x + 3y + 2z = 6
+\]</span></p>
+<p>O dividiendo entre 6:</p>
+<p><span class="math display">\[
+\frac{x}{1} + \frac{y}{2} + \frac{z}{3} = 1
+\]</span></p>
+<p>Esta forma muestra directamente los interceptos.</p>
+<div id="visualizador-interactivo-planos-en-el-espacio" class="section level4 hasAnchor" number="2.2.6.1">
+<h4><span class="header-section-number">2.2.6.1</span> 🧮 Visualizador interactivo: Planos en el espacio<a href="rectas-planos.html#visualizador-interactivo-planos-en-el-espacio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Seleccione el método de definición del plano, ingrese los datos y observe su representación geométrica junto con sus ecuaciones.</p>
+<div id="plano3d-widget" style="margin: 1.5em 0; padding: 1.5em; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px;">
+  <div style="margin-bottom: 1em; display: flex; gap: 0.5em; flex-wrap: wrap;">
+    <button id="plano3d-btn-modo1" onclick="plano3dCambiarModo(1)" style="padding: 0.4em 0.8em; background: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">3️⃣ Tres puntos</button>
+    <button id="plano3d-btn-modo2" onclick="plano3dCambiarModo(2)" style="padding: 0.4em 0.8em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">⊥ Normal + Punto</button>
+    <button id="plano3d-btn-modo3" onclick="plano3dCambiarModo(3)" style="padding: 0.4em 0.8em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">📐 Recta + Punto</button>
+    <button id="plano3d-btn-modo4" onclick="plano3dCambiarModo(4)" style="padding: 0.4em 0.8em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;
+">⫲ Recta ∥ + 2 puntos</button>
+    <button id="plano3d-btn-modo5" onclick="plano3dCambiarModo(5)" style="padding: 0.4em 0.8em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">🔀 2 vectores + Punto</button>
+  </div>
+
+  <div id="plano3d-panel1" style="margin-bottom: 1em;">
+    <div style="display: flex; gap: 0.8em; flex-wrap: wrap;">
+      <div><strong style="color: #d62728;">P₁</strong>=(<input type="number" id="plano3d-p1-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-p1-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-p1-z" value="0" step="0.5" style="width: 50px;">)</div>
+      <div><strong style="color: #2ca02c;">P₂</strong>=(<input type="number" id="plano3d-p2-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-p2-y" value="2" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-p2-z" value="0" step="0.5" style="width: 50px;">)</div>
+      <div><strong style="color: #ff9800;">P₃</strong>=(<input type="number" id="plano3d-p3-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-p3-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-p3-z" value="3" step="0.5" style="width: 50px;">)</div>
+    </div>
+  </div>
+
+  <div id="plano3d-panel2" style="display: none; margin-bottom: 1em;">
+    <div style="display: flex; gap: 0.8em; flex-wrap: wrap;">
+      <div><strong style="color: #1f77b4;">Normal n⃗</strong>=(<input type="number" id="plano3d-nx" value="6" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-ny" value="3" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-nz" value="2" step="0.5" style="width: 50px;">)</div>
+      <div><strong style="color: #d62728;">Punto P₀</strong>=(<input type="number" id="plano3d-p0-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-p0-y" value="-2" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-p0-z" value="3" step="0.5" style="width: 50px;">)</div>
+    </div>
+  </div>
+
+  <div id="plano3d-panel3" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Recta contenida:</strong> pasa por
+      (<input type="number" id="plano3d-r0-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-r0-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-r0-z" value="0" step="0.5" style="width: 50px;">)
+      con dirección
+      (<input type="number" id="plano3d-rv-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-rv-y" value="1" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-rv-z" value="0" step="0.5" style="width: 50px;">)
+    </div>
+    <div><strong style="color: #e91e63;">Punto Q</strong> no colineal=(<input type="number" id="plano3d-q-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-q-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-q-z" value="2" step="0.5" style="width: 50px;">)</div>
+  </div>
+
+  <div id="plano3d-panel4" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Recta paralela:</strong> pasa por
+      (<input type="number" id="plano3d-ra-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-ra-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-ra-z" value="0" step="0.5" style="width: 50px;">)
+      con dirección
+      (<input type="number" id="plano3d-rd-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-rd-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-rd-z" value="1" step="0.5" style="width: 50px;">)
+    </div>
+    <div style="display: flex; gap: 0.8em; flex-wrap: wrap;">
+      <div><strong style="color: #d62728;">Punto P₁</strong> del plano=(<input type="number" id="plano3d-pp1-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-pp1-y" value="2" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-pp1-z" value="0" step="0.5" style="width: 50px;">)</div>
+      <div><strong style="color: #2ca02c;">Punto P₂</strong> del plano=(<input type="number" id="plano3d-pp2-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-pp2-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-pp2-z" value="3" step="0.5" style="width: 50px;">)</div>
+    </div>
+  </div>
+
+  <div id="plano3d-panel5" style="display: none; margin-bottom: 1em;">
+    <div style="display: flex; gap: 0.8em; flex-wrap: wrap;">
+      <div><strong style="color: #ff9800;">Vector u⃗</strong> en plano=(<input type="number" id="plano3d-u1-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-u1-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-u1-z" value="0" step="0.5" style="width: 50px;">)</div>
+      <div><strong style="color: #00bcd4;">Vector v⃗</strong> en plano=(<input type="number" id="plano3d-u2-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-u2-y" value="1" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-u2-z" value="1" step="0.5" style="width: 50px;">)</div>
+      <div><strong style="color: #d62728;">Punto P₀</strong>=(<input type="number" id="plano3d-p5-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-p5-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="plano3d-p5-z" value="0" step="0.5" style="width: 50px;">)</div>
+    </div>
+  </div>
+
+  <button onclick="plano3dActualizar()" style="padding: 0.5em 1.2em; background-color: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-bottom: 1em;">🔄 Actualizar</button>
+
+  <div id="plano3d-canvas-container" style="width: 100%; height: 420px; background: #000; border-radius: 8px; overflow: hidden; position: relative;">
+    <div id="plano3d-loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-family: sans-serif;">Cargando visualizador 3D...</div>
+  </div>
+
+  <div id="plano3d-resultados" style="margin-top: 1em; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.8em;">
+    <div style="padding: 0.7em; background: #fff; border-left: 4px solid #1f77b4; border-radius: 4px;">
+      <strong>Vector normal n⃗</strong><br>
+      <small id="plano3d-res-normal">—</small>
+    </div>
+    <div style="padding: 0.7em; background: #fff; border-left: 4px solid #d62728; border-radius: 4px;">
+      <strong>Ecuación punto-normal</strong><br>
+      <small id="plano3d-res-pn">—</small>
+    </div>
+    <div style="padding: 0.7em; background: #fff; border-left: 4px solid #2ca02c; border-radius: 4px;">
+      <strong>Ecuación general</strong><br>
+      <small id="plano3d-res-gen">—</small>
+    </div>
+    <div style="padding: 0.7em; background: #fff; border-left: 4px solid #ff9800; border-radius: 4px;">
+      <strong>Interceptos</strong><br>
+      <small id="plano3d-res-int">—</small>
+    </div>
+  </div>
+
+  <p style="margin-top: 1em; font-size: 0.85em; color: #6c757d;">
+    💡 <em>Use el mouse para rotar, hacer zoom y desplazar la vista. El plano se muestra en azul semitransparente con su vector normal en rojo.</em>
+  </p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<script>
+(function() {
+  var container = document.getElementById('plano3d-canvas-container');
+  var loading = document.getElementById('plano3d-loading');
+  var modoActivo = 1;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x111111);
+  var camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+  camera.position.set(10, 8, 10);
+  camera.lookAt(0, 0, 0);
+
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+
+  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.1;
+
+  scene.add(new THREE.AmbientLight(0x404040));
+  var light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(10, 10, 10);
+  scene.add(light);
+
+  var objGroup = new THREE.Group();
+  scene.add(objGroup);
+
+  function crearEsfera(pos, color, r) {
+    var g = new THREE.SphereGeometry(r || 0.12, 16, 16);
+    var m = new THREE.MeshBasicMaterial({ color: color });
+    var mesh = new THREE.Mesh(g, m);
+    mesh.position.copy(pos);
+    return mesh;
+  }
+
+  function crearFlecha(origen, dir, long, color) {
+    if (long < 0.01) return null;
+    return new THREE.ArrowHelper(dir.clone().normalize(), origen, long, color, long * 0.15, long * 0.1);
+  }
+
+  function crearLinea(p1, p2, color, dashed) {
+    var geo = new THREE.BufferGeometry().setFromPoints([p1, p2]);
+    var mat;
+    if (dashed) {
+      mat = new THREE.LineDashedMaterial({ color: color, dashSize: 0.25, gapSize: 0.15 });
+      var line = new THREE.Line(geo, mat);
+      line.computeLineDistances();
+      return line;
+    } else {
+      mat = new THREE.LineBasicMaterial({ color: color, linewidth: 2 });
+      return new THREE.Line(geo, mat);
+    }
+  }
+
+  function red(x) { return Math.round(x * 100) / 100; }
+
+  function fmt(v) { return '(' + red(v.x) + ', ' + red(v.y) + ', ' + red(v.z) + ')'; }
+
+  function fmtEcuacion(A, B, C, D) {
+    var s = '';
+    if (Math.abs(A) >= 0.001) s += (A >= 0 ? '' : '-') + (Math.abs(A) === 1 ? '' : red(Math.abs(A))) + 'x';
+    if (Math.abs(B) >= 0.001) s += (s ? (B >= 0 ? ' + ' : ' - ') : (B >= 0 ? '' : '-')) + (Math.abs(B) === 1 ? '' : red(Math.abs(B))) + 'y';
+    if (Math.abs(C) >= 0.001) s += (s ? (C >= 0 ? ' + ' : ' - ') : (C >= 0 ? '' : '-')) + (Math.abs(C) === 1 ? '' : red(Math.abs(C))) + 'z';
+    if (Math.abs(D) >= 0.001) s += (D >= 0 ? ' + ' : ' - ') + red(Math.abs(D));
+    else if (!s) s = '0';
+    s += ' = 0';
+    return s;
+  }
+
+  function fmtInterceptos(A, B, C, D) {
+    if (Math.abs(D) < 0.001) return 'Pasa por el origen';
+    var ints = [];
+    if (Math.abs(A) > 0.001) ints.push('x=' + red(-D / A));
+    if (Math.abs(B) > 0.001) ints.push('y=' + red(-D / B));
+    if (Math.abs(C) > 0.001) ints.push('z=' + red(-D / C));
+    return ints.join(', ') || 'No hay interceptos únicos';
+  }
+
+  function dibujarPlano(P0, normal, size) {
+    var n = normal.clone().normalize();
+    var s = size || 8;
+    var geo = new THREE.PlaneGeometry(s * 2, s * 2);
+    var mat = new THREE.MeshBasicMaterial({ color: 0x1f77b4, side: THREE.DoubleSide, transparent: true, opacity: 0.25 });
+    var mesh = new THREE.Mesh(geo, mat);
+    mesh.position.copy(P0);
+    var up = new THREE.Vector3(0, 0, 1);
+    var q = new THREE.Quaternion().setFromUnitVectors(up, n);
+    mesh.setRotationFromQuaternion(q);
+    objGroup.add(mesh);
+
+    // Cuadrícula
+    var grid = new THREE.GridHelper(s * 2, 12, 0x888888, 0x555555);
+    grid.position.copy(P0);
+    grid.quaternion.copy(q);
+    objGroup.add(grid);
+
+    // Normal
+    var nlen = Math.min(normal.length(), 4);
+    objGroup.add(crearFlecha(P0, n, nlen, 0xff0000));
+  }
+
+  window.plano3dCambiarModo = function(m) {
+    modoActivo = m;
+    for (var i = 1; i <= 5; i++) {
+      document.getElementById('plano3d-panel' + i).style.display = (i === m) ? 'block' : 'none';
+      var btn = document.getElementById('plano3d-btn-modo' + i);
+      if (i === m) { btn.style.background = '#1f77b4'; btn.style.fontWeight = 'bold'; }
+      else { btn.style.background = '#6c757d'; btn.style.fontWeight = 'normal'; }
+    }
+    plano3dActualizar();
+  };
+
+  window.plano3dActualizar = function() {
+    while (objGroup.children.length > 0) objGroup.remove(objGroup.children[0]);
+
+    var P0, normal;
+    var A = 0, B = 0, C = 0, D = 0;
+
+    if (modoActivo === 1) {
+      var p1 = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-p1-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-p1-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-p1-z').value) || 0
+      );
+      var p2 = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-p2-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-p2-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-p2-z').value) || 0
+      );
+      var p3 = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-p3-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-p3-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-p3-z').value) || 0
+      );
+      var u = p2.clone().sub(p1);
+      var v = p3.clone().sub(p1);
+      normal = new THREE.Vector3().crossVectors(u, v);
+      P0 = p1.clone();
+      objGroup.add(crearEsfera(p1, 0xd62728, 0.12));
+      objGroup.add(crearEsfera(p2, 0x2ca02c, 0.12));
+      objGroup.add(crearEsfera(p3, 0xff9800, 0.12));
+    } else if (modoActivo === 2) {
+      normal = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-nx').value) || 0,
+        parseFloat(document.getElementById('plano3d-ny').value) || 0,
+        parseFloat(document.getElementById('plano3d-nz').value) || 0
+      );
+      P0 = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-p0-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-p0-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-p0-z').value) || 0
+      );
+      objGroup.add(crearEsfera(P0, 0xd62728, 0.12));
+    } else if (modoActivo === 3) {
+      var r0 = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-r0-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-r0-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-r0-z').value) || 0
+      );
+      var rv = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-rv-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-rv-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-rv-z').value) || 0
+      );
+      var q = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-q-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-q-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-q-z').value) || 0
+      );
+      var w = q.clone().sub(r0);
+      normal = new THREE.Vector3().crossVectors(rv, w);
+      P0 = r0.clone();
+      // Dibujar recta
+      if (rv.length() > 0.001) {
+        var d = rv.clone().normalize();
+        objGroup.add(crearLinea(r0.clone().add(d.clone().multiplyScalar(-8)), r0.clone().add(d.clone().multiplyScalar(8)), 0xffff00, false));
+      }
+      objGroup.add(crearEsfera(r0, 0x888888, 0.08));
+      objGroup.add(crearEsfera(q, 0xe91e63, 0.12));
+    } else if (modoActivo === 4) {
+      var ra = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-ra-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-ra-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-ra-z').value) || 0
+      );
+      var rd = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-rd-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-rd-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-rd-z').value) || 0
+      );
+      var pp1 = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-pp1-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-pp1-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-pp1-z').value) || 0
+      );
+      var pp2 = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-pp2-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-pp2-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-pp2-z').value) || 0
+      );
+      var u = pp2.clone().sub(pp1);
+      normal = new THREE.Vector3().crossVectors(u, rd);
+      P0 = pp1.clone();
+      if (rd.length() > 0.001) {
+        var d2 = rd.clone().normalize();
+        objGroup.add(crearLinea(ra.clone().add(d2.clone().multiplyScalar(-8)), ra.clone().add(d2.clone().multiplyScalar(8)), 0xffff00, true));
+      }
+      objGroup.add(crearEsfera(ra, 0x888888, 0.08));
+      objGroup.add(crearEsfera(pp1, 0xd62728, 0.12));
+      objGroup.add(crearEsfera(pp2, 0x2ca02c, 0.12));
+    } else {
+      var u1 = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-u1-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-u1-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-u1-z').value) || 0
+      );
+      var u2 = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-u2-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-u2-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-u2-z').value) || 0
+      );
+      P0 = new THREE.Vector3(
+        parseFloat(document.getElementById('plano3d-p5-x').value) || 0,
+        parseFloat(document.getElementById('plano3d-p5-y').value) || 0,
+        parseFloat(document.getElementById('plano3d-p5-z').value) || 0
+      );
+      normal = new THREE.Vector3().crossVectors(u1, u2);
+      objGroup.add(crearEsfera(P0, 0xd62728, 0.12));
+    }
+
+    // Dibujar ejes
+    var origen = new THREE.Vector3(0, 0, 0);
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(1, 0, 0), 6, 0xff0000));
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(0, 1, 0), 6, 0x00ff00));
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(0, 0, 1), 6, 0x0000ff));
+
+    if (normal.length() < 0.001) {
+      document.getElementById('plano3d-res-normal').textContent = 'Vector nulo (puntos colineales o vectores paralelos)';
+      document.getElementById('plano3d-res-pn').textContent = '—';
+      document.getElementById('plano3d-res-gen').textContent = '—';
+      document.getElementById('plano3d-res-int').textContent = '—';
+      loading.style.display = 'none';
+      return;
+    }
+
+    A = normal.x; B = normal.y; C = normal.z;
+    D = -(A * P0.x + B * P0.y + C * P0.z);
+
+    dibujarPlano(P0, normal, 6);
+
+    document.getElementById('plano3d-res-normal').textContent = fmt(normal);
+    document.getElementById('plano3d-res-pn').innerHTML =
+      red(A) + '(x - ' + red(P0.x) + ') + ' + red(B) + '(y - ' + red(P0.y) + ') + ' + red(C) + '(z - ' + red(P0.z) + ') = 0';
+    document.getElementById('plano3d-res-gen').textContent = fmtEcuacion(A, B, C, D);
+    document.getElementById('plano3d-res-int').textContent = fmtInterceptos(A, B, C, D);
+
+    loading.style.display = 'none';
+  };
+
+  var ids = ['plano3d-p1-x','plano3d-p1-y','plano3d-p1-z','plano3d-p2-x','plano3d-p2-y','plano3d-p2-z','plano3d-p3-x','plano3d-p3-y','plano3d-p3-z',
+             'plano3d-nx','plano3d-ny','plano3d-nz','plano3d-p0-x','plano3d-p0-y','plano3d-p0-z',
+             'plano3d-r0-x','plano3d-r0-y','plano3d-r0-z','plano3d-rv-x','plano3d-rv-y','plano3d-rv-z','plano3d-q-x','plano3d-q-y','plano3d-q-z',
+             'plano3d-ra-x','plano3d-ra-y','plano3d-ra-z','plano3d-rd-x','plano3d-rd-y','plano3d-rd-z',
+             'plano3d-pp1-x','plano3d-pp1-y','plano3d-pp1-z','plano3d-pp2-x','plano3d-pp2-y','plano3d-pp2-z',
+             'plano3d-u1-x','plano3d-u1-y','plano3d-u1-z','plano3d-u2-x','plano3d-u2-y','plano3d-u2-z','plano3d-p5-x','plano3d-p5-y','plano3d-p5-z'];
+  ids.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('keypress', function(e) { if (e.key === 'Enter') plano3dActualizar(); });
+  });
+
+  window.addEventListener('resize', function() {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  plano3dActualizar();
+})();
+</script>
+</div>
+</div>
+</div>
+<div id="distancias-en-el-espacio" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Distancias en el espacio<a href="rectas-planos.html#distancias-en-el-espacio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="distancia-de-un-punto-a-un-plano" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Distancia de un punto a un plano<a href="rectas-planos.html#distancia-de-un-punto-a-un-plano" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La distancia del punto <span class="math inline">\(Q = (x_1, y_1, z_1)\)</span> al plano <span class="math inline">\(Ax + By + Cz + D = 0\)</span> es:</p>
+<p><span class="math display">\[
+d(Q, \Pi) = \frac{|Ax_1 + By_1 + Cz_1 + D|}{\sqrt{A^2 + B^2 + C^2}}
+\]</span></p>
+<p>Esta fórmula se obtiene proyectando el vector <span class="math inline">\(\overrightarrow{P_0 Q}\)</span> (donde <span class="math inline">\(P_0\)</span> es cualquier punto del plano) sobre la dirección normal.</p>
+</div>
+<div id="distancia-de-un-punto-a-una-recta" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Distancia de un punto a una recta<a href="rectas-planos.html#distancia-de-un-punto-a-una-recta" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dado un punto <span class="math inline">\(Q\)</span> y una recta que pasa por <span class="math inline">\(P_0\)</span> con dirección <span class="math inline">\(\vec{v}\)</span>, la distancia es:</p>
+<p><span class="math display">\[
+d(Q, L) = \frac{\|\overrightarrow{P_0 Q} \times \vec{v}\|}{\|\vec{v}\|}
+\]</span></p>
+</div>
+<div id="distancia-entre-dos-rectas-en-el-espacio" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Distancia entre dos rectas en el espacio<a href="rectas-planos.html#distancia-entre-dos-rectas-en-el-espacio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Si las rectas <strong>se intersectan</strong>, la distancia es 0.</li>
+<li>Si las rectas son <strong>paralelas</strong>, la distancia de cualquier punto de una recta a la otra es constante.</li>
+<li>Si las rectas son <strong>alabeadas</strong> (no paralelas y no se intersectan), la distancia es:</li>
+</ul>
+<p><span class="math display">\[
+d(L_1, L_2) = \frac{|(\vec{r}_2 - \vec{r}_1) \cdot (\vec{v}_1 \times \vec{v}_2)|}{\|\vec{v}_1 \times \vec{v}_2\|}
+\]</span></p>
+<p>donde <span class="math inline">\(\vec{r}_1, \vec{v}_1\)</span> y <span class="math inline">\(\vec{r}_2, \vec{v}_2\)</span> son puntos y vectores directores de cada recta.</p>
+</div>
+<div id="ejemplo-resuelto-4" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Ejemplo resuelto<a href="rectas-planos.html#ejemplo-resuelto-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p><strong>Ejemplo 3.</strong> Calcule la distancia del punto <span class="math inline">\(Q = (1, 2, 3)\)</span> al plano <span class="math inline">\(2x - y + 2z - 4 = 0\)</span>.</p>
+</blockquote>
+<p><strong>Solución.</strong></p>
+<p><span class="math display">\[
+d = \frac{|2(1) - 1(2) + 2(3) - 4|}{\sqrt{4 + 1 + 4}} = \frac{|2 - 2 + 6 - 4|}{3} = \frac{2}{3}
+\]</span></p>
+<div id="calculadora-interactiva-distancias-en-el-espacio" class="section level4 hasAnchor" number="2.3.4.1">
+<h4><span class="header-section-number">2.3.4.1</span> 🧮 Calculadora interactiva: Distancias en el espacio<a href="rectas-planos.html#calculadora-interactiva-distancias-en-el-espacio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Seleccione el tipo de distancia o magnitud que desea calcular. Ingrese los datos correspondientes y observe el resultado numérico junto con su representación geométrica.</p>
+<div id="dist3d-widget" style="margin: 1.5em 0; padding: 1.5em; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px;">
+  <div style="margin-bottom: 1em; display: flex; gap: 0.4em; flex-wrap: wrap;">
+    <button id="dist3d-btn-modo1" onclick="dist3dCambiarModo(1)" style="padding: 0.4em 0.7em; background: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">📏 Puntos</button>
+    <button id="dist3d-btn-modo2" onclick="dist3dCambiarModo(2)" style="padding: 0.4em 0.7em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">↔️ Vector libre</button>
+    <button id="dist3d-btn-modo3" onclick="dist3dCambiarModo(3)" style="padding: 0.4em 0.7em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">📐 Vector coord.</button>
+    <button id="dist3d-btn-modo4" onclick="dist3dCambiarModo(4)" style="padding: 0.4em 0.7em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;
+">📍 Punto → Recta</button>
+    <button id="dist3d-btn-modo5" onclick="dist3dCambiarModo(5)" style="padding: 0.4em 0.7em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">⫲ Dos rectas</button>
+    <button id="dist3d-btn-modo6" onclick="dist3dCambiarModo(6)" style="padding: 0.4em 0.7em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">⊥ Punto → Plano</button>
+    <button id="dist3d-btn-modo7" onclick="dist3dCambiarModo(7)" style="padding: 0.4em 0.7em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;
+">⧄ Dos planos</button>
+    <button id="dist3d-btn-modo8" onclick="dist3dCambiarModo(8)" style="padding: 0.4em 0.7em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">📐 Recta → Plano</button>
+  </div>
+
+  <!-- Modo 1: Distancia entre puntos -->
+  <div id="dist3d-panel1" style="margin-bottom: 1em;">
+    <div style="display: flex; gap: 1em; flex-wrap: wrap;">
+      <div><strong style="color: #d62728;">P</strong>=(<input type="number" id="dist3d-p1-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-p1-y" value="2" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-p1-z" value="3" step="0.5" style="width: 50px;">)</div>
+      <div><strong style="color: #2ca02c;">Q</strong>=(<input type="number" id="dist3d-p2-x" value="4" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-p2-y" value="-1" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-p2-z" value="0" step="0.5" style="width: 50px;">)</div>
+    </div>
+  </div>
+
+  <!-- Modo 2: Vector libre -->
+  <div id="dist3d-panel2" style="display: none; margin-bottom: 1em;">
+    <div style="display: flex; gap: 1em; flex-wrap: wrap;">
+      <div><strong style="color: #d62728;">Origen P</strong>=(<input type="number" id="dist3d-o1-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-o1-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-o1-z" value="2" step="0.5" style="width: 50px;">)</div>
+      <div><strong style="color: #2ca02c;">Destino Q</strong>=(<input type="number" id="dist3d-o2-x" value="4" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-o2-y" value="3" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-o2-z" value="1" step="0.5" style="width: 50px;">)</div>
+    </div>
+  </div>
+
+  <!-- Modo 3: Vector coordenado -->
+  <div id="dist3d-panel3" style="display: none; margin-bottom: 1em;">
+    <div><strong style="color: #1f77b4;">Vector v⃗</strong>=(<input type="number" id="dist3d-v-x" value="3" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-v-y" value="-2" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-v-z" value="1" step="0.5" style="width: 50px;">)</div>
+  </div>
+
+  <!-- Modo 4: Punto a recta -->
+  <div id="dist3d-panel4" style="display: none; margin-bottom: 1em;">
+    <div style="display: flex; gap: 1em; flex-wrap: wrap;">
+      <div><strong style="color: #e91e63;">Punto Q</strong>=(<input type="number" id="dist3d-q-x" value="2" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-q-y" value="1" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-q-z" value="-1" step="0.5" style="width: 50px;">)</div>
+      <div><strong style="color: #ff9800;">Recta P₀</strong>=(<input type="number" id="dist3d-rp-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-rp-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-rp-z" value="0" step="0.5" style="width: 50px;">)</div>
+      <div><strong style="color: #1f77b4;">Dir v⃗</strong>=(<input type="number" id="dist3d-rv-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-rv-y" value="1" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-rv-z" value="1" step="0.5" style="width: 50px;">)</div>
+    </div>
+  </div>
+
+  <!-- Modo 5: Dos rectas -->
+  <div id="dist3d-panel5" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Recta 1:</strong> P₁=(<input type="number" id="dist3d-r1p-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-r1p-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-r1p-z" value="0" step="0.5" style="width: 50px;">)
+      v⃗₁=(<input type="number" id="dist3d-r1v-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-r1v-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-r1v-z" value="0" step="0.5" style="width: 50px;">)
+    </div>
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px;">
+      <strong>Recta 2:</strong> P₂=(<input type="number" id="dist3d-r2p-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-r2p-y" value="2" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-r2p-z" value="0" step="0.5" style="width: 50px;">)
+      v⃗₂=(<input type="number" id="dist3d-r2v-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-r2v-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-r2v-z" value="1" step="0.5" style="width: 50px;">)
+    </div>
+  </div>
+
+  <!-- Modo 6: Punto a plano -->
+  <div id="dist3d-panel6" style="display: none; margin-bottom: 1em;">
+    <div style="display: flex; gap: 1em; flex-wrap: wrap;">
+      <div><strong style="color: #e91e63;">Q</strong>=(<input type="number" id="dist3d-qp-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-qp-y" value="2" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-qp-z" value="3" step="0.5" style="width: 50px;">)</div>
+      <div><strong style="color: #1f77b4;">Plano</strong> <input type="number" id="dist3d-a" value="2" step="0.5" style="width: 50px;">x + <input type="number" id="dist3d-b" value="-1" step="0.5" style="width: 50px;">y + <input type="number" id="dist3d-c" value="2" step="0.5" style="width: 50px;">z + <input type="number" id="dist3d-d" value="-4" step="0.5" style="width: 50px;"> = 0</div>
+    </div>
+  </div>
+
+  <!-- Modo 7: Dos planos -->
+  <div id="dist3d-panel7" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Plano 1:</strong> <input type="number" id="dist3d-p1a" value="1" step="0.5" style="width: 50px;">x + <input type="number" id="dist3d-p1b" value="0" step="0.5" style="width: 50px;">y + <input type="number" id="dist3d-p1c" value="0" step="0.5" style="width: 50px;">z + <input type="number" id="dist3d-p1d" value="0" step="0.5" style="width: 50px;"> = 0
+    </div>
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px;">
+      <strong>Plano 2:</strong> <input type="number" id="dist3d-p2a" value="1" step="0.5" style="width: 50px;">x + <input type="number" id="dist3d-p2b" value="0" step="0.5" style="width: 50px;">y + <input type="number" id="dist3d-p2c" value="0" step="0.5" style="width: 50px;">z + <input type="number" id="dist3d-p2d" value="-3" step="0.5" style="width: 50px;"> = 0
+    </div>
+  </div>
+
+  <!-- Modo 8: Recta a plano -->
+  <div id="dist3d-panel8" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Recta:</strong> P₀=(<input type="number" id="dist3d-rlp-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-rlp-y" value="1" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-rlp-z" value="1" step="0.5" style="width: 50px;">)
+      v⃗=(<input type="number" id="dist3d-rlv-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-rlv-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="dist3d-rlv-z" value="0" step="0.5" style="width: 50px;">)
+    </div>
+    <div><strong style="color: #1f77b4;">Plano</strong> <input type="number" id="dist3d-pla" value="0" step="0.5" style="width: 50px;">x + <input type="number" id="dist3d-plb" value="1" step="0.5" style="width: 50px;">y + <input type="number" id="dist3d-plc" value="0" step="0.5" style="width: 50px;">z + <input type="number" id="dist3d-pld" value="-2" step="0.5" style="width: 50px;"> = 0</div>
+  </div>
+
+  <button onclick="dist3dActualizar()" style="padding: 0.5em 1.2em; background-color: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-bottom: 1em;">🔄 Calcular y visualizar</button>
+
+  <div id="dist3d-canvas-container" style="width: 100%; height: 400px; background: #000; border-radius: 8px; overflow: hidden; position: relative;">
+    <div id="dist3d-loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-family: sans-serif;">Cargando visualizador 3D...</div>
+  </div>
+
+  <div style="margin-top: 1em; padding: 1em; background: #e7f3ff; border-left: 5px solid #1f77b4; border-radius: 4px;">
+    <strong style="color: #1565c0; font-size: 1.1em;">Resultado</strong><br>
+    <span id="dist3d-res-texto" style="font-size: 1.05em;">—</span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<script>
+(function() {
+  var container = document.getElementById('dist3d-canvas-container');
+  var loading = document.getElementById('dist3d-loading');
+  var modoActivo = 1;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x111111);
+  var camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+  camera.position.set(8, 6, 8);
+  camera.lookAt(0, 0, 0);
+
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+
+  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.1;
+
+  scene.add(new THREE.AmbientLight(0x404040));
+  var light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(10, 10, 10);
+  scene.add(light);
+
+  var objGroup = new THREE.Group();
+  scene.add(objGroup);
+
+  function crearEsfera(pos, color, r) {
+    var g = new THREE.SphereGeometry(r || 0.12, 16, 16);
+    var m = new THREE.MeshBasicMaterial({ color: color });
+    var mesh = new THREE.Mesh(g, m);
+    mesh.position.copy(pos);
+    return mesh;
+  }
+
+  function crearFlecha(origen, dir, long, color) {
+    if (long < 0.01) return null;
+    return new THREE.ArrowHelper(dir.clone().normalize(), origen, long, color, long * 0.15, long * 0.1);
+  }
+
+  function crearLinea(p1, p2, color, dashed) {
+    var geo = new THREE.BufferGeometry().setFromPoints([p1, p2]);
+    var mat;
+    if (dashed) {
+      mat = new THREE.LineDashedMaterial({ color: color, dashSize: 0.25, gapSize: 0.15 });
+      var line = new THREE.Line(geo, mat);
+      line.computeLineDistances();
+      return line;
+    } else {
+      mat = new THREE.LineBasicMaterial({ color: color, linewidth: 3 });
+      return new THREE.Line(geo, mat);
+    }
+  }
+
+  function red(x) { return Math.round(x * 100) / 100; }
+
+  function dibujarPlano(P0, normal, size, colorHex) {
+    var n = normal.clone().normalize();
+    var s = size || 6;
+    var geo = new THREE.PlaneGeometry(s * 2, s * 2);
+    var mat = new THREE.MeshBasicMaterial({ color: colorHex || 0x1f77b4, side: THREE.DoubleSide, transparent: true, opacity: 0.22 });
+    var mesh = new THREE.Mesh(geo, mat);
+    mesh.position.copy(P0);
+    var up = new THREE.Vector3(0, 0, 1);
+    var q = new THREE.Quaternion().setFromUnitVectors(up, n);
+    mesh.setRotationFromQuaternion(q);
+    objGroup.add(mesh);
+    var grid = new THREE.GridHelper(s * 2, 10, 0x666666, 0x444444);
+    grid.position.copy(P0);
+    grid.quaternion.copy(q);
+    objGroup.add(grid);
+  }
+
+  function dibujarRecta(P0, dir, color, dashed) {
+    if (dir.length() < 0.001) return;
+    var d = dir.clone().normalize();
+    var t = 10;
+    objGroup.add(crearLinea(P0.clone().add(d.clone().multiplyScalar(-t)), P0.clone().add(d.clone().multiplyScalar(t)), color, dashed));
+  }
+
+  function setRes(txt) {
+    document.getElementById('dist3d-res-texto').innerHTML = txt;
+  }
+
+  window.dist3dCambiarModo = function(m) {
+    modoActivo = m;
+    for (var i = 1; i <= 8; i++) {
+      document.getElementById('dist3d-panel' + i).style.display = (i === m) ? 'block' : 'none';
+      var btn = document.getElementById('dist3d-btn-modo' + i);
+      if (i === m) { btn.style.background = '#1f77b4'; btn.style.fontWeight = 'bold'; }
+      else { btn.style.background = '#6c757d'; btn.style.fontWeight = 'normal'; }
+    }
+    dist3dActualizar();
+  };
+
+  window.dist3dActualizar = function() {
+    while (objGroup.children.length > 0) objGroup.remove(objGroup.children[0]);
+    var origen = new THREE.Vector3(0, 0, 0);
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(1, 0, 0), 6, 0xff0000));
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(0, 1, 0), 6, 0x00ff00));
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(0, 0, 1), 6, 0x0000ff));
+
+    if (modoActivo === 1) {
+      var p1 = new THREE.Vector3(parseFloat(document.getElementById('dist3d-p1-x').value) || 0, parseFloat(document.getElementById('dist3d-p1-y').value) || 0, parseFloat(document.getElementById('dist3d-p1-z').value) || 0);
+      var p2 = new THREE.Vector3(parseFloat(document.getElementById('dist3d-p2-x').value) || 0, parseFloat(document.getElementById('dist3d-p2-y').value) || 0, parseFloat(document.getElementById('dist3d-p2-z').value) || 0);
+      var d = p1.distanceTo(p2);
+      objGroup.add(crearEsfera(p1, 0xd62728, 0.15));
+      objGroup.add(crearEsfera(p2, 0x2ca02c, 0.15));
+      objGroup.add(crearLinea(p1, p2, 0xffff00, false));
+      setRes('Distancia(P,Q) = ‖Q − P‖ = <strong>' + red(d) + '</strong>');
+    }
+    else if (modoActivo === 2) {
+      var p = new THREE.Vector3(parseFloat(document.getElementById('dist3d-o1-x').value) || 0, parseFloat(document.getElementById('dist3d-o1-y').value) || 0, parseFloat(document.getElementById('dist3d-o1-z').value) || 0);
+      var q = new THREE.Vector3(parseFloat(document.getElementById('dist3d-o2-x').value) || 0, parseFloat(document.getElementById('dist3d-o2-y').value) || 0, parseFloat(document.getElementById('dist3d-o2-z').value) || 0);
+      var v = q.clone().sub(p);
+      var mag = v.length();
+      var dir = mag > 0 ? v.clone().normalize() : new THREE.Vector3(0, 0, 0);
+      objGroup.add(crearEsfera(p, 0xd62728, 0.12));
+      objGroup.add(crearEsfera(q, 0x2ca02c, 0.12));
+      if (mag > 0.01) objGroup.add(crearFlecha(p, dir, mag, 0x1f77b4));
+      setRes('Magnitud = <strong>' + red(mag) + '</strong><br>Dirección = (' + red(dir.x) + ', ' + red(dir.y) + ', ' + red(dir.z) + ')');
+    }
+    else if (modoActivo === 3) {
+      var v = new THREE.Vector3(parseFloat(document.getElementById('dist3d-v-x').value) || 0, parseFloat(document.getElementById('dist3d-v-y').value) || 0, parseFloat(document.getElementById('dist3d-v-z').value) || 0);
+      var mag = v.length();
+      objGroup.add(crearEsfera(origen, 0x888888, 0.08));
+      if (mag > 0.01) objGroup.add(crearFlecha(origen, v.clone().normalize(), Math.min(mag, 5), 0x1f77b4));
+      setRes('‖v⃗‖ = √(v₁² + v₂² + v₃²) = <strong>' + red(mag) + '</strong>');
+    }
+    else if (modoActivo === 4) {
+      var q = new THREE.Vector3(parseFloat(document.getElementById('dist3d-q-x').value) || 0, parseFloat(document.getElementById('dist3d-q-y').value) || 0, parseFloat(document.getElementById('dist3d-q-z').value) || 0);
+      var p0 = new THREE.Vector3(parseFloat(document.getElementById('dist3d-rp-x').value) || 0, parseFloat(document.getElementById('dist3d-rp-y').value) || 0, parseFloat(document.getElementById('dist3d-rp-z').value) || 0);
+      var dir = new THREE.Vector3(parseFloat(document.getElementById('dist3d-rv-x').value) || 0, parseFloat(document.getElementById('dist3d-rv-y').value) || 0, parseFloat(document.getElementById('dist3d-rv-z').value) || 0);
+      var w = q.clone().sub(p0);
+      var cruz = new THREE.Vector3().crossVectors(w, dir);
+      var d = dir.length() > 0.001 ? cruz.length() / dir.length() : 0;
+      var t = dir.lengthSq() > 0.001 ? w.dot(dir) / dir.lengthSq() : 0;
+      var qProj = p0.clone().add(dir.clone().multiplyScalar(t));
+      dibujarRecta(p0, dir, 0xffff00, false);
+      objGroup.add(crearEsfera(q, 0xe91e63, 0.15));
+      objGroup.add(crearEsfera(qProj, 0x2ca02c, 0.12));
+      objGroup.add(crearLinea(q, qProj, 0xff0000, false));
+      setRes('d(Q, recta) = ‖(Q−P₀) × v⃗‖ / ‖v⃗‖ = <strong>' + red(d) + '</strong><br>Punto más cercano: ' + red(qProj.x) + ', ' + red(qProj.y) + ', ' + red(qProj.z));
+    }
+    else if (modoActivo === 5) {
+      var p1 = new THREE.Vector3(parseFloat(document.getElementById('dist3d-r1p-x').value) || 0, parseFloat(document.getElementById('dist3d-r1p-y').value) || 0, parseFloat(document.getElementById('dist3d-r1p-z').value) || 0);
+      var v1 = new THREE.Vector3(parseFloat(document.getElementById('dist3d-r1v-x').value) || 0, parseFloat(document.getElementById('dist3d-r1v-y').value) || 0, parseFloat(document.getElementById('dist3d-r1v-z').value) || 0);
+      var p2 = new THREE.Vector3(parseFloat(document.getElementById('dist3d-r2p-x').value) || 0, parseFloat(document.getElementById('dist3d-r2p-y').value) || 0, parseFloat(document.getElementById('dist3d-r2p-z').value) || 0);
+      var v2 = new THREE.Vector3(parseFloat(document.getElementById('dist3d-r2v-x').value) || 0, parseFloat(document.getElementById('dist3d-r2v-y').value) || 0, parseFloat(document.getElementById('dist3d-r2v-z').value) || 0);
+      dibujarRecta(p1, v1, 0xff9800, false);
+      dibujarRecta(p2, v2, 0x00bcd4, false);
+      var w = p2.clone().sub(p1);
+      var cruz = new THREE.Vector3().crossVectors(v1, v2);
+      var magCruz = cruz.length();
+      var txt = '';
+      if (magCruz < 0.001) {
+        var cruz2 = new THREE.Vector3().crossVectors(w, v1);
+        var d = v1.length() > 0.001 ? cruz2.length() / v1.length() : 0;
+        txt = 'Rectas paralelas. d = <strong>' + red(d) + '</strong>';
+      } else {
+        var d = Math.abs(w.dot(cruz)) / magCruz;
+        txt = 'Rectas alabeadas. d = |(P₂−P₁)·(v⃗₁×v⃗₂)| / ‖v⃗₁×v⃗₂‖ = <strong>' + red(d) + '</strong>';
+      }
+      setRes(txt);
+    }
+    else if (modoActivo === 6) {
+      var q = new THREE.Vector3(parseFloat(document.getElementById('dist3d-qp-x').value) || 0, parseFloat(document.getElementById('dist3d-qp-y').value) || 0, parseFloat(document.getElementById('dist3d-qp-z').value) || 0);
+      var A = parseFloat(document.getElementById('dist3d-a').value) || 0;
+      var B = parseFloat(document.getElementById('dist3d-b').value) || 0;
+      var C = parseFloat(document.getElementById('dist3d-c').value) || 0;
+      var D = parseFloat(document.getElementById('dist3d-d').value) || 0;
+      var den = Math.sqrt(A*A + B*B + C*C);
+      var d = den > 0.001 ? Math.abs(A*q.x + B*q.y + C*q.z + D) / den : 0;
+      var normal = new THREE.Vector3(A, B, C);
+      var P0 = den > 0.001 ? q.clone().sub(normal.clone().multiplyScalar((A*q.x + B*q.y + C*q.z + D) / (den*den))) : q.clone();
+      dibujarPlano(P0, normal, 5, 0x1f77b4);
+      objGroup.add(crearEsfera(q, 0xe91e63, 0.15));
+      objGroup.add(crearEsfera(P0, 0x2ca02c, 0.12));
+      objGroup.add(crearLinea(q, P0, 0xff0000, false));
+      setRes('d(Q, plano) = |Ax₀+By₀+Cz₀+D| / √(A²+B²+C²) = <strong>' + red(d) + '</strong>');
+    }
+    else if (modoActivo === 7) {
+      var A1 = parseFloat(document.getElementById('dist3d-p1a').value) || 0;
+      var B1 = parseFloat(document.getElementById('dist3d-p1b').value) || 0;
+      var C1 = parseFloat(document.getElementById('dist3d-p1c').value) || 0;
+      var D1 = parseFloat(document.getElementById('dist3d-p1d').value) || 0;
+      var A2 = parseFloat(document.getElementById('dist3d-p2a').value) || 0;
+      var B2 = parseFloat(document.getElementById('dist3d-p2b').value) || 0;
+      var C2 = parseFloat(document.getElementById('dist3d-p2c').value) || 0;
+      var D2 = parseFloat(document.getElementById('dist3d-p2d').value) || 0;
+      var n1 = new THREE.Vector3(A1, B1, C1);
+      var n2 = new THREE.Vector3(A2, B2, C2);
+      var n1u = n1.clone().normalize();
+      var n2u = n2.clone().normalize();
+      var paralelos = Math.abs(1 - Math.abs(n1u.dot(n2u))) < 0.01;
+      var P1 = new THREE.Vector3(-D1/A1, 0, 0);
+      if (Math.abs(A1) < 0.001) P1 = new THREE.Vector3(0, -D1/B1, 0);
+      if (Math.abs(A1) < 0.001 && Math.abs(B1) < 0.001) P1 = new THREE.Vector3(0, 0, -D1/C1);
+      dibujarPlano(P1, n1, 5, 0x1f77b4);
+      var P2 = new THREE.Vector3(-D2/A2, 0, 0);
+      if (Math.abs(A2) < 0.001) P2 = new THREE.Vector3(0, -D2/B2, 0);
+      if (Math.abs(A2) < 0.001 && Math.abs(B2) < 0.001) P2 = new THREE.Vector3(0, 0, -D2/C2);
+      dibujarPlano(P2, n2, 5, 0x2ca02c);
+      if (!paralelos) {
+        setRes('Los planos <strong>no son paralelos</strong>. Se cruzan (distancia = 0 en la línea de intersección).');
+      } else {
+        var den = n1.length();
+        var d = den > 0.001 ? Math.abs(A1*P2.x + B1*P2.y + C1*P2.z + D1) / den : 0;
+        setRes('Planos paralelos. d = <strong>' + red(d) + '</strong>');
+      }
+    }
+    else if (modoActivo === 8) {
+      var p0 = new THREE.Vector3(parseFloat(document.getElementById('dist3d-rlp-x').value) || 0, parseFloat(document.getElementById('dist3d-rlp-y').value) || 0, parseFloat(document.getElementById('dist3d-rlp-z').value) || 0);
+      var dir = new THREE.Vector3(parseFloat(document.getElementById('dist3d-rlv-x').value) || 0, parseFloat(document.getElementById('dist3d-rlv-y').value) || 0, parseFloat(document.getElementById('dist3d-rlv-z').value) || 0);
+      var A = parseFloat(document.getElementById('dist3d-pla').value) || 0;
+      var B = parseFloat(document.getElementById('dist3d-plb').value) || 0;
+      var C = parseFloat(document.getElementById('dist3d-plc').value) || 0;
+      var D = parseFloat(document.getElementById('dist3d-pld').value) || 0;
+      var normal = new THREE.Vector3(A, B, C);
+      var den = Math.sqrt(A*A + B*B + C*C);
+      var puntoPlano = den > 0.001 ? p0.clone().sub(normal.clone().multiplyScalar((A*p0.x + B*p0.y + C*p0.z + D) / (den*den))) : p0.clone();
+      dibujarPlano(puntoPlano, normal, 5, 0x1f77b4);
+      dibujarRecta(p0, dir, 0xffff00, false);
+      var dot = dir.dot(normal);
+      var paralela = Math.abs(dot) < 0.01;
+      var dPlano = den > 0.001 ? Math.abs(A*p0.x + B*p0.y + C*p0.z + D) / den : 0;
+      if (!paralela) {
+        var t = -(A*p0.x + B*p0.y + C*p0.z + D) / (dir.dot(normal));
+        var inter = p0.clone().add(dir.clone().multiplyScalar(t));
+        objGroup.add(crearEsfera(inter, 0xff0000, 0.15));
+        setRes('La recta <strong>corta</strong> al plano. Punto de intersección: (' + red(inter.x) + ', ' + red(inter.y) + ', ' + red(inter.z) + ')<br>Distancia = <strong>0</strong>');
+      } else if (dPlano < 0.01) {
+        setRes('La recta está <strong>contenida</strong> en el plano. Distancia = <strong>0</strong>');
+      } else {
+        setRes('La recta es <strong>paralela</strong> al plano. d = <strong>' + red(dPlano) + '</strong>');
+      }
+    }
+    loading.style.display = 'none';
+  };
+
+  var ids = [];
+  for (var i = 1; i <= 8; i++) {
+    var panel = document.getElementById('dist3d-panel' + i);
+    if (panel) {
+      var inputs = panel.querySelectorAll('input[type="number"]');
+      inputs.forEach(function(inp) { ids.push(inp.id); });
+    }
+  }
+  ids.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('keypress', function(e) { if (e.key === 'Enter') dist3dActualizar(); });
+  });
+
+  window.addEventListener('resize', function() {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  dist3dActualizar();
+})();
+</script>
+</div>
+</div>
+</div>
+<div id="ángulos-en-el-espacio" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Ángulos en el espacio<a href="rectas-planos.html#ángulos-en-el-espacio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ángulo-entre-dos-rectas" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Ángulo entre dos rectas<a href="rectas-planos.html#ángulo-entre-dos-rectas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si las rectas tienen vectores directores <span class="math inline">\(\vec{v}_1\)</span> y <span class="math inline">\(\vec{v}_2\)</span>:</p>
+<p><span class="math display">\[
+\cos\theta = \frac{|\vec{v}_1 \cdot \vec{v}_2|}{\|\vec{v}_1\| \|\vec{v}_2\|}
+\]</span></p>
+<p>Se toma el valor absoluto para obtener el ángulo agudo.</p>
+</div>
+<div id="ángulo-entre-dos-planos" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Ángulo entre dos planos<a href="rectas-planos.html#ángulo-entre-dos-planos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si los planos tienen vectores normales <span class="math inline">\(\vec{n}_1\)</span> y <span class="math inline">\(\vec{n}_2\)</span>:</p>
+<p><span class="math display">\[
+\cos\theta = \frac{|\vec{n}_1 \cdot \vec{n}_2|}{\|\vec{n}_1\| \|\vec{n}_2\|}
+\]</span></p>
+</div>
+<div id="ángulo-entre-una-recta-y-un-plano" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Ángulo entre una recta y un plano<a href="rectas-planos.html#ángulo-entre-una-recta-y-un-plano" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si la recta tiene vector director <span class="math inline">\(\vec{v}\)</span> y el plano tiene vector normal <span class="math inline">\(\vec{n}\)</span>:</p>
+<p><span class="math display">\[
+\sin\theta = \frac{|\vec{v} \cdot \vec{n}|}{\|\vec{v}\| \|\vec{n}\|}
+\]</span></p>
+<p>donde <span class="math inline">\(\theta\)</span> es el ángulo entre la recta y su proyección sobre el plano.</p>
+<div id="calculadora-interactiva-ángulos-en-el-espacio" class="section level4 hasAnchor" number="2.4.3.1">
+<h4><span class="header-section-number">2.4.3.1</span> 🧮 Calculadora interactiva: Ángulos en el espacio<a href="rectas-planos.html#calculadora-interactiva-ángulos-en-el-espacio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Calcule el ángulo entre vectores, rectas, planos, y entre rectas y planos. Observe la representación geométrica y el resultado en grados y radianes.</p>
+<div id="ang3d-widget" style="margin: 1.5em 0; padding: 1.5em; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px;">
+  <div style="margin-bottom: 1em; display: flex; gap: 0.5em; flex-wrap: wrap;">
+    <button id="ang3d-btn-modo1" onclick="ang3dCambiarModo(1)" style="padding: 0.5em 1em; background: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">🔀 Dos vectores</button>
+    <button id="ang3d-btn-modo2" onclick="ang3dCambiarModo(2)" style="padding: 0.5em 1em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">⫲ Dos rectas</button>
+    <button id="ang3d-btn-modo3" onclick="ang3dCambiarModo(3)" style="padding: 0.5em 1em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">⧄ Dos planos</button>
+    <button id="ang3d-btn-modo4" onclick="ang3dCambiarModo(4)" style="padding: 0.5em 1em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">📐 Recta y plano</button>
+  </div>
+
+  <div id="ang3d-panel1" style="margin-bottom: 1em;">
+    <div style="display: flex; gap: 1em; flex-wrap: wrap;">
+      <div><strong style="color: #ff9800;">u⃗</strong>=(<input type="number" id="ang3d-u1" value="1" step="0.5" style="width: 55px;">,<input type="number" id="ang3d-u2" value="0" step="0.5" style="width: 55px;">,<input type="number" id="ang3d-u3" value="1" step="0.5" style="width: 55px;">)</div>
+      <div><strong style="color: #00bcd4;">v⃗</strong>=(<input type="number" id="ang3d-v1" value="0" step="0.5" style="width: 55px;">,<input type="number" id="ang3d-v2" value="1" step="0.5" style="width: 55px;">,<input type="number" id="ang3d-v3" value="1" step="0.5" style="width: 55px;">)</div>
+    </div>
+  </div>
+
+  <div id="ang3d-panel2" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Recta 1:</strong> P₁=(<input type="number" id="ang3d-r1p-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-r1p-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-r1p-z" value="0" step="0.5" style="width: 50px;">)
+      v⃗₁=(<input type="number" id="ang3d-r1v-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-r1v-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-r1v-z" value="0" step="0.5" style="width: 50px;">)
+    </div>
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px;">
+      <strong>Recta 2:</strong> P₂=(<input type="number" id="ang3d-r2p-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-r2p-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-r2p-z" value="0" step="0.5" style="width: 50px;">)
+      v⃗₂=(<input type="number" id="ang3d-r2v-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-r2v-y" value="1" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-r2v-z" value="1" step="0.5" style="width: 50px;">)
+    </div>
+  </div>
+
+  <div id="ang3d-panel3" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Plano 1:</strong> <input type="number" id="ang3d-p1a" value="1" step="0.5" style="width: 50px;">x + <input type="number" id="ang3d-p1b" value="0" step="0.5" style="width: 50px;">y + <input type="number" id="ang3d-p1c" value="0" step="0.5" style="width: 50px;">z + <input type="number" id="ang3d-p1d" value="0" step="0.5" style="width: 50px;"> = 0
+    </div>
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px;">
+      <strong>Plano 2:</strong> <input type="number" id="ang3d-p2a" value="0" step="0.5" style="width: 50px;">x + <input type="number" id="ang3d-p2b" value="1" step="0.5" style="width: 50px;">y + <input type="number" id="ang3d-p2c" value="1" step="0.5" style="width: 50px;">z + <input type="number" id="ang3d-p2d" value="0" step="0.5" style="width: 50px;"> = 0
+    </div>
+  </div>
+
+  <div id="ang3d-panel4" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Recta:</strong> P₀=(<input type="number" id="ang3d-rlp-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-rlp-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-rlp-z" value="0" step="0.5" style="width: 50px;">)
+      v⃗=(<input type="number" id="ang3d-rlv-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-rlv-y" value="1" step="0.5" style="width: 50px;">,<input type="number" id="ang3d-rlv-z" value="0" step="0.5" style="width: 50px;">)
+    </div>
+    <div><strong style="color: #1f77b4;">Plano</strong> <input type="number" id="ang3d-pla" value="0" step="0.5" style="width: 50px;">x + <input type="number" id="ang3d-plb" value="0" step="0.5" style="width: 50px;">y + <input type="number" id="ang3d-plc" value="1" step="0.5" style="width: 50px;">z + <input type="number" id="ang3d-pld" value="0" step="0.5" style="width: 50px;"> = 0</div>
+  </div>
+
+  <button onclick="ang3dActualizar()" style="padding: 0.5em 1.2em; background-color: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-bottom: 1em;">🔄 Calcular ángulo</button>
+
+  <div id="ang3d-canvas-container" style="width: 100%; height: 380px; background: #000; border-radius: 8px; overflow: hidden; position: relative;">
+    <div id="ang3d-loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-family: sans-serif;">Cargando visualizador 3D...</div>
+  </div>
+
+  <div style="margin-top: 1em; padding: 1em; background: #fff3e0; border-left: 5px solid #ff9800; border-radius: 4px;">
+    <strong style="color: #e65100; font-size: 1.1em;">Resultado</strong><br>
+    <span id="ang3d-res-texto" style="font-size: 1.05em;">—</span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<script>
+(function() {
+  var container = document.getElementById('ang3d-canvas-container');
+  var loading = document.getElementById('ang3d-loading');
+  var modoActivo = 1;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x111111);
+  var camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+  camera.position.set(8, 6, 8);
+  camera.lookAt(0, 0, 0);
+
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+
+  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.1;
+
+  scene.add(new THREE.AmbientLight(0x404040));
+  var light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(10, 10, 10);
+  scene.add(light);
+
+  var objGroup = new THREE.Group();
+  scene.add(objGroup);
+
+  function crearEsfera(pos, color, r) {
+    var g = new THREE.SphereGeometry(r || 0.12, 16, 16);
+    var m = new THREE.MeshBasicMaterial({ color: color });
+    var mesh = new THREE.Mesh(g, m);
+    mesh.position.copy(pos);
+    return mesh;
+  }
+
+  function crearFlecha(origen, dir, long, color) {
+    if (long < 0.01) return null;
+    return new THREE.ArrowHelper(dir.clone().normalize(), origen, long, color, long * 0.15, long * 0.1);
+  }
+
+  function crearLinea(p1, p2, color, dashed) {
+    var geo = new THREE.BufferGeometry().setFromPoints([p1, p2]);
+    var mat;
+    if (dashed) {
+      mat = new THREE.LineDashedMaterial({ color: color, dashSize: 0.25, gapSize: 0.15 });
+      var line = new THREE.Line(geo, mat);
+      line.computeLineDistances();
+      return line;
+    } else {
+      mat = new THREE.LineBasicMaterial({ color: color, linewidth: 3 });
+      return new THREE.Line(geo, mat);
+    }
+  }
+
+  function dibujarPlano(P0, normal, size, colorHex) {
+    var n = normal.clone().normalize();
+    var s = size || 5;
+    var geo = new THREE.PlaneGeometry(s * 2, s * 2);
+    var mat = new THREE.MeshBasicMaterial({ color: colorHex || 0x1f77b4, side: THREE.DoubleSide, transparent: true, opacity: 0.22 });
+    var mesh = new THREE.Mesh(geo, mat);
+    mesh.position.copy(P0);
+    var up = new THREE.Vector3(0, 0, 1);
+    var q = new THREE.Quaternion().setFromUnitVectors(up, n);
+    mesh.setRotationFromQuaternion(q);
+    objGroup.add(mesh);
+    var grid = new THREE.GridHelper(s * 2, 10, 0x666666, 0x444444);
+    grid.position.copy(P0);
+    grid.quaternion.copy(q);
+    objGroup.add(grid);
+  }
+
+  function dibujarRecta(P0, dir, color, dashed) {
+    if (dir.length() < 0.001) return;
+    var d = dir.clone().normalize();
+    var t = 8;
+    objGroup.add(crearLinea(P0.clone().add(d.clone().multiplyScalar(-t)), P0.clone().add(d.clone().multiplyScalar(t)), color, dashed));
+  }
+
+  function red(x) { return Math.round(x * 100) / 100; }
+
+  function setRes(txt) {
+    document.getElementById('ang3d-res-texto').innerHTML = txt;
+  }
+
+  window.ang3dCambiarModo = function(m) {
+    modoActivo = m;
+    for (var i = 1; i <= 4; i++) {
+      document.getElementById('ang3d-panel' + i).style.display = (i === m) ? 'block' : 'none';
+      var btn = document.getElementById('ang3d-btn-modo' + i);
+      if (i === m) { btn.style.background = '#1f77b4'; btn.style.fontWeight = 'bold'; }
+      else { btn.style.background = '#6c757d'; btn.style.fontWeight = 'normal'; }
+    }
+    ang3dActualizar();
+  };
+
+  window.ang3dActualizar = function() {
+    while (objGroup.children.length > 0) objGroup.remove(objGroup.children[0]);
+    var origen = new THREE.Vector3(0, 0, 0);
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(1, 0, 0), 6, 0xff0000));
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(0, 1, 0), 6, 0x00ff00));
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(0, 0, 1), 6, 0x0000ff));
+
+    if (modoActivo === 1) {
+      var u = new THREE.Vector3(parseFloat(document.getElementById('ang3d-u1').value) || 0, parseFloat(document.getElementById('ang3d-u2').value) || 0, parseFloat(document.getElementById('ang3d-u3').value) || 0);
+      var v = new THREE.Vector3(parseFloat(document.getElementById('ang3d-v1').value) || 0, parseFloat(document.getElementById('ang3d-v2').value) || 0, parseFloat(document.getElementById('ang3d-v3').value) || 0);
+      var mu = u.length(), mv = v.length();
+      var cosT = (mu > 0 && mv > 0) ? u.dot(v) / (mu * mv) : 0;
+      cosT = Math.max(-1, Math.min(1, cosT));
+      var ang = Math.acos(cosT) * 180 / Math.PI;
+      var lu = Math.min(mu, 4), lv = Math.min(mv, 4);
+      if (lu > 0.01) objGroup.add(crearFlecha(origen, u, lu, 0xff9800));
+      if (lv > 0.01) objGroup.add(crearFlecha(origen, v, lv, 0x00bcd4));
+      setRes('cos θ = (u⃗·v⃗)/(‖u⃗‖‖v⃗‖) = ' + red(cosT) + '<br>θ = <strong>' + red(ang) + '°</strong> (' + red(ang * Math.PI / 180) + ' rad)');
+    }
+    else if (modoActivo === 2) {
+      var p1 = new THREE.Vector3(parseFloat(document.getElementById('ang3d-r1p-x').value) || 0, parseFloat(document.getElementById('ang3d-r1p-y').value) || 0, parseFloat(document.getElementById('ang3d-r1p-z').value) || 0);
+      var v1 = new THREE.Vector3(parseFloat(document.getElementById('ang3d-r1v-x').value) || 0, parseFloat(document.getElementById('ang3d-r1v-y').value) || 0, parseFloat(document.getElementById('ang3d-r1v-z').value) || 0);
+      var p2 = new THREE.Vector3(parseFloat(document.getElementById('ang3d-r2p-x').value) || 0, parseFloat(document.getElementById('ang3d-r2p-y').value) || 0, parseFloat(document.getElementById('ang3d-r2p-z').value) || 0);
+      var v2 = new THREE.Vector3(parseFloat(document.getElementById('ang3d-r2v-x').value) || 0, parseFloat(document.getElementById('ang3d-r2v-y').value) || 0, parseFloat(document.getElementById('ang3d-r2v-z').value) || 0);
+      var m1 = v1.length(), m2 = v2.length();
+      var cosT = (m1 > 0 && m2 > 0) ? Math.abs(v1.dot(v2)) / (m1 * m2) : 0;
+      cosT = Math.max(-1, Math.min(1, cosT));
+      var ang = Math.acos(cosT) * 180 / Math.PI;
+      dibujarRecta(p1, v1, 0xff9800, false);
+      dibujarRecta(p2, v2, 0x00bcd4, false);
+      setRes('cos θ = |v⃗₁·v⃗₂|/(‖v⃗₁‖‖v⃗₂‖) = ' + red(cosT) + '<br>θ = <strong>' + red(ang) + '°</strong> (' + red(ang * Math.PI / 180) + ' rad)');
+    }
+    else if (modoActivo === 3) {
+      var A1 = parseFloat(document.getElementById('ang3d-p1a').value) || 0;
+      var B1 = parseFloat(document.getElementById('ang3d-p1b').value) || 0;
+      var C1 = parseFloat(document.getElementById('ang3d-p1c').value) || 0;
+      var D1 = parseFloat(document.getElementById('ang3d-p1d').value) || 0;
+      var A2 = parseFloat(document.getElementById('ang3d-p2a').value) || 0;
+      var B2 = parseFloat(document.getElementById('ang3d-p2b').value) || 0;
+      var C2 = parseFloat(document.getElementById('ang3d-p2c').value) || 0;
+      var D2 = parseFloat(document.getElementById('ang3d-p2d').value) || 0;
+      var n1 = new THREE.Vector3(A1, B1, C1);
+      var n2 = new THREE.Vector3(A2, B2, C2);
+      var m1 = n1.length(), m2 = n2.length();
+      var cosT = (m1 > 0 && m2 > 0) ? Math.abs(n1.dot(n2)) / (m1 * m2) : 0;
+      cosT = Math.max(-1, Math.min(1, cosT));
+      var ang = Math.acos(cosT) * 180 / Math.PI;
+      var P1 = new THREE.Vector3(-D1/A1, 0, 0); if (Math.abs(A1) < 0.001) P1 = new THREE.Vector3(0, -D1/B1, 0); if (Math.abs(A1) < 0.001 && Math.abs(B1) < 0.001) P1 = new THREE.Vector3(0, 0, -D1/C1);
+      var P2 = new THREE.Vector3(-D2/A2, 0, 0); if (Math.abs(A2) < 0.001) P2 = new THREE.Vector3(0, -D2/B2, 0); if (Math.abs(A2) < 0.001 && Math.abs(B2) < 0.001) P2 = new THREE.Vector3(0, 0, -D2/C2);
+      dibujarPlano(P1, n1, 5, 0x1f77b4);
+      dibujarPlano(P2, n2, 5, 0x2ca02c);
+      setRes('cos θ = |n⃗₁·n⃗₂|/(‖n⃗₁‖‖n⃗₂‖) = ' + red(cosT) + '<br>θ = <strong>' + red(ang) + '°</strong> (' + red(ang * Math.PI / 180) + ' rad)');
+    }
+    else if (modoActivo === 4) {
+      var p0 = new THREE.Vector3(parseFloat(document.getElementById('ang3d-rlp-x').value) || 0, parseFloat(document.getElementById('ang3d-rlp-y').value) || 0, parseFloat(document.getElementById('ang3d-rlp-z').value) || 0);
+      var dir = new THREE.Vector3(parseFloat(document.getElementById('ang3d-rlv-x').value) || 0, parseFloat(document.getElementById('ang3d-rlv-y').value) || 0, parseFloat(document.getElementById('ang3d-rlv-z').value) || 0);
+      var A = parseFloat(document.getElementById('ang3d-pla').value) || 0;
+      var B = parseFloat(document.getElementById('ang3d-plb').value) || 0;
+      var C = parseFloat(document.getElementById('ang3d-plc').value) || 0;
+      var D = parseFloat(document.getElementById('ang3d-pld').value) || 0;
+      var normal = new THREE.Vector3(A, B, C);
+      var md = dir.length(), mn = normal.length();
+      var sinT = (md > 0 && mn > 0) ? Math.abs(dir.dot(normal)) / (md * mn) : 0;
+      sinT = Math.max(-1, Math.min(1, sinT));
+      var ang = Math.asin(sinT) * 180 / Math.PI;
+      var Pp = mn > 0.001 ? p0.clone().sub(normal.clone().multiplyScalar((A*p0.x + B*p0.y + C*p0.z + D) / (mn*mn))) : p0.clone();
+      dibujarPlano(Pp, normal, 5, 0x1f77b4);
+      dibujarRecta(p0, dir, 0xffff00, false);
+      setRes('sin θ = |v⃗·n⃗|/(‖v⃗‖‖n⃗‖) = ' + red(sinT) + '<br>θ = <strong>' + red(ang) + '°</strong> (' + red(ang * Math.PI / 180) + ' rad)<br><em>Ángulo entre la recta y su proyección sobre el plano</em>');
+    }
+    loading.style.display = 'none';
+  };
+
+  var ids = [];
+  for (var i = 1; i <= 4; i++) {
+    var panel = document.getElementById('ang3d-panel' + i);
+    if (panel) {
+      var inputs = panel.querySelectorAll('input[type="number"]');
+      inputs.forEach(function(inp) { ids.push(inp.id); });
+    }
+  }
+  ids.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('keypress', function(e) { if (e.key === 'Enter') ang3dActualizar(); });
+  });
+
+  window.addEventListener('resize', function() {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  ang3dActualizar();
+})();
+</script>
+</div>
+</div>
+</div>
+<div id="intersecciones" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Intersecciones<a href="rectas-planos.html#intersecciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="intersección-de-una-recta-y-un-plano" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Intersección de una recta y un plano<a href="rectas-planos.html#intersección-de-una-recta-y-un-plano" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sustituya las ecuaciones paramétricas de la recta en la ecuación del plano y resuelva para <span class="math inline">\(t\)</span>.</p>
+<ul>
+<li>Si obtiene un único valor de <span class="math inline">\(t\)</span>: la recta corta al plano en un punto.</li>
+<li>Si la ecuación es una identidad (<span class="math inline">\(0 = 0\)</span>): la recta está contenida en el plano.</li>
+<li>Si la ecuación es imposible (<span class="math inline">\(0 = k\)</span> con <span class="math inline">\(k \neq 0\)</span>): la recta es paralela al plano (no se intersectan).</li>
+</ul>
+</div>
+<div id="intersección-de-dos-planos" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Intersección de dos planos<a href="rectas-planos.html#intersección-de-dos-planos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dos planos no paralelos se intersectan en una <strong>recta</strong>. La dirección de esta recta es perpendicular a ambos vectores normales:</p>
+<p><span class="math display">\[
+\vec{v} = \vec{n}_1 \times \vec{n}_2
+\]</span></p>
+<p>Para hallar un punto de la recta de intersección, se resuelve el sistema de las dos ecuaciones de los planos (imponiendo una condición adicional, por ejemplo <span class="math inline">\(z = 0\)</span> si es posible).</p>
+</div>
+<div id="intersección-de-tres-planos" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Intersección de tres planos<a href="rectas-planos.html#intersección-de-tres-planos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tres planos pueden:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Intersectarse en un único punto</strong>: el sistema tiene solución única.</li>
+<li><strong>Intersectarse en una recta común</strong>: los tres planos pertenecen a un haz.</li>
+<li><strong>No tener intersección común</strong>: el sistema es incompatible.</li>
+<li><strong>Coincidir dos a dos</strong>: dos o más planos son el mismo.</li>
+</ol>
+<div id="visualizador-interactivo-intersecciones-en-el-espacio" class="section level4 hasAnchor" number="2.5.3.1">
+<h4><span class="header-section-number">2.5.3.1</span> 🧮 Visualizador interactivo: Intersecciones en el espacio<a href="rectas-planos.html#visualizador-interactivo-intersecciones-en-el-espacio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Calcule y visualice la intersección entre rectas, planos, y combinaciones de ambos. La aplicación resuelve el sistema correspondiente y muestra el punto, la recta o la configuración resultante.</p>
+<div id="int3d-widget" style="margin: 1.5em 0; padding: 1.5em; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px;">
+  <div style="margin-bottom: 1em; display: flex; gap: 0.5em; flex-wrap: wrap;">
+    <button id="int3d-btn-modo1" onclick="int3dCambiarModo(1)" style="padding: 0.5em 1em; background: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">⫲ Dos rectas</button>
+    <button id="int3d-btn-modo2" onclick="int3dCambiarModo(2)" style="padding: 0.5em 1em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">⧄ Dos planos</button>
+    <button id="int3d-btn-modo3" onclick="int3dCambiarModo(3)" style="padding: 0.5em 1em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">🔷 Tres planos</button>
+    <button id="int3d-btn-modo4" onclick="int3dCambiarModo(4)" style="padding: 0.5em 1em; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">📐 Recta y plano</button>
+  </div>
+
+  <div id="int3d-panel1" style="margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Recta 1:</strong> P₁=(<input type="number" id="int3d-r1p-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="int3d-r1p-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="int3d-r1p-z" value="0" step="0.5" style="width: 50px;">)
+      v⃗₁=(<input type="number" id="int3d-r1v-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="int3d-r1v-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="int3d-r1v-z" value="0" step="0.5" style="width: 50px;">)
+    </div>
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px;">
+      <strong>Recta 2:</strong> P₂=(<input type="number" id="int3d-r2p-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="int3d-r2p-y" value="2" step="0.5" style="width: 50px;">,<input type="number" id="int3d-r2p-z" value="0" step="0.5" style="width: 50px;">)
+      v⃗₂=(<input type="number" id="int3d-r2v-x" value="0" step="0.5" style="width: 50px;">,<input type="number" id="int3d-r2v-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="int3d-r2v-z" value="1" step="0.5" style="width: 50px;">)
+    </div>
+  </div>
+
+  <div id="int3d-panel2" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Plano 1:</strong> <input type="number" id="int3d-p1a" value="1" step="0.5" style="width: 50px;">x + <input type="number" id="int3d-p1b" value="0" step="0.5" style="width: 50px;">y + <input type="number" id="int3d-p1c" value="0" step="0.5" style="width: 50px;">z + <input type="number" id="int3d-p1d" value="0" step="0.5" style="width: 50px;"> = 0
+    </div>
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px;">
+      <strong>Plano 2:</strong> <input type="number" id="int3d-p2a" value="0" step="0.5" style="width: 50px;">x + <input type="number" id="int3d-p2b" value="1" step="0.5" style="width: 50px;">y + <input type="number" id="int3d-p2c" value="0" step="0.5" style="width: 50px;">z + <input type="number" id="int3d-p2d" value="0" step="0.5" style="width: 50px;"> = 0
+    </div>
+  </div>
+
+  <div id="int3d-panel3" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Plano 1:</strong> <input type="number" id="int3d-3p1a" value="1" step="0.5" style="width: 45px;">x + <input type="number" id="int3d-3p1b" value="0" step="0.5" style="width: 45px;">y + <input type="number" id="int3d-3p1c" value="0" step="0.5" style="width: 45px;">z + <input type="number" id="int3d-3p1d" value="0" step="0.5" style="width: 45px;"> = 0
+    </div>
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Plano 2:</strong> <input type="number" id="int3d-3p2a" value="0" step="0.5" style="width: 45px;">x + <input type="number" id="int3d-3p2b" value="1" step="0.5" style="width: 45px;">y + <input type="number" id="int3d-3p2c" value="0" step="0.5" style="width: 45px;">z + <input type="number" id="int3d-3p2d" value="0" step="0.5" style="width: 45px;"> = 0
+    </div>
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px;">
+      <strong>Plano 3:</strong> <input type="number" id="int3d-3p3a" value="0" step="0.5" style="width: 45px;">x + <input type="number" id="int3d-3p3b" value="0" step="0.5" style="width: 45px;">y + <input type="number" id="int3d-3p3c" value="1" step="0.5" style="width: 45px;">z + <input type="number" id="int3d-3p3d" value="-3" step="0.5" style="width: 45px;"> = 0
+    </div>
+  </div>
+
+  <div id="int3d-panel4" style="display: none; margin-bottom: 1em;">
+    <div style="padding: 0.5em; background: #e9ecef; border-radius: 4px; margin-bottom: 0.5em;">
+      <strong>Recta:</strong> P₀=(<input type="number" id="int3d-rlp-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="int3d-rlp-y" value="1" step="0.5" style="width: 50px;">,<input type="number" id="int3d-rlp-z" value="1" step="0.5" style="width: 50px;">)
+      v⃗=(<input type="number" id="int3d-rlv-x" value="1" step="0.5" style="width: 50px;">,<input type="number" id="int3d-rlv-y" value="0" step="0.5" style="width: 50px;">,<input type="number" id="int3d-rlv-z" value="0" step="0.5" style="width: 50px;">)
+    </div>
+    <div><strong style="color: #1f77b4;">Plano</strong> <input type="number" id="int3d-pla" value="0" step="0.5" style="width: 50px;">x + <input type="number" id="int3d-plb" value="1" step="0.5" style="width: 50px;">y + <input type="number" id="int3d-plc" value="0" step="0.5" style="width: 50px;">z + <input type="number" id="int3d-pld" value="-2" step="0.5" style="width: 50px;"> = 0</div>
+  </div>
+
+  <button onclick="int3dActualizar()" style="padding: 0.5em 1.2em; background-color: #1f77b4; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-bottom: 1em;">🔄 Calcular intersección</button>
+
+  <div id="int3d-canvas-container" style="width: 100%; height: 400px; background: #000; border-radius: 8px; overflow: hidden; position: relative;">
+    <div id="int3d-loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-family: sans-serif;">Cargando visualizador 3D...</div>
+  </div>
+
+  <div style="margin-top: 1em; padding: 1em; background: #e8f5e9; border-left: 5px solid #2ca02c; border-radius: 4px;">
+    <strong style="color: #1b5e20; font-size: 1.1em;">Resultado</strong><br>
+    <span id="int3d-res-texto" style="font-size: 1.05em;">—</span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<script>
+(function() {
+  var container = document.getElementById('int3d-canvas-container');
+  var loading = document.getElementById('int3d-loading');
+  var modoActivo = 1;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x111111);
+  var camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+  camera.position.set(8, 6, 8);
+  camera.lookAt(0, 0, 0);
+
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+
+  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.1;
+
+  scene.add(new THREE.AmbientLight(0x404040));
+  var light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(10, 10, 10);
+  scene.add(light);
+
+  var objGroup = new THREE.Group();
+  scene.add(objGroup);
+
+  function crearEsfera(pos, color, r) {
+    var g = new THREE.SphereGeometry(r || 0.12, 16, 16);
+    var m = new THREE.MeshBasicMaterial({ color: color });
+    var mesh = new THREE.Mesh(g, m);
+    mesh.position.copy(pos);
+    return mesh;
+  }
+
+  function crearFlecha(origen, dir, long, color) {
+    if (long < 0.01) return null;
+    return new THREE.ArrowHelper(dir.clone().normalize(), origen, long, color, long * 0.15, long * 0.1);
+  }
+
+  function crearLinea(p1, p2, color, dashed) {
+    var geo = new THREE.BufferGeometry().setFromPoints([p1, p2]);
+    var mat;
+    if (dashed) {
+      mat = new THREE.LineDashedMaterial({ color: color, dashSize: 0.25, gapSize: 0.15 });
+      var line = new THREE.Line(geo, mat);
+      line.computeLineDistances();
+      return line;
+    } else {
+      mat = new THREE.LineBasicMaterial({ color: color, linewidth: 3 });
+      return new THREE.Line(geo, mat);
+    }
+  }
+
+  function dibujarPlano(P0, normal, size, colorHex) {
+    var n = normal.clone().normalize();
+    var s = size || 5;
+    var geo = new THREE.PlaneGeometry(s * 2, s * 2);
+    var mat = new THREE.MeshBasicMaterial({ color: colorHex || 0x1f77b4, side: THREE.DoubleSide, transparent: true, opacity: 0.22 });
+    var mesh = new THREE.Mesh(geo, mat);
+    mesh.position.copy(P0);
+    var up = new THREE.Vector3(0, 0, 1);
+    var q = new THREE.Quaternion().setFromUnitVectors(up, n);
+    mesh.setRotationFromQuaternion(q);
+    objGroup.add(mesh);
+    var grid = new THREE.GridHelper(s * 2, 10, 0x666666, 0x444444);
+    grid.position.copy(P0);
+    grid.quaternion.copy(q);
+    objGroup.add(grid);
+  }
+
+  function dibujarRecta(P0, dir, color, dashed) {
+    if (dir.length() < 0.001) return;
+    var d = dir.clone().normalize();
+    var t = 8;
+    objGroup.add(crearLinea(P0.clone().add(d.clone().multiplyScalar(-t)), P0.clone().add(d.clone().multiplyScalar(t)), color, dashed));
+  }
+
+  function red(x) { return Math.round(x * 100) / 100; }
+
+  function setRes(txt) {
+    document.getElementById('int3d-res-texto').innerHTML = txt;
+  }
+
+  function det3(M) {
+    return M[0][0]*(M[1][1]*M[2][2]-M[1][2]*M[2][1]) - M[0][1]*(M[1][0]*M[2][2]-M[1][2]*M[2][0]) + M[0][2]*(M[1][0]*M[2][1]-M[1][1]*M[2][0]);
+  }
+
+  function solve3(A, b) {
+    var det = det3(A);
+    if (Math.abs(det) < 1e-9) return null;
+    var Ax = [[b[0],A[0][1],A[0][2]],[b[1],A[1][1],A[1][2]],[b[2],A[2][1],A[2][2]]];
+    var Ay = [[A[0][0],b[0],A[0][2]],[A[1][0],b[1],A[1][2]],[A[2][0],b[2],A[2][2]]];
+    var Az = [[A[0][0],A[0][1],b[0]],[A[1][0],A[1][1],b[1]],[A[2][0],A[2][1],b[2]]];
+    return { x: det3(Ax)/det, y: det3(Ay)/det, z: det3(Az)/det };
+  }
+
+  window.int3dCambiarModo = function(m) {
+    modoActivo = m;
+    for (var i = 1; i <= 4; i++) {
+      document.getElementById('int3d-panel' + i).style.display = (i === m) ? 'block' : 'none';
+      var btn = document.getElementById('int3d-btn-modo' + i);
+      if (i === m) { btn.style.background = '#1f77b4'; btn.style.fontWeight = 'bold'; }
+      else { btn.style.background = '#6c757d'; btn.style.fontWeight = 'normal'; }
+    }
+    int3dActualizar();
+  };
+
+  window.int3dActualizar = function() {
+    while (objGroup.children.length > 0) objGroup.remove(objGroup.children[0]);
+    var origen = new THREE.Vector3(0, 0, 0);
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(1, 0, 0), 6, 0xff0000));
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(0, 1, 0), 6, 0x00ff00));
+    objGroup.add(crearFlecha(origen, new THREE.Vector3(0, 0, 1), 6, 0x0000ff));
+
+    if (modoActivo === 1) {
+      var p1 = new THREE.Vector3(parseFloat(document.getElementById('int3d-r1p-x').value)||0, parseFloat(document.getElementById('int3d-r1p-y').value)||0, parseFloat(document.getElementById('int3d-r1p-z').value)||0);
+      var v1 = new THREE.Vector3(parseFloat(document.getElementById('int3d-r1v-x').value)||0, parseFloat(document.getElementById('int3d-r1v-y').value)||0, parseFloat(document.getElementById('int3d-r1v-z').value)||0);
+      var p2 = new THREE.Vector3(parseFloat(document.getElementById('int3d-r2p-x').value)||0, parseFloat(document.getElementById('int3d-r2p-y').value)||0, parseFloat(document.getElementById('int3d-r2p-z').value)||0);
+      var v2 = new THREE.Vector3(parseFloat(document.getElementById('int3d-r2v-x').value)||0, parseFloat(document.getElementById('int3d-r2v-y').value)||0, parseFloat(document.getElementById('int3d-r2v-z').value)||0);
+      dibujarRecta(p1, v1, 0xff9800, false);
+      dibujarRecta(p2, v2, 0x00bcd4, false);
+      var w = p2.clone().sub(p1);
+      var cruz = new THREE.Vector3().crossVectors(v1, v2);
+      if (cruz.lengthSq() < 1e-6) {
+        setRes('Las rectas son <strong>paralelas</strong> (o coincidentes). No hay intersección única.');
+      } else if (Math.abs(w.dot(cruz)) > 0.1) {
+        setRes('Las rectas son <strong>alabeadas</strong>. No se intersectan.');
+      } else {
+        // Resolver para t
+        var t;
+        var det = v1.x * (-v2.y) - v1.y * (-v2.x);
+        if (Math.abs(det) > 0.001) {
+          t = (w.x * (-v2.y) - w.y * (-v2.x)) / det;
+        } else {
+          det = v1.x * (-v2.z) - v1.z * (-v2.x);
+          t = (w.x * (-v2.z) - w.z * (-v2.x)) / det;
+        }
+        var inter = p1.clone().add(v1.clone().multiplyScalar(t));
+        objGroup.add(crearEsfera(inter, 0x2ca02c, 0.18));
+        setRes('Las rectas se cortan en:<br><strong>(' + red(inter.x) + ', ' + red(inter.y) + ', ' + red(inter.z) + ')</strong>');
+      }
+    }
+    else if (modoActivo === 2) {
+      var A1 = parseFloat(document.getElementById('int3d-p1a').value)||0, B1 = parseFloat(document.getElementById('int3d-p1b').value)||0, C1 = parseFloat(document.getElementById('int3d-p1c').value)||0, D1 = parseFloat(document.getElementById('int3d-p1d').value)||0;
+      var A2 = parseFloat(document.getElementById('int3d-p2a').value)||0, B2 = parseFloat(document.getElementById('int3d-p2b').value)||0, C2 = parseFloat(document.getElementById('int3d-p2c').value)||0, D2 = parseFloat(document.getElementById('int3d-p2d').value)||0;
+      var n1 = new THREE.Vector3(A1, B1, C1);
+      var n2 = new THREE.Vector3(A2, B2, C2);
+      var dir = new THREE.Vector3().crossVectors(n1, n2);
+      var P0;
+      var det = A1*B2 - A2*B1;
+      if (Math.abs(det) > 0.001) {
+        var x = (-D1*B2 + D2*B1) / det;
+        var y = (-A1*D2 + A2*D1) / det;
+        P0 = new THREE.Vector3(x, y, 0);
+      } else {
+        det = A1*C2 - A2*C1;
+        if (Math.abs(det) > 0.001) {
+          var x = (-D1*C2 + D2*C1) / det;
+          var z = (-A1*D2 + A2*D1) / det;
+          P0 = new THREE.Vector3(x, 0, z);
+        } else {
+          det = B1*C2 - B2*C1;
+          var y = (-D1*C2 + D2*C1) / det;
+          var z = (-B1*D2 + B2*D1) / det;
+          P0 = new THREE.Vector3(0, y, z);
+        }
+      }
+      var Pp1 = new THREE.Vector3(-D1/A1, 0, 0); if (Math.abs(A1) < 0.001) Pp1 = new THREE.Vector3(0, -D1/B1, 0); if (Math.abs(A1) < 0.001 && Math.abs(B1) < 0.001) Pp1 = new THREE.Vector3(0, 0, -D1/C1);
+      var Pp2 = new THREE.Vector3(-D2/A2, 0, 0); if (Math.abs(A2) < 0.001) Pp2 = new THREE.Vector3(0, -D2/B2, 0); if (Math.abs(A2) < 0.001 && Math.abs(B2) < 0.001) Pp2 = new THREE.Vector3(0, 0, -D2/C2);
+      dibujarPlano(Pp1, n1, 5, 0x1f77b4);
+      dibujarPlano(Pp2, n2, 5, 0x2ca02c);
+      if (dir.lengthSq() < 1e-6) {
+        setRes('Los planos son <strong>paralelos</strong> (o coincidentes). No hay recta de intersección.');
+      } else {
+        dibujarRecta(P0, dir, 0xff0000, false);
+        setRes('La intersección es una recta con dirección <strong>(' + red(dir.x) + ', ' + red(dir.y) + ', ' + red(dir.z) + ')</strong><br>Punto: (' + red(P0.x) + ', ' + red(P0.y) + ', ' + red(P0.z) + ')');
+      }
+    }
+    else if (modoActivo === 3) {
+      var A1 = parseFloat(document.getElementById('int3d-3p1a').value)||0, B1 = parseFloat(document.getElementById('int3d-3p1b').value)||0, C1 = parseFloat(document.getElementById('int3d-3p1c').value)||0, D1 = parseFloat(document.getElementById('int3d-3p1d').value)||0;
+      var A2 = parseFloat(document.getElementById('int3d-3p2a').value)||0, B2 = parseFloat(document.getElementById('int3d-3p2b').value)||0, C2 = parseFloat(document.getElementById('int3d-3p2c').value)||0, D2 = parseFloat(document.getElementById('int3d-3p2d').value)||0;
+      var A3 = parseFloat(document.getElementById('int3d-3p3a').value)||0, B3 = parseFloat(document.getElementById('int3d-3p3b').value)||0, C3 = parseFloat(document.getElementById('int3d-3p3c').value)||0, D3 = parseFloat(document.getElementById('int3d-3p3d').value)||0;
+      var sol = solve3([[A1,B1,C1],[A2,B2,C2],[A3,B3,C3]], [-D1,-D2,-D3]);
+      var n1 = new THREE.Vector3(A1,B1,C1), n2 = new THREE.Vector3(A2,B2,C2), n3 = new THREE.Vector3(A3,B3,C3);
+      var Pp1 = new THREE.Vector3(-D1/A1,0,0); if (Math.abs(A1)<0.001) Pp1 = new THREE.Vector3(0,-D1/B1,0); if (Math.abs(A1)<0.001 && Math.abs(B1)<0.001) Pp1 = new THREE.Vector3(0,0,-D1/C1);
+      var Pp2 = new THREE.Vector3(-D2/A2,0,0); if (Math.abs(A2)<0.001) Pp2 = new THREE.Vector3(0,-D2/B2,0); if (Math.abs(A2)<0.001 && Math.abs(B2)<0.001) Pp2 = new THREE.Vector3(0,0,-D2/C2);
+      var Pp3 = new THREE.Vector3(-D3/A3,0,0); if (Math.abs(A3)<0.001) Pp3 = new THREE.Vector3(0,-D3/B3,0); if (Math.abs(A3)<0.001 && Math.abs(B3)<0.001) Pp3 = new THREE.Vector3(0,0,-D3/C3);
+      dibujarPlano(Pp1, n1, 5, 0x1f77b4);
+      dibujarPlano(Pp2, n2, 5, 0x2ca02c);
+      dibujarPlano(Pp3, n3, 5, 0xe91e63);
+      if (!sol) {
+        setRes('El sistema no tiene <strong>solución única</strong>. Los planos son paralelos o forman un haz.');
+      } else {
+        var pt = new THREE.Vector3(sol.x, sol.y, sol.z);
+        objGroup.add(crearEsfera(pt, 0x2ca02c, 0.18));
+        setRes('Los tres planos se intersectan en un único punto:<br><strong>(' + red(pt.x) + ', ' + red(pt.y) + ', ' + red(pt.z) + ')</strong>');
+      }
+    }
+    else if (modoActivo === 4) {
+      var p0 = new THREE.Vector3(parseFloat(document.getElementById('int3d-rlp-x').value)||0, parseFloat(document.getElementById('int3d-rlp-y').value)||0, parseFloat(document.getElementById('int3d-rlp-z').value)||0);
+      var dir = new THREE.Vector3(parseFloat(document.getElementById('int3d-rlv-x').value)||0, parseFloat(document.getElementById('int3d-rlv-y').value)||0, parseFloat(document.getElementById('int3d-rlv-z').value)||0);
+      var A = parseFloat(document.getElementById('int3d-pla').value)||0, B = parseFloat(document.getElementById('int3d-plb').value)||0, C = parseFloat(document.getElementById('int3d-plc').value)||0, D = parseFloat(document.getElementById('int3d-pld').value)||0;
+      var normal = new THREE.Vector3(A,B,C);
+      var den = A*dir.x + B*dir.y + C*dir.z;
+      var Pp = normal.lengthSq() > 0.001 ? p0.clone().sub(normal.clone().multiplyScalar((A*p0.x + B*p0.y + C*p0.z + D) / normal.lengthSq())) : p0.clone();
+      dibujarPlano(Pp, normal, 5, 0x1f77b4);
+      dibujarRecta(p0, dir, 0xffff00, false);
+      if (Math.abs(den) < 0.001) {
+        var dPlano = normal.length() > 0.001 ? Math.abs(A*p0.x + B*p0.y + C*p0.z + D) / normal.length() : 0;
+        if (dPlano < 0.01) setRes('La recta está <strong>contenida</strong> en el plano. Infinitos puntos de intersección.');
+        else setRes('La recta es <strong>paralela</strong> al plano. No hay intersección.');
+      } else {
+        var t = -(A*p0.x + B*p0.y + C*p0.z + D) / den;
+        var inter = p0.clone().add(dir.clone().multiplyScalar(t));
+        objGroup.add(crearEsfera(inter, 0x2ca02c, 0.18));
+        setRes('La recta corta al plano en:<br><strong>(' + red(inter.x) + ', ' + red(inter.y) + ', ' + red(inter.z) + ')</strong>');
+      }
+    }
+    loading.style.display = 'none';
+  };
+
+  var ids = [];
+  for (var i = 1; i <= 4; i++) {
+    var panel = document.getElementById('int3d-panel' + i);
+    if (panel) {
+      var inputs = panel.querySelectorAll('input[type="number"]');
+      inputs.forEach(function(inp) { ids.push(inp.id); });
+    }
+  }
+  ids.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('keypress', function(e) { if (e.key === 'Enter') int3dActualizar(); });
+  });
+
+  window.addEventListener('resize', function() {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  int3dActualizar();
+})();
+</script>
+</div>
+</div>
+</div>
+<div id="ejercicios-propuestos-1" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Ejercicios propuestos<a href="rectas-planos.html#ejercicios-propuestos-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Halle las ecuaciones paramétricas y simétricas de la recta que pasa por <span class="math inline">\((2, -1, 4)\)</span> y es paralela al vector <span class="math inline">\((3, 2, -2)\)</span>.</li>
+<li>Determine la ecuación del plano que pasa por <span class="math inline">\((1, 1, 1)\)</span> y es perpendicular a la recta <span class="math inline">\(x = 2t, y = 1 - t, z = 3 + 2t\)</span>.</li>
+<li>Calcule la distancia entre las rectas alabeadas <span class="math inline">\(L_1: x = 1 + t, y = 2 - t, z = 3t\)</span> y <span class="math inline">\(L_2: x = 2s, y = 1 + s, z = -1 + 2s\)</span>.</li>
+<li>Halle el ángulo entre los planos <span class="math inline">\(x + y + z = 1\)</span> y <span class="math inline">\(x - y + z = 2\)</span>.</li>
+<li>Determine si la recta <span class="math inline">\(\frac{x-1}{2} = \frac{y+1}{-1} = \frac{z-3}{1}\)</span> intersecta al plano <span class="math inline">\(x + 2y - z = 5\)</span>. En caso afirmativo, halle el punto de intersección.</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="coordenadas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Superficies3d.pdf", "Superficies3d.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

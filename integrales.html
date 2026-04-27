@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 7 Integrales Múltiples | Conceptos de Superficies</title>
+  <meta name="description" content="Este es un resumen de los casos de superficies y sus propiedades." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 7 Integrales Múltiples | Conceptos de Superficies" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este es un resumen de los casos de superficies y sus propiedades." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 7 Integrales Múltiples | Conceptos de Superficies" />
+  
+  <meta name="twitter:description" content="Este es un resumen de los casos de superficies y sus propiedades." />
+  
+
+<meta name="author" content="John Jairo Estrada Álvarez" />
+
+
+<meta name="date" content="2026-04-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cuadricas.html"/>
+<link rel="next" href="diferencial.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.12.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Conceptos de Superficies 3D</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vectores y Geometría Vectorial</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#vectores-libres-y-vectores-coordenados"><i class="fa fa-check"></i><b>1.1</b> Vectores libres y vectores coordenados</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#definición-de-vector"><i class="fa fa-check"></i><b>1.1.1</b> Definición de vector</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#vector-en-la-recta-mathbbr"><i class="fa fa-check"></i><b>1.1.2</b> Vector en la recta (<span class="math inline">\(\mathbb{R}\)</span>)</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#vector-en-el-plano-mathbbr2"><i class="fa fa-check"></i><b>1.1.3</b> Vector en el plano (<span class="math inline">\(\mathbb{R}^2\)</span>)</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#vector-en-el-espacio-mathbbr3"><i class="fa fa-check"></i><b>1.1.4</b> Vector en el espacio (<span class="math inline">\(\mathbb{R}^3\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#operaciones-vectoriales"><i class="fa fa-check"></i><b>1.2</b> Operaciones vectoriales</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#suma-y-resta"><i class="fa fa-check"></i><b>1.2.1</b> Suma y resta</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#multiplicación-por-escalar"><i class="fa fa-check"></i><b>1.2.2</b> Multiplicación por escalar</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#producto-punto-producto-escalar"><i class="fa fa-check"></i><b>1.3</b> Producto punto (producto escalar)</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#definición-algebraica"><i class="fa fa-check"></i><b>1.3.1</b> Definición algebraica</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#definición-geométrica"><i class="fa fa-check"></i><b>1.3.2</b> Definición geométrica</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#propiedades"><i class="fa fa-check"></i><b>1.3.3</b> Propiedades</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#aplicaciones-del-producto-punto"><i class="fa fa-check"></i><b>1.3.4</b> Aplicaciones del producto punto</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#ejemplo-resuelto"><i class="fa fa-check"></i><b>1.3.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#producto-cruz-producto-vectorial"><i class="fa fa-check"></i><b>1.4</b> Producto cruz (producto vectorial)</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#definición"><i class="fa fa-check"></i><b>1.4.1</b> Definición</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#propiedades-geométricas"><i class="fa fa-check"></i><b>1.4.2</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#propiedades-algebraicas"><i class="fa fa-check"></i><b>1.4.3</b> Propiedades algebraicas</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#ejemplo-resuelto-1"><i class="fa fa-check"></i><b>1.4.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#triple-producto-escalar"><i class="fa fa-check"></i><b>1.5</b> Triple producto escalar</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#interpretación-geométrica"><i class="fa fa-check"></i><b>1.5.1</b> Interpretación geométrica</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#ejemplo"><i class="fa fa-check"></i><b>1.5.2</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#visualización-interactiva-vectores-en-3d"><i class="fa fa-check"></i><b>1.6</b> Visualización interactiva: vectores en 3D</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#ejercicios-propuestos"><i class="fa fa-check"></i><b>1.7</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rectas-planos.html"><a href="rectas-planos.html"><i class="fa fa-check"></i><b>2</b> Rectas y Planos en el Espacio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rectas-planos.html"><a href="rectas-planos.html#rectas-en-el-espacio"><i class="fa fa-check"></i><b>2.1</b> Rectas en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuación-vectorial"><i class="fa fa-check"></i><b>2.1.1</b> Ecuación vectorial</a></li>
+<li class="chapter" data-level="2.1.2" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuaciones-paramétricas"><i class="fa fa-check"></i><b>2.1.2</b> Ecuaciones paramétricas</a></li>
+<li class="chapter" data-level="2.1.3" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuaciones-simétricas"><i class="fa fa-check"></i><b>2.1.3</b> Ecuaciones simétricas</a></li>
+<li class="chapter" data-level="2.1.4" data-path="rectas-planos.html"><a href="rectas-planos.html#recta-que-pasa-por-dos-puntos"><i class="fa fa-check"></i><b>2.1.4</b> Recta que pasa por dos puntos</a></li>
+<li class="chapter" data-level="2.1.5" data-path="rectas-planos.html"><a href="rectas-planos.html#ejemplo-resuelto-2"><i class="fa fa-check"></i><b>2.1.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="rectas-planos.html"><a href="rectas-planos.html#planos-en-el-espacio"><i class="fa fa-check"></i><b>2.2</b> Planos en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuación-punto-normal"><i class="fa fa-check"></i><b>2.2.1</b> Ecuación punto-normal</a></li>
+<li class="chapter" data-level="2.2.2" data-path="rectas-planos.html"><a href="rectas-planos.html#ecuación-general"><i class="fa fa-check"></i><b>2.2.2</b> Ecuación general</a></li>
+<li class="chapter" data-level="2.2.3" data-path="rectas-planos.html"><a href="rectas-planos.html#planos-coordenados"><i class="fa fa-check"></i><b>2.2.3</b> Planos coordenados</a></li>
+<li class="chapter" data-level="2.2.4" data-path="rectas-planos.html"><a href="rectas-planos.html#interceptos"><i class="fa fa-check"></i><b>2.2.4</b> Interceptos</a></li>
+<li class="chapter" data-level="2.2.5" data-path="rectas-planos.html"><a href="rectas-planos.html#plano-que-pasa-por-tres-puntos"><i class="fa fa-check"></i><b>2.2.5</b> Plano que pasa por tres puntos</a></li>
+<li class="chapter" data-level="2.2.6" data-path="rectas-planos.html"><a href="rectas-planos.html#ejemplo-resuelto-3"><i class="fa fa-check"></i><b>2.2.6</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="rectas-planos.html"><a href="rectas-planos.html#distancias-en-el-espacio"><i class="fa fa-check"></i><b>2.3</b> Distancias en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="rectas-planos.html"><a href="rectas-planos.html#distancia-de-un-punto-a-un-plano"><i class="fa fa-check"></i><b>2.3.1</b> Distancia de un punto a un plano</a></li>
+<li class="chapter" data-level="2.3.2" data-path="rectas-planos.html"><a href="rectas-planos.html#distancia-de-un-punto-a-una-recta"><i class="fa fa-check"></i><b>2.3.2</b> Distancia de un punto a una recta</a></li>
+<li class="chapter" data-level="2.3.3" data-path="rectas-planos.html"><a href="rectas-planos.html#distancia-entre-dos-rectas-en-el-espacio"><i class="fa fa-check"></i><b>2.3.3</b> Distancia entre dos rectas en el espacio</a></li>
+<li class="chapter" data-level="2.3.4" data-path="rectas-planos.html"><a href="rectas-planos.html#ejemplo-resuelto-4"><i class="fa fa-check"></i><b>2.3.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulos-en-el-espacio"><i class="fa fa-check"></i><b>2.4</b> Ángulos en el espacio</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulo-entre-dos-rectas"><i class="fa fa-check"></i><b>2.4.1</b> Ángulo entre dos rectas</a></li>
+<li class="chapter" data-level="2.4.2" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulo-entre-dos-planos"><i class="fa fa-check"></i><b>2.4.2</b> Ángulo entre dos planos</a></li>
+<li class="chapter" data-level="2.4.3" data-path="rectas-planos.html"><a href="rectas-planos.html#ángulo-entre-una-recta-y-un-plano"><i class="fa fa-check"></i><b>2.4.3</b> Ángulo entre una recta y un plano</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="rectas-planos.html"><a href="rectas-planos.html#intersecciones"><i class="fa fa-check"></i><b>2.5</b> Intersecciones</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="rectas-planos.html"><a href="rectas-planos.html#intersección-de-una-recta-y-un-plano"><i class="fa fa-check"></i><b>2.5.1</b> Intersección de una recta y un plano</a></li>
+<li class="chapter" data-level="2.5.2" data-path="rectas-planos.html"><a href="rectas-planos.html#intersección-de-dos-planos"><i class="fa fa-check"></i><b>2.5.2</b> Intersección de dos planos</a></li>
+<li class="chapter" data-level="2.5.3" data-path="rectas-planos.html"><a href="rectas-planos.html#intersección-de-tres-planos"><i class="fa fa-check"></i><b>2.5.3</b> Intersección de tres planos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="rectas-planos.html"><a href="rectas-planos.html#ejercicios-propuestos-1"><i class="fa fa-check"></i><b>2.6</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="coordenadas.html"><a href="coordenadas.html"><i class="fa fa-check"></i><b>3</b> Sistemas de Coordenadas y Parametrización</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="coordenadas.html"><a href="coordenadas.html#coordenadas-polares-en-el-plano"><i class="fa fa-check"></i><b>3.1</b> Coordenadas polares en el plano</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="coordenadas.html"><a href="coordenadas.html#relación-con-coordenadas-cartesianas"><i class="fa fa-check"></i><b>3.1.1</b> Relación con coordenadas cartesianas</a></li>
+<li class="chapter" data-level="3.1.2" data-path="coordenadas.html"><a href="coordenadas.html#curvas-notables-en-coordenadas-polares"><i class="fa fa-check"></i><b>3.1.2</b> Curvas notables en coordenadas polares</a></li>
+<li class="chapter" data-level="3.1.3" data-path="coordenadas.html"><a href="coordenadas.html#ejemplo-resuelto-5"><i class="fa fa-check"></i><b>3.1.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="coordenadas.html"><a href="coordenadas.html#coordenadas-cilíndricas"><i class="fa fa-check"></i><b>3.2</b> Coordenadas cilíndricas</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="coordenadas.html"><a href="coordenadas.html#definición-1"><i class="fa fa-check"></i><b>3.2.1</b> Definición</a></li>
+<li class="chapter" data-level="3.2.2" data-path="coordenadas.html"><a href="coordenadas.html#conversión-a-cartesianas"><i class="fa fa-check"></i><b>3.2.2</b> Conversión a cartesianas</a></li>
+<li class="chapter" data-level="3.2.3" data-path="coordenadas.html"><a href="coordenadas.html#superficies-de-coordenadas-constantes"><i class="fa fa-check"></i><b>3.2.3</b> Superficies de coordenadas constantes</a></li>
+<li class="chapter" data-level="3.2.4" data-path="coordenadas.html"><a href="coordenadas.html#jacobiano"><i class="fa fa-check"></i><b>3.2.4</b> Jacobiano</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="coordenadas.html"><a href="coordenadas.html#coordenadas-esféricas"><i class="fa fa-check"></i><b>3.3</b> Coordenadas esféricas</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="coordenadas.html"><a href="coordenadas.html#conversión-a-cartesianas-1"><i class="fa fa-check"></i><b>3.3.1</b> Conversión a cartesianas</a></li>
+<li class="chapter" data-level="3.3.2" data-path="coordenadas.html"><a href="coordenadas.html#conversión-a-cilíndricas"><i class="fa fa-check"></i><b>3.3.2</b> Conversión a cilíndricas</a></li>
+<li class="chapter" data-level="3.3.3" data-path="coordenadas.html"><a href="coordenadas.html#superficies-de-coordenadas-constantes-1"><i class="fa fa-check"></i><b>3.3.3</b> Superficies de coordenadas constantes</a></li>
+<li class="chapter" data-level="3.3.4" data-path="coordenadas.html"><a href="coordenadas.html#jacobiano-1"><i class="fa fa-check"></i><b>3.3.4</b> Jacobiano</a></li>
+<li class="chapter" data-level="3.3.5" data-path="coordenadas.html"><a href="coordenadas.html#ejemplo-resuelto-6"><i class="fa fa-check"></i><b>3.3.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="coordenadas.html"><a href="coordenadas.html#parametrización-de-curvas"><i class="fa fa-check"></i><b>3.4</b> Parametrización de curvas</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="coordenadas.html"><a href="coordenadas.html#curvas-paramétricas-en-el-plano"><i class="fa fa-check"></i><b>3.4.1</b> Curvas paramétricas en el plano</a></li>
+<li class="chapter" data-level="3.4.2" data-path="coordenadas.html"><a href="coordenadas.html#curvas-paramétricas-en-el-espacio"><i class="fa fa-check"></i><b>3.4.2</b> Curvas paramétricas en el espacio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="coordenadas.html"><a href="coordenadas.html#longitud-de-arco"><i class="fa fa-check"></i><b>3.5</b> Longitud de arco</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="coordenadas.html"><a href="coordenadas.html#ejemplo-resuelto-7"><i class="fa fa-check"></i><b>3.5.1</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="coordenadas.html"><a href="coordenadas.html#ejercicios-propuestos-2"><i class="fa fa-check"></i><b>3.6</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html"><i class="fa fa-check"></i><b>4</b> Funciones de Varias Variables y Derivadas Parciales</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#funciones-de-dos-y-tres-variables"><i class="fa fa-check"></i><b>4.1</b> Funciones de dos y tres variables</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#definición-2"><i class="fa fa-check"></i><b>4.1.1</b> Definición</a></li>
+<li class="chapter" data-level="4.1.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#dominio-y-rango"><i class="fa fa-check"></i><b>4.1.2</b> Dominio y rango</a></li>
+<li class="chapter" data-level="4.1.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplos"><i class="fa fa-check"></i><b>4.1.3</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#gráfica-de-una-función-de-dos-variables"><i class="fa fa-check"></i><b>4.2</b> Gráfica de una función de dos variables</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-1"><i class="fa fa-check"></i><b>4.2.1</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#curvas-de-nivel"><i class="fa fa-check"></i><b>4.3</b> Curvas de nivel</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplos-de-curvas-de-nivel"><i class="fa fa-check"></i><b>4.3.1</b> Ejemplos de curvas de nivel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#límites-y-continuidad"><i class="fa fa-check"></i><b>4.4</b> Límites y continuidad</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#límite-de-una-función-de-dos-variables"><i class="fa fa-check"></i><b>4.4.1</b> Límite de una función de dos variables</a></li>
+<li class="chapter" data-level="4.4.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#criterio-para-inexistencia-de-límite"><i class="fa fa-check"></i><b>4.4.2</b> Criterio para inexistencia de límite</a></li>
+<li class="chapter" data-level="4.4.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-8"><i class="fa fa-check"></i><b>4.4.3</b> Ejemplo resuelto</a></li>
+<li class="chapter" data-level="4.4.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#continuidad"><i class="fa fa-check"></i><b>4.4.4</b> Continuidad</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivadas-parciales-1"><i class="fa fa-check"></i><b>4.5</b> Derivadas parciales</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#definición-3"><i class="fa fa-check"></i><b>4.5.1</b> Definición</a></li>
+<li class="chapter" data-level="4.5.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#notaciones"><i class="fa fa-check"></i><b>4.5.2</b> Notaciones</a></li>
+<li class="chapter" data-level="4.5.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#interpretación-geométrica-1"><i class="fa fa-check"></i><b>4.5.3</b> Interpretación geométrica</a></li>
+<li class="chapter" data-level="4.5.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-9"><i class="fa fa-check"></i><b>4.5.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#herramienta-de-cálculo-derivadas-parciales-paso-a-paso"><i class="fa fa-check"></i><b>4.6</b> Herramienta de cálculo: Derivadas parciales paso a paso</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-fx-y-x3-siny-exy"><i class="fa fa-check"></i><b>4.6.1</b> Ejemplo: <span class="math inline">\(f(x, y) = x^3 \sin(y) + e^{xy}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivadas-parciales-de-orden-superior"><i class="fa fa-check"></i><b>4.7</b> Derivadas parciales de orden superior</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#teorema-de-clairaut"><i class="fa fa-check"></i><b>4.7.1</b> Teorema de Clairaut</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#plano-tangente-y-aproximación-lineal"><i class="fa fa-check"></i><b>4.8</b> Plano tangente y aproximación lineal</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ecuación-del-plano-tangente"><i class="fa fa-check"></i><b>4.8.1</b> Ecuación del plano tangente</a></li>
+<li class="chapter" data-level="4.8.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#aproximación-lineal-diferenciabilidad"><i class="fa fa-check"></i><b>4.8.2</b> Aproximación lineal (diferenciabilidad)</a></li>
+<li class="chapter" data-level="4.8.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-10"><i class="fa fa-check"></i><b>4.8.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#regla-de-la-cadena"><i class="fa fa-check"></i><b>4.9</b> Regla de la cadena</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#caso-1-función-compuesta-de-una-variable"><i class="fa fa-check"></i><b>4.9.1</b> Caso 1: Función compuesta de una variable</a></li>
+<li class="chapter" data-level="4.9.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#caso-2-función-compuesta-de-dos-variables"><i class="fa fa-check"></i><b>4.9.2</b> Caso 2: Función compuesta de dos variables</a></li>
+<li class="chapter" data-level="4.9.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-11"><i class="fa fa-check"></i><b>4.9.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivada-direccional-y-gradiente"><i class="fa fa-check"></i><b>4.10</b> Derivada direccional y gradiente</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#derivada-direccional"><i class="fa fa-check"></i><b>4.10.1</b> Derivada direccional</a></li>
+<li class="chapter" data-level="4.10.2" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#vector-gradiente"><i class="fa fa-check"></i><b>4.10.2</b> Vector gradiente</a></li>
+<li class="chapter" data-level="4.10.3" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#propiedades-del-gradiente"><i class="fa fa-check"></i><b>4.10.3</b> Propiedades del gradiente</a></li>
+<li class="chapter" data-level="4.10.4" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejemplo-resuelto-12"><i class="fa fa-check"></i><b>4.10.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#visualización-interactiva-plano-tangente-y-gradiente"><i class="fa fa-check"></i><b>4.11</b> Visualización interactiva: plano tangente y gradiente</a></li>
+<li class="chapter" data-level="4.12" data-path="derivadas-parciales.html"><a href="derivadas-parciales.html#ejercicios-propuestos-3"><i class="fa fa-check"></i><b>4.12</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="maximos-minimos.html"><a href="maximos-minimos.html"><i class="fa fa-check"></i><b>5</b> Máximos, Mínimos y Optimización</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#puntos-críticos"><i class="fa fa-check"></i><b>5.1</b> Puntos críticos</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#definición-4"><i class="fa fa-check"></i><b>5.1.1</b> Definición</a></li>
+<li class="chapter" data-level="5.1.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#extremos-locales"><i class="fa fa-check"></i><b>5.1.2</b> Extremos locales</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#criterio-del-hessiano-para-funciones-de-dos-variables"><i class="fa fa-check"></i><b>5.2</b> Criterio del Hessiano para funciones de dos variables</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#matriz-hessiana"><i class="fa fa-check"></i><b>5.2.1</b> Matriz Hessiana</a></li>
+<li class="chapter" data-level="5.2.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#discriminante"><i class="fa fa-check"></i><b>5.2.2</b> Discriminante</a></li>
+<li class="chapter" data-level="5.2.3" data-path="maximos-minimos.html"><a href="maximos-minimos.html#criterio-de-clasificación"><i class="fa fa-check"></i><b>5.2.3</b> Criterio de clasificación</a></li>
+<li class="chapter" data-level="5.2.4" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-resuelto-13"><i class="fa fa-check"></i><b>5.2.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="maximos-minimos.html"><a href="maximos-minimos.html#herramienta-de-cálculo-hessiano-automático"><i class="fa fa-check"></i><b>5.3</b> Herramienta de cálculo: Hessiano automático</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-fx-y-x3-y3---3xy-en-1-1"><i class="fa fa-check"></i><b>5.3.1</b> Ejemplo: <span class="math inline">\(f(x, y) = x^3 + y^3 - 3xy\)</span> en <span class="math inline">\((1, 1)\)</span></a></li>
+<li class="chapter" data-level="5.3.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#segundo-ejemplo-fx-y-x2-y2-en-0-0"><i class="fa fa-check"></i><b>5.3.2</b> Segundo ejemplo: <span class="math inline">\(f(x, y) = x^2 + y^2\)</span> en <span class="math inline">\((0, 0)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="maximos-minimos.html"><a href="maximos-minimos.html#extremos-absolutos-en-regiones-compactas"><i class="fa fa-check"></i><b>5.4</b> Extremos absolutos en regiones compactas</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#método-para-encontrar-extremos-absolutos"><i class="fa fa-check"></i><b>5.4.1</b> Método para encontrar extremos absolutos</a></li>
+<li class="chapter" data-level="5.4.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-resuelto-14"><i class="fa fa-check"></i><b>5.4.2</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="maximos-minimos.html"><a href="maximos-minimos.html#multiplicadores-de-lagrange"><i class="fa fa-check"></i><b>5.5</b> Multiplicadores de Lagrange</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="maximos-minimos.html"><a href="maximos-minimos.html#condición-necesaria"><i class="fa fa-check"></i><b>5.5.1</b> Condición necesaria</a></li>
+<li class="chapter" data-level="5.5.2" data-path="maximos-minimos.html"><a href="maximos-minimos.html#función-de-lagrange"><i class="fa fa-check"></i><b>5.5.2</b> Función de Lagrange</a></li>
+<li class="chapter" data-level="5.5.3" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejemplo-resuelto-15"><i class="fa fa-check"></i><b>5.5.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="maximos-minimos.html"><a href="maximos-minimos.html#extensión-a-tres-variables"><i class="fa fa-check"></i><b>5.6</b> Extensión a tres variables</a></li>
+<li class="chapter" data-level="5.7" data-path="maximos-minimos.html"><a href="maximos-minimos.html#visualización-interactiva-puntos-críticos-y-sillas-de-montar"><i class="fa fa-check"></i><b>5.7</b> Visualización interactiva: puntos críticos y sillas de montar</a></li>
+<li class="chapter" data-level="5.8" data-path="maximos-minimos.html"><a href="maximos-minimos.html#ejercicios-propuestos-4"><i class="fa fa-check"></i><b>5.8</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cuadricas.html"><a href="cuadricas.html"><i class="fa fa-check"></i><b>6</b> Superficies Cuádricas</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-general-y-clasificación"><i class="fa fa-check"></i><b>6.1</b> Ecuación general y clasificación</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="cuadricas.html"><a href="cuadricas.html#estrategia-de-análisis"><i class="fa fa-check"></i><b>6.1.1</b> Estrategia de análisis</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="cuadricas.html"><a href="cuadricas.html#elipsoide"><i class="fa fa-check"></i><b>6.2</b> Elipsoide</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica"><i class="fa fa-check"></i><b>6.2.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.2.2" data-path="cuadricas.html"><a href="cuadricas.html#caso-particular-la-esfera"><i class="fa fa-check"></i><b>6.2.2</b> Caso particular: la esfera</a></li>
+<li class="chapter" data-level="6.2.3" data-path="cuadricas.html"><a href="cuadricas.html#trazas"><i class="fa fa-check"></i><b>6.2.3</b> Trazas</a></li>
+<li class="chapter" data-level="6.2.4" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-1"><i class="fa fa-check"></i><b>6.2.4</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.2.5" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-16"><i class="fa fa-check"></i><b>6.2.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="cuadricas.html"><a href="cuadricas.html#hiperboloide-de-una-hoja"><i class="fa fa-check"></i><b>6.3</b> Hiperboloide de una hoja</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-1"><i class="fa fa-check"></i><b>6.3.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.3.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-1"><i class="fa fa-check"></i><b>6.3.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.3.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-2"><i class="fa fa-check"></i><b>6.3.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.3.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-17"><i class="fa fa-check"></i><b>6.3.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="cuadricas.html"><a href="cuadricas.html#hiperboloide-de-dos-hojas"><i class="fa fa-check"></i><b>6.4</b> Hiperboloide de dos hojas</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-2"><i class="fa fa-check"></i><b>6.4.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.4.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-2"><i class="fa fa-check"></i><b>6.4.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.4.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-3"><i class="fa fa-check"></i><b>6.4.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.4.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-18"><i class="fa fa-check"></i><b>6.4.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="cuadricas.html"><a href="cuadricas.html#paraboloide-elíptico"><i class="fa fa-check"></i><b>6.5</b> Paraboloide elíptico</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-3"><i class="fa fa-check"></i><b>6.5.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.5.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-3"><i class="fa fa-check"></i><b>6.5.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.5.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-4"><i class="fa fa-check"></i><b>6.5.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.5.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-19"><i class="fa fa-check"></i><b>6.5.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="cuadricas.html"><a href="cuadricas.html#paraboloide-hiperbólico"><i class="fa fa-check"></i><b>6.6</b> Paraboloide hiperbólico</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-4"><i class="fa fa-check"></i><b>6.6.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.6.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-4"><i class="fa fa-check"></i><b>6.6.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.6.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-5"><i class="fa fa-check"></i><b>6.6.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.6.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-20"><i class="fa fa-check"></i><b>6.6.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="cuadricas.html"><a href="cuadricas.html#cono-elíptico"><i class="fa fa-check"></i><b>6.7</b> Cono elíptico</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="cuadricas.html"><a href="cuadricas.html#ecuación-canónica-5"><i class="fa fa-check"></i><b>6.7.1</b> Ecuación canónica</a></li>
+<li class="chapter" data-level="6.7.2" data-path="cuadricas.html"><a href="cuadricas.html#trazas-5"><i class="fa fa-check"></i><b>6.7.2</b> Trazas</a></li>
+<li class="chapter" data-level="6.7.3" data-path="cuadricas.html"><a href="cuadricas.html#propiedades-geométricas-6"><i class="fa fa-check"></i><b>6.7.3</b> Propiedades geométricas</a></li>
+<li class="chapter" data-level="6.7.4" data-path="cuadricas.html"><a href="cuadricas.html#ejemplo-resuelto-21"><i class="fa fa-check"></i><b>6.7.4</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="cuadricas.html"><a href="cuadricas.html#clasificación-resumida-de-las-cuádricas"><i class="fa fa-check"></i><b>6.8</b> Clasificación resumida de las cuádricas</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="cuadricas.html"><a href="cuadricas.html#criterio-de-clasificación-1"><i class="fa fa-check"></i><b>6.8.1</b> Criterio de clasificación</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="cuadricas.html"><a href="cuadricas.html#ejercicios-propuestos-5"><i class="fa fa-check"></i><b>6.9</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="integrales.html"><a href="integrales.html"><i class="fa fa-check"></i><b>7</b> Integrales Múltiples</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="integrales.html"><a href="integrales.html#integrales-dobles"><i class="fa fa-check"></i><b>7.1</b> Integrales dobles</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="integrales.html"><a href="integrales.html#definición-por-sumas-de-riemann"><i class="fa fa-check"></i><b>7.1.1</b> Definición por sumas de Riemann</a></li>
+<li class="chapter" data-level="7.1.2" data-path="integrales.html"><a href="integrales.html#propiedades-1"><i class="fa fa-check"></i><b>7.1.2</b> Propiedades</a></li>
+<li class="chapter" data-level="7.1.3" data-path="integrales.html"><a href="integrales.html#evaluación-integrales-iteradas-teorema-de-fubini"><i class="fa fa-check"></i><b>7.1.3</b> Evaluación: integrales iteradas (Teorema de Fubini)</a></li>
+<li class="chapter" data-level="7.1.4" data-path="integrales.html"><a href="integrales.html#regiones-generales"><i class="fa fa-check"></i><b>7.1.4</b> Regiones generales</a></li>
+<li class="chapter" data-level="7.1.5" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-22"><i class="fa fa-check"></i><b>7.1.5</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="integrales.html"><a href="integrales.html#cambio-de-variables-en-integrales-dobles"><i class="fa fa-check"></i><b>7.2</b> Cambio de variables en integrales dobles</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="integrales.html"><a href="integrales.html#transformación-general"><i class="fa fa-check"></i><b>7.2.1</b> Transformación general</a></li>
+<li class="chapter" data-level="7.2.2" data-path="integrales.html"><a href="integrales.html#coordenadas-polares"><i class="fa fa-check"></i><b>7.2.2</b> Coordenadas polares</a></li>
+<li class="chapter" data-level="7.2.3" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-23"><i class="fa fa-check"></i><b>7.2.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="integrales.html"><a href="integrales.html#integrales-triples"><i class="fa fa-check"></i><b>7.3</b> Integrales triples</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="integrales.html"><a href="integrales.html#definición-5"><i class="fa fa-check"></i><b>7.3.1</b> Definición</a></li>
+<li class="chapter" data-level="7.3.2" data-path="integrales.html"><a href="integrales.html#evaluación-como-integral-iterada"><i class="fa fa-check"></i><b>7.3.2</b> Evaluación como integral iterada</a></li>
+<li class="chapter" data-level="7.3.3" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-24"><i class="fa fa-check"></i><b>7.3.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="integrales.html"><a href="integrales.html#cambio-de-variables-en-integrales-triples"><i class="fa fa-check"></i><b>7.4</b> Cambio de variables en integrales triples</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="integrales.html"><a href="integrales.html#coordenadas-cilíndricas-1"><i class="fa fa-check"></i><b>7.4.1</b> Coordenadas cilíndricas</a></li>
+<li class="chapter" data-level="7.4.2" data-path="integrales.html"><a href="integrales.html#coordenadas-esféricas-1"><i class="fa fa-check"></i><b>7.4.2</b> Coordenadas esféricas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="integrales.html"><a href="integrales.html#ejemplo-resuelto-25"><i class="fa fa-check"></i><b>7.4.3</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="integrales.html"><a href="integrales.html#aplicaciones-de-las-integrales-múltiples"><i class="fa fa-check"></i><b>7.5</b> Aplicaciones de las integrales múltiples</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="integrales.html"><a href="integrales.html#áreas-y-volúmenes"><i class="fa fa-check"></i><b>7.5.1</b> Áreas y volúmenes</a></li>
+<li class="chapter" data-level="7.5.2" data-path="integrales.html"><a href="integrales.html#masa-y-centro-de-masa"><i class="fa fa-check"></i><b>7.5.2</b> Masa y centro de masa</a></li>
+<li class="chapter" data-level="7.5.3" data-path="integrales.html"><a href="integrales.html#momentos-de-inercia"><i class="fa fa-check"></i><b>7.5.3</b> Momentos de inercia</a></li>
+<li class="chapter" data-level="7.5.4" data-path="integrales.html"><a href="integrales.html#valor-promedio"><i class="fa fa-check"></i><b>7.5.4</b> Valor promedio</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="integrales.html"><a href="integrales.html#visualización-interactiva-regiones-de-integración"><i class="fa fa-check"></i><b>7.6</b> Visualización interactiva: regiones de integración</a></li>
+<li class="chapter" data-level="7.7" data-path="integrales.html"><a href="integrales.html#ejercicios-propuestos-6"><i class="fa fa-check"></i><b>7.7</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="diferencial.html"><a href="diferencial.html"><i class="fa fa-check"></i><b>8</b> Geometría Diferencial de Superficies</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="diferencial.html"><a href="diferencial.html#superficies-paramétricas"><i class="fa fa-check"></i><b>8.1</b> Superficies paramétricas</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="diferencial.html"><a href="diferencial.html#definición-6"><i class="fa fa-check"></i><b>8.1.1</b> Definición</a></li>
+<li class="chapter" data-level="8.1.2" data-path="diferencial.html"><a href="diferencial.html#ejemplos-de-parametrizaciones"><i class="fa fa-check"></i><b>8.1.2</b> Ejemplos de parametrizaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="diferencial.html"><a href="diferencial.html#cambio-de-parametrización"><i class="fa fa-check"></i><b>8.2</b> Cambio de parametrización</a></li>
+<li class="chapter" data-level="8.3" data-path="diferencial.html"><a href="diferencial.html#vector-normal-y-orientación"><i class="fa fa-check"></i><b>8.3</b> Vector normal y orientación</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="diferencial.html"><a href="diferencial.html#vector-normal"><i class="fa fa-check"></i><b>8.3.1</b> Vector normal</a></li>
+<li class="chapter" data-level="8.3.2" data-path="diferencial.html"><a href="diferencial.html#interpretación-geométrica-2"><i class="fa fa-check"></i><b>8.3.2</b> Interpretación geométrica</a></li>
+<li class="chapter" data-level="8.3.3" data-path="diferencial.html"><a href="diferencial.html#ejemplo-de-cálculo"><i class="fa fa-check"></i><b>8.3.3</b> Ejemplo de cálculo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="diferencial.html"><a href="diferencial.html#plano-tangente"><i class="fa fa-check"></i><b>8.4</b> Plano tangente</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="diferencial.html"><a href="diferencial.html#definición-7"><i class="fa fa-check"></i><b>8.4.1</b> Definición</a></li>
+<li class="chapter" data-level="8.4.2" data-path="diferencial.html"><a href="diferencial.html#ecuación-del-plano-tangente-1"><i class="fa fa-check"></i><b>8.4.2</b> Ecuación del plano tangente</a></li>
+<li class="chapter" data-level="8.4.3" data-path="diferencial.html"><a href="diferencial.html#ejemplo-2"><i class="fa fa-check"></i><b>8.4.3</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="diferencial.html"><a href="diferencial.html#primera-forma-fundamental"><i class="fa fa-check"></i><b>8.5</b> Primera forma fundamental</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="diferencial.html"><a href="diferencial.html#coeficientes-fundamentales"><i class="fa fa-check"></i><b>8.5.1</b> Coeficientes fundamentales</a></li>
+<li class="chapter" data-level="8.5.2" data-path="diferencial.html"><a href="diferencial.html#aplicaciones"><i class="fa fa-check"></i><b>8.5.2</b> Aplicaciones</a></li>
+<li class="chapter" data-level="8.5.3" data-path="diferencial.html"><a href="diferencial.html#ejemplo-esfera"><i class="fa fa-check"></i><b>8.5.3</b> Ejemplo: Esfera</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="diferencial.html"><a href="diferencial.html#segunda-forma-fundamental-y-curvatura"><i class="fa fa-check"></i><b>8.6</b> Segunda forma fundamental y curvatura</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="diferencial.html"><a href="diferencial.html#vector-normal-y-derivadas"><i class="fa fa-check"></i><b>8.6.1</b> Vector normal y derivadas</a></li>
+<li class="chapter" data-level="8.6.2" data-path="diferencial.html"><a href="diferencial.html#curvaturas-principales"><i class="fa fa-check"></i><b>8.6.2</b> Curvaturas principales</a></li>
+<li class="chapter" data-level="8.6.3" data-path="diferencial.html"><a href="diferencial.html#curvatura-gaussiana"><i class="fa fa-check"></i><b>8.6.3</b> Curvatura gaussiana</a></li>
+<li class="chapter" data-level="8.6.4" data-path="diferencial.html"><a href="diferencial.html#curvatura-media"><i class="fa fa-check"></i><b>8.6.4</b> Curvatura media</a></li>
+<li class="chapter" data-level="8.6.5" data-path="diferencial.html"><a href="diferencial.html#ejemplo-paraboloide-elíptico"><i class="fa fa-check"></i><b>8.6.5</b> Ejemplo: Paraboloide elíptico</a></li>
+<li class="chapter" data-level="8.6.6" data-path="diferencial.html"><a href="diferencial.html#ejemplo-paraboloide-hiperbólico"><i class="fa fa-check"></i><b>8.6.6</b> Ejemplo: Paraboloide hiperbólico</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="diferencial.html"><a href="diferencial.html#líneas-de-curvatura-y-direcciones-principales"><i class="fa fa-check"></i><b>8.7</b> Líneas de curvatura y direcciones principales</a></li>
+<li class="chapter" data-level="8.8" data-path="diferencial.html"><a href="diferencial.html#ecuaciones-de-weingarten"><i class="fa fa-check"></i><b>8.8</b> Ecuaciones de Weingarten</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="diferencial.html"><a href="diferencial.html#aplicaciones"><i class="fa fa-check"></i><b>9</b> Aplicaciones de las Superficies</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="aplicaciones.html"><a href="aplicaciones.html"><i class="fa fa-check"></i><b>9.1</b> Áreas de superficies</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="aplicaciones.html"><a href="aplicaciones.html#fórmula-general"><i class="fa fa-check"></i><b>9.1.1</b> Fórmula general</a></li>
+<li class="chapter" data-level="9.1.2" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-área-de-un-paraboloide"><i class="fa fa-check"></i><b>9.1.2</b> Ejemplo resuelto: Área de un paraboloide</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="aplicaciones.html"><a href="aplicaciones.html#integrales-de-superficie-de-campos-escalares"><i class="fa fa-check"></i><b>9.2</b> Integrales de superficie de campos escalares</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="aplicaciones.html"><a href="aplicaciones.html#interpretaciones-físicas"><i class="fa fa-check"></i><b>9.2.1</b> Interpretaciones físicas</a></li>
+<li class="chapter" data-level="9.2.2" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-masa-de-una-lámina-esférica"><i class="fa fa-check"></i><b>9.2.2</b> Ejemplo resuelto: Masa de una lámina esférica</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="aplicaciones.html"><a href="aplicaciones.html#integrales-de-superficie-de-campos-vectoriales-flujo"><i class="fa fa-check"></i><b>9.3</b> Integrales de superficie de campos vectoriales (Flujo)</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="aplicaciones.html"><a href="aplicaciones.html#interpretación-física"><i class="fa fa-check"></i><b>9.3.1</b> Interpretación física</a></li>
+<li class="chapter" data-level="9.3.2" data-path="aplicaciones.html"><a href="aplicaciones.html#teorema-de-la-divergencia-gauss"><i class="fa fa-check"></i><b>9.3.2</b> Teorema de la divergencia (Gauss)</a></li>
+<li class="chapter" data-level="9.3.3" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-flujo-a-través-de-un-elipsoide"><i class="fa fa-check"></i><b>9.3.3</b> Ejemplo resuelto: Flujo a través de un elipsoide</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="aplicaciones.html"><a href="aplicaciones.html#volumen-bajo-una-superficie"><i class="fa fa-check"></i><b>9.4</b> Volumen bajo una superficie</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="aplicaciones.html"><a href="aplicaciones.html#ejemplo-resuelto-26"><i class="fa fa-check"></i><b>9.4.1</b> Ejemplo resuelto</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="aplicaciones.html"><a href="aplicaciones.html#aplicaciones-en-física"><i class="fa fa-check"></i><b>9.5</b> Aplicaciones en física</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="aplicaciones.html"><a href="aplicaciones.html#ley-de-gauss-eléctrica"><i class="fa fa-check"></i><b>9.5.1</b> Ley de Gauss eléctrica</a></li>
+<li class="chapter" data-level="9.5.2" data-path="aplicaciones.html"><a href="aplicaciones.html#ley-de-ampère-maxwell"><i class="fa fa-check"></i><b>9.5.2</b> Ley de Ampère-Maxwell</a></li>
+<li class="chapter" data-level="9.5.3" data-path="aplicaciones.html"><a href="aplicaciones.html#momento-de-inercia"><i class="fa fa-check"></i><b>9.5.3</b> Momento de inercia</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="aplicaciones.html"><a href="aplicaciones.html#aplicaciones-en-arquitectura-e-ingeniería"><i class="fa fa-check"></i><b>9.6</b> Aplicaciones en arquitectura e ingeniería</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="aplicaciones.html"><a href="aplicaciones.html#estructuras-regladas"><i class="fa fa-check"></i><b>9.6.1</b> Estructuras regladas</a></li>
+<li class="chapter" data-level="9.6.2" data-path="aplicaciones.html"><a href="aplicaciones.html#óptica"><i class="fa fa-check"></i><b>9.6.2</b> Óptica</a></li>
+<li class="chapter" data-level="9.6.3" data-path="aplicaciones.html"><a href="aplicaciones.html#mecánica-celeste"><i class="fa fa-check"></i><b>9.6.3</b> Mecánica celeste</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="aplicaciones.html"><a href="aplicaciones.html#ejercicios-propuestos-7"><i class="fa fa-check"></i><b>9.7</b> Ejercicios propuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>10</b> Conclusiones</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="conclusiones.html"><a href="conclusiones.html#resumen-de-contenidos-por-capítulo"><i class="fa fa-check"></i><b>10.1</b> Resumen de contenidos por capítulo</a></li>
+<li class="chapter" data-level="10.2" data-path="conclusiones.html"><a href="conclusiones.html#conclusiones-finales"><i class="fa fa-check"></i><b>10.2</b> Conclusiones finales</a></li>
+<li class="chapter" data-level="10.3" data-path="conclusiones.html"><a href="conclusiones.html#direcciones-para-profundizar"><i class="fa fa-check"></i><b>10.3</b> Direcciones para profundizar</a></li>
+<li class="chapter" data-level="10.4" data-path="conclusiones.html"><a href="conclusiones.html#referencias-bibliográficas"><i class="fa fa-check"></i><b>10.4</b> Referencias bibliográficas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Conceptos de Superficies</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="integrales" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Capítulo 7</span> Integrales Múltiples<a href="integrales.html#integrales" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div style="margin: 1.5em 0; padding: 1em; background-color: #e8f4fd; border-left: 5px solid #2196F3; border-radius: 4px;">
+<p style="margin: 0 0 0.5em 0; font-weight: bold; color: #1565C0;">
+🎧 Podcast del capítulo
+</p>
+<p><audio controls preload="none" style="width: 100%; height: 40px;">
+<source src="audio/cap06_integrales.mp3" type="audio/mpeg">
+Tu navegador no soporta el elemento de audio.
+</audio></p>
+</div>
+<p>El cálculo integral se extiende de manera natural a funciones de varias variables mediante las integrales dobles y triples. Estas herramientas permiten calcular volúmenes, áreas, centroides, momentos de inercia y promedios sobre regiones bidimensionales y tridimensionales.</p>
+<div id="integrales-dobles" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Integrales dobles<a href="integrales.html#integrales-dobles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="definición-por-sumas-de-riemann" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Definición por sumas de Riemann<a href="integrales.html#definición-por-sumas-de-riemann" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sea <span class="math inline">\(f(x, y)\)</span> una función definida sobre una región rectangular <span class="math inline">\(R = [a, b] \times [c, d]\)</span>. Dividimos <span class="math inline">\(R\)</span> en <span class="math inline">\(m \times n\)</span> subrectángulos de área <span class="math inline">\(\Delta A = \Delta x \Delta y\)</span>. La <strong>integral doble</strong> de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(R\)</span> es:</p>
+<p><span class="math display">\[
+\iint_R f(x, y) \, dA = \lim_{m,n \to \infty} \sum_{i=1}^m \sum_{j=1}^n f(x_i^*, y_j^*) \Delta A
+\]</span></p>
+<p>siempre que el límite exista.</p>
+</div>
+<div id="propiedades-1" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Propiedades<a href="integrales.html#propiedades-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Linealidad</strong>: <span class="math inline">\(\iint_R [\alpha f + \beta g] \, dA = \alpha \iint_R f \, dA + \beta \iint_R g \, dA\)</span></li>
+<li><strong>Monotonía</strong>: Si <span class="math inline">\(f(x, y) \leq g(x, y)\)</span>, entonces <span class="math inline">\(\iint_R f \, dA \leq \iint_R g \, dA\)</span></li>
+<li><strong>Aditividad</strong>: Si <span class="math inline">\(R = R_1 \cup R_2\)</span> con interiores disjuntos, <span class="math inline">\(\iint_R f \, dA = \iint_{R_1} f \, dA + \iint_{R_2} f \, dA\)</span></li>
+<li><strong>Área</strong>: <span class="math inline">\(\iint_R 1 \, dA = A(R)\)</span></li>
+</ol>
+</div>
+<div id="evaluación-integrales-iteradas-teorema-de-fubini" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Evaluación: integrales iteradas (Teorema de Fubini)<a href="integrales.html#evaluación-integrales-iteradas-teorema-de-fubini" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si <span class="math inline">\(f\)</span> es continua sobre <span class="math inline">\(R = [a, b] \times [c, d]\)</span>, entonces:</p>
+<p><span class="math display">\[
+\iint_R f(x, y) \, dA = \int_a^b \int_c^d f(x, y) \, dy \, dx = \int_c^d \int_a^b f(x, y) \, dx \, dy
+\]</span></p>
+<p>El orden de integración puede intercambiarse cuando <span class="math inline">\(f\)</span> es continua.</p>
+</div>
+<div id="regiones-generales" class="section level3 hasAnchor" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Regiones generales<a href="integrales.html#regiones-generales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="tipo-i-verticalmente-simple" class="section level4 hasAnchor" number="7.1.4.1">
+<h4><span class="header-section-number">7.1.4.1</span> Tipo I (verticalmente simple)<a href="integrales.html#tipo-i-verticalmente-simple" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="math display">\[
+R = \{(x, y) : a \leq x \leq b, \; g_1(x) \leq y \leq g_2(x)\}
+\]</span></p>
+<p><span class="math display">\[
+\iint_R f(x, y) \, dA = \int_a^b \int_{g_1(x)}^{g_2(x)} f(x, y) \, dy \, dx
+\]</span></p>
+</div>
+<div id="tipo-ii-horizontalmente-simple" class="section level4 hasAnchor" number="7.1.4.2">
+<h4><span class="header-section-number">7.1.4.2</span> Tipo II (horizontalmente simple)<a href="integrales.html#tipo-ii-horizontalmente-simple" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="math display">\[
+R = \{(x, y) : c \leq y \leq d, \; h_1(y) \leq x \leq h_2(y)\}
+\]</span></p>
+<p><span class="math display">\[
+\iint_R f(x, y) \, dA = \int_c^d \int_{h_1(y)}^{h_2(y)} f(x, y) \, dx \, dy
+\]</span></p>
+</div>
+</div>
+<div id="ejemplo-resuelto-22" class="section level3 hasAnchor" number="7.1.5">
+<h3><span class="header-section-number">7.1.5</span> Ejemplo resuelto<a href="integrales.html#ejemplo-resuelto-22" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p><strong>Ejemplo 1.</strong> Evalúe <span class="math inline">\(\iint_R (x + y) \, dA\)</span> donde <span class="math inline">\(R\)</span> está acotada por <span class="math inline">\(y = x^2\)</span> e <span class="math inline">\(y = x\)</span>.</p>
+</blockquote>
+<p><strong>Solución.</strong> Las curvas se intersectan cuando <span class="math inline">\(x^2 = x\)</span>, es decir, <span class="math inline">\(x = 0\)</span> y <span class="math inline">\(x = 1\)</span>.</p>
+<p>Región Tipo I: <span class="math inline">\(0 \leq x \leq 1\)</span>, <span class="math inline">\(x^2 \leq y \leq x\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\iint_R (x + y) \, dA &amp;= \int_0^1 \int_{x^2}^x (x + y) \, dy \, dx \\
+&amp;= \int_0^1 \left[ xy + \frac{y^2}{2} \right]_{x^2}^x dx \\
+&amp;= \int_0^1 \left( x^2 + \frac{x^2}{2} - x^3 - \frac{x^4}{2} \right) dx \\
+&amp;= \int_0^1 \left( \frac{3x^2}{2} - x^3 - \frac{x^4}{2} \right) dx \\
+&amp;= \left[ \frac{x^3}{2} - \frac{x^4}{4} - \frac{x^5}{10} \right]_0^1 = \frac{1}{2} - \frac{1}{4} - \frac{1}{10} = \frac{3}{20}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="cambio-de-variables-en-integrales-dobles" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Cambio de variables en integrales dobles<a href="integrales.html#cambio-de-variables-en-integrales-dobles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="transformación-general" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Transformación general<a href="integrales.html#transformación-general" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si <span class="math inline">\(x = x(u, v)\)</span>, <span class="math inline">\(y = y(u, v)\)</span> es una transformación biyectiva con jacobiano:</p>
+<p><span class="math display">\[
+J = \frac{\partial(x, y)}{\partial(u, v)} = \begin{vmatrix}
+\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\
+\frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v}
+\end{vmatrix}
+\]</span></p>
+<p>Entonces:</p>
+<p><span class="math display">\[
+\iint_R f(x, y) \, dA = \iint_S f(x(u, v), y(u, v)) \, |J| \, du \, dv
+\]</span></p>
+</div>
+<div id="coordenadas-polares" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Coordenadas polares<a href="integrales.html#coordenadas-polares" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En coordenadas polares: <span class="math inline">\(x = r\cos\theta\)</span>, <span class="math inline">\(y = r\sin\theta\)</span>.</p>
+<p><span class="math display">\[
+J = \begin{vmatrix}
+\cos\theta &amp; -r\sin\theta \\
+\sin\theta &amp; r\cos\theta
+\end{vmatrix} = r
+\]</span></p>
+<p>Por tanto:</p>
+<p><span class="math display">\[
+\iint_R f(x, y) \, dA = \iint_S f(r\cos\theta, r\sin\theta) \, r \, dr \, d\theta
+\]</span></p>
+</div>
+<div id="ejemplo-resuelto-23" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Ejemplo resuelto<a href="integrales.html#ejemplo-resuelto-23" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p><strong>Ejemplo 2.</strong> Evalúe <span class="math inline">\(\iint_D e^{x^2 + y^2} \, dA\)</span> donde <span class="math inline">\(D\)</span> es el disco unitario.</p>
+</blockquote>
+<p><strong>Solución.</strong> En coordenadas polares: <span class="math inline">\(0 \leq r \leq 1\)</span>, <span class="math inline">\(0 \leq \theta \leq 2\pi\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\iint_D e^{x^2 + y^2} \, dA &amp;= \int_0^{2\pi} \int_0^1 e^{r^2} r \, dr \, d\theta \\
+&amp;= 2\pi \cdot \frac{1}{2} e^{r^2} \Big|_0^1 = \pi(e - 1)
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="integrales-triples" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Integrales triples<a href="integrales.html#integrales-triples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="definición-5" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Definición<a href="integrales.html#definición-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La <strong>integral triple</strong> de <span class="math inline">\(f(x, y, z)\)</span> sobre una región sólida <span class="math inline">\(E\)</span> es:</p>
+<p><span class="math display">\[
+\iiint_E f(x, y, z) \, dV = \lim_{l,m,n \to \infty} \sum_{i=1}^l \sum_{j=1}^m \sum_{k=1}^n f(x_i^*, y_j^*, z_k^*) \Delta V
+\]</span></p>
+</div>
+<div id="evaluación-como-integral-iterada" class="section level3 hasAnchor" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Evaluación como integral iterada<a href="integrales.html#evaluación-como-integral-iterada" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para una región <span class="math inline">\(E = \{(x, y, z) : a \leq x \leq b, \; g_1(x) \leq y \leq g_2(x), \; u_1(x, y) \leq z \leq u_2(x, y)\}\)</span>:</p>
+<p><span class="math display">\[
+\iiint_E f(x, y, z) \, dV = \int_a^b \int_{g_1(x)}^{g_2(x)} \int_{u_1(x,y)}^{u_2(x,y)} f(x, y, z) \, dz \, dy \, dx
+\]</span></p>
+<p>Existen 6 órdenes posibles de integración.</p>
+</div>
+<div id="ejemplo-resuelto-24" class="section level3 hasAnchor" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> Ejemplo resuelto<a href="integrales.html#ejemplo-resuelto-24" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p><strong>Ejemplo 3.</strong> Calcule el volumen del tetraedro acotado por los planos coordenados y <span class="math inline">\(x + y + z = 1\)</span>.</p>
+</blockquote>
+<p><strong>Solución.</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+V &amp;= \int_0^1 \int_0^{1-x} \int_0^{1-x-y} dz \, dy \, dx \\
+&amp;= \int_0^1 \int_0^{1-x} (1 - x - y) \, dy \, dx \\
+&amp;= \int_0^1 \left[ y - xy - \frac{y^2}{2} \right]_0^{1-x} dx \\
+&amp;= \int_0^1 \left( (1-x) - x(1-x) - \frac{(1-x)^2}{2} \right) dx \\
+&amp;= \int_0^1 \frac{(1-x)^2}{2} dx = \frac{1}{2} \left[ -\frac{(1-x)^3}{3} \right]_0^1 = \frac{1}{6}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="cambio-de-variables-en-integrales-triples" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Cambio de variables en integrales triples<a href="integrales.html#cambio-de-variables-en-integrales-triples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="coordenadas-cilíndricas-1" class="section level3 hasAnchor" number="7.4.1">
+<h3><span class="header-section-number">7.4.1</span> Coordenadas cilíndricas<a href="integrales.html#coordenadas-cilíndricas-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+\iiint_E f(x, y, z) \, dV = \iiint_E f(r\cos\theta, r\sin\theta, z) \, r \, dr \, d\theta \, dz
+\]</span></p>
+</div>
+<div id="coordenadas-esféricas-1" class="section level3 hasAnchor" number="7.4.2">
+<h3><span class="header-section-number">7.4.2</span> Coordenadas esféricas<a href="integrales.html#coordenadas-esféricas-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+\iiint_E f(x, y, z) \, dV = \iiint_E f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi) \, \rho^2 \sin\phi \, d\rho \, d\phi \, d\theta
+\]</span></p>
+</div>
+<div id="ejemplo-resuelto-25" class="section level3 hasAnchor" number="7.4.3">
+<h3><span class="header-section-number">7.4.3</span> Ejemplo resuelto<a href="integrales.html#ejemplo-resuelto-25" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p><strong>Ejemplo 4.</strong> Calcule el volumen de una esfera de radio <span class="math inline">\(R\)</span> usando coordenadas esféricas.</p>
+</blockquote>
+<p><strong>Solución.</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+V &amp;= \int_0^{2\pi} \int_0^{\pi} \int_0^R \rho^2 \sin\phi \, d\rho \, d\phi \, d\theta \\
+&amp;= \int_0^{2\pi} d\theta \int_0^{\pi} \sin\phi \, d\phi \int_0^R \rho^2 \, d\rho \\
+&amp;= (2\pi)(2)\left(\frac{R^3}{3}\right) = \frac{4}{3}\pi R^3
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="aplicaciones-de-las-integrales-múltiples" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Aplicaciones de las integrales múltiples<a href="integrales.html#aplicaciones-de-las-integrales-múltiples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="áreas-y-volúmenes" class="section level3 hasAnchor" number="7.5.1">
+<h3><span class="header-section-number">7.5.1</span> Áreas y volúmenes<a href="integrales.html#áreas-y-volúmenes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Área de una región plana: <span class="math inline">\(A = \iint_R 1 \, dA\)</span></li>
+<li>Volumen bajo una superficie: <span class="math inline">\(V = \iint_R f(x, y) \, dA\)</span> (con <span class="math inline">\(f \geq 0\)</span>)</li>
+<li>Volumen de un sólido: <span class="math inline">\(V = \iiint_E 1 \, dV\)</span></li>
+</ul>
+</div>
+<div id="masa-y-centro-de-masa" class="section level3 hasAnchor" number="7.5.2">
+<h3><span class="header-section-number">7.5.2</span> Masa y centro de masa<a href="integrales.html#masa-y-centro-de-masa" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para una lámina con densidad <span class="math inline">\(\rho(x, y)\)</span>:</p>
+<p><span class="math display">\[
+M = \iint_R \rho(x, y) \, dA
+\]</span></p>
+<p><span class="math display">\[
+\bar{x} = \frac{1}{M} \iint_R x \rho(x, y) \, dA, \qquad
+\bar{y} = \frac{1}{M} \iint_R y \rho(x, y) \, dA
+\]</span></p>
+</div>
+<div id="momentos-de-inercia" class="section level3 hasAnchor" number="7.5.3">
+<h3><span class="header-section-number">7.5.3</span> Momentos de inercia<a href="integrales.html#momentos-de-inercia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+I_x = \iint_R y^2 \rho(x, y) \, dA, \qquad
+I_y = \iint_R x^2 \rho(x, y) \, dA, \qquad
+I_0 = I_x + I_y
+\]</span></p>
+</div>
+<div id="valor-promedio" class="section level3 hasAnchor" number="7.5.4">
+<h3><span class="header-section-number">7.5.4</span> Valor promedio<a href="integrales.html#valor-promedio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El valor promedio de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(R\)</span> es:</p>
+<p><span class="math display">\[
+f_{\text{prom}} = \frac{1}{A(R)} \iint_R f(x, y) \, dA
+\]</span></p>
+</div>
+</div>
+<div id="visualización-interactiva-regiones-de-integración" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Visualización interactiva: regiones de integración<a href="integrales.html#visualización-interactiva-regiones-de-integración" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Explore el siguiente applet de GeoGebra para visualizar regiones de integración en coordenadas cartesianas y polares:</p>
+<iframe src="https://www.geogebra.org/m/XKfpRjQH" width="100%" height="600" allowfullscreen style="border: 1px solid #ccc;">
+</iframe>
+</div>
+<div id="ejercicios-propuestos-6" class="section level2 hasAnchor" number="7.7">
+<h2><span class="header-section-number">7.7</span> Ejercicios propuestos<a href="integrales.html#ejercicios-propuestos-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Evalúe <span class="math inline">\(\int_0^1 \int_0^{x^2} (x + y) \, dy \, dx\)</span>.</li>
+<li>Cambie el orden de integración y evalúe <span class="math inline">\(\int_0^1 \int_y^1 e^{x^2} \, dx \, dy\)</span>.</li>
+<li>Use coordenadas polares para calcular <span class="math inline">\(\iint_D \sqrt{x^2 + y^2} \, dA\)</span> donde <span class="math inline">\(D\)</span> es el disco <span class="math inline">\(x^2 + y^2 \leq 4\)</span>.</li>
+<li>Calcule el volumen del sólido acotado por el paraboloide <span class="math inline">\(z = x^2 + y^2\)</span> y el plano <span class="math inline">\(z = 4\)</span>.</li>
+<li>Halle el centro de masa de una lámina semicircular de radio <span class="math inline">\(R\)</span> con densidad uniforme.</li>
+<li>Use coordenadas esféricas para calcular <span class="math inline">\(\iiint_E (x^2 + y^2 + z^2) \, dV\)</span> donde <span class="math inline">\(E\)</span> es la bola unitaria.</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cuadricas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="diferencial.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Superficies3d.pdf", "Superficies3d.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
